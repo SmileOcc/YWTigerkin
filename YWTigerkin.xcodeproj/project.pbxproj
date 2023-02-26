@@ -13,9 +13,11 @@
 		62F68B9829AB5E190023EC3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F68B9629AB5E190023EC3C /* Main.storyboard */; };
 		62F68B9A29AB5E1F0023EC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62F68B9929AB5E1F0023EC3C /* Assets.xcassets */; };
 		62F68B9D29AB5E1F0023EC3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F68B9B29AB5E1F0023EC3C /* LaunchScreen.storyboard */; };
+		75A3E4B8A9E79AA3AF72D998 /* Pods_YWTigerkin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80CD5CD02A6E1E11EDF2028 /* Pods_YWTigerkin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		288D7EC254B0498AFFA713DA /* Pods-YWTigerkin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.debug.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.debug.xcconfig"; sourceTree = "<group>"; };
 		62F68B8D29AB5E190023EC3C /* YWTigerkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YWTigerkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F68B9029AB5E190023EC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62F68B9229AB5E190023EC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		62F68B9929AB5E1F0023EC3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62F68B9C29AB5E1F0023EC3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62F68B9E29AB5E1F0023EC3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80CD5CD02A6E1E11EDF2028 /* Pods_YWTigerkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YWTigerkin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED243E67DE8D7369D64DEEDA /* Pods-YWTigerkin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.release.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A3E4B8A9E79AA3AF72D998 /* Pods_YWTigerkin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38CA01FCF50B7950D6C7D981 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				288D7EC254B0498AFFA713DA /* Pods-YWTigerkin.debug.xcconfig */,
+				ED243E67DE8D7369D64DEEDA /* Pods-YWTigerkin.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		62F68B8429AB5E190023EC3C = {
 			isa = PBXGroup;
 			children = (
 				62F68B8F29AB5E190023EC3C /* YWTigerkin */,
 				62F68B8E29AB5E190023EC3C /* Products */,
+				38CA01FCF50B7950D6C7D981 /* Pods */,
+				F5B48A8E83D30E48D7DA755C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = YWTigerkin;
 			sourceTree = "<group>";
 		};
+		F5B48A8E83D30E48D7DA755C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D80CD5CD02A6E1E11EDF2028 /* Pods_YWTigerkin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62F68BA129AB5E1F0023EC3C /* Build configuration list for PBXNativeTarget "YWTigerkin" */;
 			buildPhases = (
+				1C030E2844A445E52B6D9F5D /* [CP] Check Pods Manifest.lock */,
 				62F68B8929AB5E190023EC3C /* Sources */,
 				62F68B8A29AB5E190023EC3C /* Frameworks */,
 				62F68B8B29AB5E190023EC3C /* Resources */,
+				2927D9E9DB868C311C5F6285 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C030E2844A445E52B6D9F5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YWTigerkin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2927D9E9DB868C311C5F6285 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62F68B8929AB5E190023EC3C /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		62F68BA229AB5E1F0023EC3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288D7EC254B0498AFFA713DA /* Pods-YWTigerkin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +381,7 @@
 		};
 		62F68BA329AB5E1F0023EC3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED243E67DE8D7369D64DEEDA /* Pods-YWTigerkin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
