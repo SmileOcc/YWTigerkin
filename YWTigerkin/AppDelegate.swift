@@ -11,26 +11,41 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
+    var tab: YWTabBarViewController?
+
+    lazy var appServices = {
+        AppServices(loginService: YWLoginService(),
+                    userService: YWUserService(),
+                    searchService: YWSearchService())
+    }()
+    
+    public let navigator = YWNavigatorServices.shareInstance
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        YWNavigationMap.initialize(navigator: navigator, services: appServices)
+
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
+        initRootViewController()
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    func initRootViewController() {
+        
+        self.tab = YWTabBarViewController(navigator: navigator)
+        self.tab?.configureRootVCS(navigator: navigator, services: appServices)
+        self.window?.rootViewController = self.tab!
+        self.window?.makeKeyAndVisible()
     }
 
 
 }
 
+
+struct AppServices: HasYWLoginService, HasYWUserService, HasYWSearchService {
+    let loginService: YWLoginService
+    let userService: YWUserService
+    let searchService: YWSearchService
+}
