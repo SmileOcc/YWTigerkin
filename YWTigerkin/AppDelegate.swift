@@ -7,6 +7,14 @@
 
 import UIKit
 
+///< MARK: print
+func YWLog<T>(_ message: T, file: String = #file, function: String = #function, lineNumber: Int = #line) {
+    #if DEBUG
+    let fileName = (file as NSString).lastPathComponent
+    print("[\(fileName):funciton:\(function):line:\(lineNumber)]- \(message)")
+    #endif
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         YWNavigationMap.initialize(navigator: navigator, services: appServices)
 
-        
+        YWLog("开始----")
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         initRootViewController()

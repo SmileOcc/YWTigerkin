@@ -22,7 +22,7 @@ pod 'NSObject+Rx'
 pod 'URLNavigator'
 
 # 网络请求
-#pod 'Moya/RxSwift', '~> 14.0'
+pod 'Moya/RxSwift'
 
 #pod 'Alamofire-Synchronous'
 
@@ -60,14 +60,14 @@ pod 'IQKeyboardManagerSwift', '~> 6.5.5'
 pod 'MJRefresh', '3.2.0'
 #pod 'CYLTabBarController/Lottie', '~> 1.28.0'
 #pod 'MLeaksFinder'
-#pod 'SAMKeychain'
+pod 'SAMKeychain'
 #pod 'YYText'
 #pod 'UITableView+FDTemplateLayoutCell', '~> 1.6'
 #pod 'Protobuf'
 #pod 'CocoaAsyncSocket'
 #pod 'PPSPing', '~> 0.3.0'
 #pod 'SwiftProtobuf', '~> 1.10.2'
-#pod 'MMKV'
+pod 'MMKV'
 #pod 'DZNEmptyDataSet'
 
 #AppDelegate瘦身类
@@ -92,7 +92,7 @@ pod 'MJRefresh', '3.2.0'
 #pod 'SensorsAnalyticsSDK'
 
 #SnapKit is a DSL to make Auto Layout easy on both iOS and OS X.
-#pod 'SnapKit', '~> 4.2.0'
+pod 'SnapKit'
 
 pod 'Masonry'
 
@@ -104,7 +104,7 @@ pod 'Masonry'
 #pod 'QMUIKit', '~> 4.4.3'
 
 # Lottie动画
-#pod 'lottie-ios'
+pod 'lottie-ios'
 
 # 富文本处理框架
 #pod 'DTCoreText'
@@ -116,7 +116,7 @@ pod 'MBProgressHUD'
 #pod 'R.swift', '~> 5.2.2'
 
 # swift版本的加密库
-#pod 'CryptoSwift'
+pod 'CryptoSwift'
 
 pod 'YYModel'
 
@@ -155,6 +155,8 @@ pod 'JXPagingView/Paging'
 #pod 'Onfido'
 #pod 'OnfidoExtended'
 
+
+pod 'Then'
 end
 
 

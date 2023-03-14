@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import Then
 
 class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
     
     var viewModel: YWHomeViewModel!
 
+    let label = UILabel().then {
+      $0.textAlignment = .center
+      $0.textColor = .black
+      $0.text = "Hello, World!"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "home"

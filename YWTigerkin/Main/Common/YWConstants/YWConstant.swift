@@ -16,6 +16,10 @@ import UIKit
     case prd_hk // 生产环境（HK）
 }
 
+let KSCREEN_WIDTH = YWConstant.screenWidth
+let KSCREEN_HEIGHT = YWConstant.screenHeight
+let kNav_Height = YWConstant.navBarHeight()
+
 class YWConstant: NSObject {
 
     @objc public static let sharedAppDelegate = UIApplication.shared.delegate

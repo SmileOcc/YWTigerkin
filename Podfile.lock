@@ -1,10 +1,21 @@
 PODS:
+  - Alamofire (5.6.1)
+  - CryptoSwift (1.5.1)
   - IQKeyboardManagerSwift (6.5.10)
   - JXPagingView/Paging (2.1.2)
   - JXSegmentedView (1.2.7)
+  - lottie-ios (3.3.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.2.0)
+  - MMKV (1.2.13):
+    - MMKVCore (~> 1.2.13)
+  - MMKVCore (1.2.13)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - "NSObject+Rx (5.2.2)":
     - RxSwift (~> 6.2)
   - Reusable (4.1.2):
@@ -21,6 +32,8 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SAMKeychain (1.5.3)
+  - SnapKit (5.6.0)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
     - SwifterSwift/CoreAnimation (= 5.2.0)
@@ -46,60 +59,86 @@ PODS:
   - SwifterSwift/StoreKit (5.2.0)
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
+  - Then (3.0.0)
   - URLNavigator (2.4.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - CryptoSwift
   - IQKeyboardManagerSwift (~> 6.5.5)
   - JXPagingView/Paging
   - JXSegmentedView (= 1.2.7)
+  - lottie-ios
   - Masonry
   - MBProgressHUD
   - MJRefresh (= 3.2.0)
+  - MMKV
+  - Moya/RxSwift
   - "NSObject+Rx"
   - Reusable (~> 4.1.1)
   - RxCocoa
   - RxGesture
   - RxSwift
+  - SAMKeychain
+  - SnapKit
   - SwifterSwift
+  - Then
   - URLNavigator
   - YYModel
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - CryptoSwift
     - IQKeyboardManagerSwift
     - JXPagingView
     - JXSegmentedView
+    - lottie-ios
     - Masonry
     - MBProgressHUD
     - MJRefresh
+    - MMKV
+    - MMKVCore
+    - Moya
     - "NSObject+Rx"
     - Reusable
     - RxCocoa
     - RxGesture
     - RxRelay
     - RxSwift
+    - SAMKeychain
+    - SnapKit
     - SwifterSwift
+    - Then
     - URLNavigator
     - YYModel
 
 SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
   JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MMKV: aac95d817a100479445633f2b3ed8961b4ac5043
+  MMKVCore: 3388952ded307e41b3ed8a05892736a236ed1b8e
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 578cbe403d11bad49a6ba845af58d003f9ade730
+PODFILE CHECKSUM: eff758263a1e483a50f83d12ce39ed74ae0d1028
 
 COCOAPODS: 1.11.2
