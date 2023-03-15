@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import URLNavigator
+let navColor = UIColor(red: 41/255, green: 160/255, blue: 230/255, alpha: 1)
 
 class YWTabBarViewController: UITabBarController {
 
@@ -18,19 +19,15 @@ class YWTabBarViewController: UITabBarController {
     
     init(navigator: NavigatorServicesType) {
         self.navigator = navigator
-        UITabBar.appearance().unselectedItemTintColor = UIColor.black
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.red], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 10),NSAttributedString.Key.foregroundColor:UIColor.black], for: .normal)
+//        UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.black], for: .selected)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 10),NSAttributedString.Key.foregroundColor:UIColor.gray], for: .normal)
         super.init(nibName: nil, bundle: nil)
-        
-
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,21 +35,29 @@ class YWTabBarViewController: UITabBarController {
             self.overrideUserInterfaceStyle = .light;
         }
    
+        self.tabBar.backgroundColor = UIColor.white
+        self.tabBar.tintColor = UIColor.black
     }
     
     func configureRootVCS(navigator: NavigatorProtocol, services:AppServices) {
         
         let homeCtrl = YWHomeCtrl.instantiate(withViewModel: YWHomeViewModel(), andServices: services, andNavigator: navigator)
         let homeNav = YWNavigationViewController(rootViewController: homeCtrl)
-//        homNav.tabBarItem.title = "首页"
-//        homNav.tabBarItem.image = UIImage(named: "tab_home_selected")
-//        homNav.tabBarItem.selectedImage = UIImage(named: "tab_home")
+        homeNav.tabBarItem.title = "首页"
+        homeNav.tabBarItem.image = UIImage(named: "tab_home")
+        homeNav.tabBarItem.selectedImage = UIImage(named: "tab_home_selected")
         
         let categoryCtrl = YWCategoryCtrl.instantiate(withViewModel: YWCategoryViewModel(), andServices: services, andNavigator: navigator)
         let categoryNav = YWNavigationViewController(rootViewController: categoryCtrl)
+        categoryNav.tabBarItem.title = "分类"
+        categoryNav.tabBarItem.image = UIImage(named: "tab_categories")
+        categoryNav.tabBarItem.selectedImage = UIImage(named: "tab_categories_selected")
         
         let accountCtrl = YWAccountCtrl.instantiate(withViewModel: YWAccountViewModel(), andServices: services, andNavigator: navigator)
         let accountNav = YWNavigationViewController(rootViewController: accountCtrl)
+        accountNav.tabBarItem.title = "中心"
+        accountNav.tabBarItem.image = UIImage(named: "tab_me")
+        accountNav.tabBarItem.selectedImage = UIImage(named: "tab_me_selected")
         
         self.viewControllers = [homeNav,categoryNav,accountNav]
     }

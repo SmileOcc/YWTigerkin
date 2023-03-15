@@ -204,6 +204,9 @@ extension YWLoginAPI: YWTargetType {
             params["page_size"] = "20"
             params["sex"] = "1"
 
+            //表单
+//            MultipartFormData(provider: .data(phoneNumber.data(using: .utf8)!), name: "phone_number")
+            
 //            var headers: [String: String] = ["Accept-Language":"en;q=1","User-Agent":"Vivaia/2.0.0 (iPhone; iOS 15.2; Scale/3.00)","onesite":"true","adw-pf":"ios","adw-deviceid":HCConstant.deviceUUID]
 
 //            return .requestParameters(parameters: params, encoding: JSONEncoding.default)

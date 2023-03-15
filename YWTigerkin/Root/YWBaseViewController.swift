@@ -12,7 +12,7 @@ class YWBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "YW"
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.random
     }
     
 

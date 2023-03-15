@@ -33,16 +33,18 @@ class YWAccountCtrl: YWBaseViewController, YWViewModelBased{
     
     lazy var htmBtn: UIButton = {
         let view = UIButton(type: .custom)
-        view.setTitle("htmWeb", for: .normal)
-        view.backgroundColor = UIColor.yellow
+        view.setTitle("go htmWeb", for: .normal)
+        view.setTitleColor(UIColor.black, for: .normal)
+        view.backgroundColor = UIColor.random
         view.addTarget(self, action: #selector(webAction), for: .touchUpInside)
         return view
     }()
     
     lazy var searchBtn: UIButton = {
         let view = UIButton(type: .custom)
-        view.setTitle("Search", for: .normal)
-        view.backgroundColor = UIColor.yellow
+        view.setTitle("go Search", for: .normal)
+        view.setTitleColor(UIColor.black, for: .normal)
+        view.backgroundColor = UIColor.random
         view.addTarget(self, action: #selector(searchAction), for: .touchUpInside)
         return view
     }()

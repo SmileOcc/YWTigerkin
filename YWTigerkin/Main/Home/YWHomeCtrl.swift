@@ -13,17 +13,75 @@ class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
     var viewModel: YWHomeViewModel!
 
     let label = UILabel().then {
-      $0.textAlignment = .center
-      $0.textColor = .black
-      $0.text = "Hello, World!"
+        $0.textAlignment = .center
+        $0.textColor = .black
+        $0.text = "Hello, World!"
+        $0.backgroundColor = UIColor.random
     }
     
+    lazy var inputTf: UITextField = {
+        let view = UITextField(frame: CGRect.zero)
+        view.backgroundColor = UIColor.random
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "home"
         // Do any additional setup after loading the view.
+        
+        // count计算表情符号错误的，方式与oc length方式不一样，要用utf16
+        print("count: \(label.text!.count)   length:\(label.text!.utf16.count)")
+        
+        self.view.addSubview(label)
+        self.view.addSubview(inputTf)
+        
+        label.snp.makeConstraints { make in
+            make.left.equalTo(self.view.snp.left).offset(16)
+            make.top.equalTo(self.view.snp.top).offset(12)
+            make.height.equalTo(44)
+        }
+        
+        inputTf.snp.makeConstraints { make in
+            make.left.equalTo(self.view.snp.left).offset(16)
+            make.top.equalTo(self.label.snp.bottom).offset(8)
+            make.size.equalTo(CGSize(width: 150, height: 40))
+        }
+        
+        _ = inputTf.rx.text.skip(1)
+            .subscribe(onNext: { (text) in
+            print("输入：\(text)")
+        })
     }
     
+    func textReplace() {
+        
+        // 若model是Codable，需要替换，在栈上，
+        var list:[YWTestModel] = []
+        for i in 0...4 {
+            let model = YWTestModel()
+            model.id = "\(i)"
+        }
+        
+        let sourceModel = YWTestModel()
+        sourceModel.id = "2"
+        if let index = list.firstIndex(where: { info in
+            print("-----------1")
+            if info.id == sourceModel.id {
+                return true
+            }
+            return false
+        }) {
+            
+            list.replaceSubrange(index...index, with: [sourceModel])
+        }
+        
+        //如果： itemModel是 Codable 这里是修改没作用的
+        list.forEach { itemMode in
+            if itemMode.id == sourceModel.id {
+                itemMode.isSelect = sourceModel.isSelect
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

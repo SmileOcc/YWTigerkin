@@ -74,3 +74,10 @@ class YWSlideImages: NSObject, Codable {
         case imageUrl = "image_url"
     }
 }
+
+
+class YWTestModel: Codable {
+    var id: String?
+    var name: String?
+    var isSelect: Bool = false
+}
