@@ -90,5 +90,9 @@ public func forceLocalized(withKey key:String) {
 
 
 extension YWConstant {
+    static let requestLoading = "加载中..."
+    static let requestFail = "请求失败"
+    static let requestNetError = "网络异常，请稍后重试"
+    static let requestNoData = "暂无数据"
     
 }

@@ -90,7 +90,7 @@ extension UIColor {
         //如果是0x开头的，那么截取字符串，字符串从索引为2的位置开始，一直到末尾
         let index = cString.index(cString.endIndex, offsetBy: -6)
         let subString = cString[index...]
-        if cString.hasPrefix("0X") { cString = String(subString) }
+        if cString.hasPrefix("0X") || cString.hasPrefix("0x") { cString = String(subString) }
         //如果是#开头的，那么截取字符串，字符串从索引为1的位置开始，一直到末尾
         if cString.hasPrefix("#") { cString = String(subString) }
 

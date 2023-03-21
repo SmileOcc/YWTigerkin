@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
-class YWBaseViewController: UIViewController {
+
+class YWBaseViewController: UIViewController, HasDisposeBag {
 
     override func viewDidLoad() {
         super.viewDidLoad()

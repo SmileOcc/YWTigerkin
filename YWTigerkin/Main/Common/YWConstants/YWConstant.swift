@@ -24,6 +24,23 @@ class YWConstant: NSObject {
 
     @objc public static let sharedAppDelegate = UIApplication.shared.delegate
     
+    class func kKeyWindow() -> UIWindow? {
+        var  window: UIWindow? =  nil
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.connectedScenes.filter { $0.activationState == .foregroundActive }
+            .compactMap { $0 as? UIWindowScene }.first?.windows
+            .filter { $0.isKeyWindow }.first;
+        }
+        else {
+            window = UIApplication.shared.keyWindow
+        }
+        
+        if window == nil {
+            window = YWConstant.sharedAppDelegate?.window ?? UIWindow()
+        }
+        return window
+    }
+    
     /// App类型
     @objc public enum YWAppType: Int {
         case CN         = 0x01        // 大陆版

@@ -11,20 +11,25 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-class YWAccountViewModel: YWServicesViewModel, HasDisposeBag  {
+class YWAccountViewModel: HUDServicesViewModel, HasDisposeBag  {
     typealias Services = AppServices
     
+    var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
+
     var navigator: NavigatorServicesType!
     
 //    var loginResponse: HCResultResponse<JSONAny>?
-    var loginResponse: YWResultResponse<YWHomeModel>?
-
+    var accountResponse: YWResultResponse<YWHomeModel>?
+    let accountSubject = PublishSubject<Bool>()
     let disposebag = DisposeBag()
 
+    var datas:[YWAccountItemModel] = []
+    
     var services: Services! {
         didSet {
-            loginResponse = {[weak self] (response) in
+            accountResponse = {[weak self] (response) in
                 guard let `self` = self else {return}
+                self.hudSubject.onNext(.hide)
                 switch response {
                     case .success(let result, let code):
                     switch code {
@@ -42,17 +47,17 @@ class YWAccountViewModel: YWServicesViewModel, HasDisposeBag  {
                         }
                         
                         setUserInfo()
-                        
+                        self.accountSubject.onNext(true)
                     default:
                         if let msg = result.message {
-                            //self.hudSubject.onNext(.error(msg, false))
+                            self.hudSubject.onNext(.error(msg, false))
                             
                         }
                     }
                 case .failed(_):
                     print("error")
                     //YXProgressHUD.showSuccess(YXLanguageUtility.kLang(key: "common_net_error"))
-                   // self.hudSubject.onNext(.error(YXLanguageUtility.kLang(key: "common_net_error"), false))
+                    self.hudSubject.onNext(.error(YWConstant.requestNetError, false))
                 }
             
                 
@@ -60,10 +65,39 @@ class YWAccountViewModel: YWServicesViewModel, HasDisposeBag  {
         }
     }
     
+    func requestData() {
+        self.hudSubject.onNext(.loading(YWConstant.requestLoading, false))
+        for i in 0...5 {
+            let model = YWAccountItemModel()
+            model.title = "其他"
+            model.imgName = "settings"
+            if i == 0 {
+                model.title = "设置"
+            } else if i == 1 {
+                model.title = "通知"
+            } else if i == 2 {
+                model.title = "关于"
+            } else if i == 3 {
+                model.title = "活动"
+                model.desc = "最新活动"
+            } else if i == 4 {
+                model.title = "版本"
+                model.desc = "v_\(YWConstant.appVersion ?? "")"
+            }
+            self.datas.append(model)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.hudSubject.onNext(.hide)
+            self.accountSubject.onNext(true)
+        })
+    }
+    
     func testRequest() {
+        
         
 //        self.services.loginService.requesttttt(.testRequest("1"), response: loginResponse)
 
-        self.services.loginService.request(.testRequest("1"), response: loginResponse).disposed(by: disposebag)
+//        self.services.loginService.request(.testRequest("1"), response: accountResponse).disposed(by: disposebag)
     }
 }

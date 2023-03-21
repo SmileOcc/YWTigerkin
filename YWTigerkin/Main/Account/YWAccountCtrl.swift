@@ -6,30 +6,49 @@
 //
 
 import UIKit
+import Reusable
+import RxSwift
+import RxCocoa
 
-class YWAccountCtrl: YWBaseViewController, YWViewModelBased{
+class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
     
+    var networkingHUD: YWProgressHUD! = YWProgressHUD()
+
     var viewModel: YWAccountViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "account"
-        // Do any additional setup after loading the view.
         
-        self.view.addSubview(htmBtn)
-        self.view.addSubview(searchBtn)
-
-        htmBtn.snp.makeConstraints { make in
+        bindViewModel()
+        viewModelResponse()
+        bindHUD()
+        
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
             make.left.equalTo(self.view.snp.left).offset(16)
-            make.top.equalTo(self.view.snp.top).offset(120)
+            make.right.equalTo(self.view.snp.right).offset(-16)
+            make.top.equalTo(self.view.snp.top).offset(12)
+            make.bottom.equalTo(self.view.snp.bottom)
         }
         
-        searchBtn.snp.makeConstraints { make in
-            make.left.equalTo(self.view.snp.left).offset(16)
-            make.top.equalTo(self.view.snp.top).offset(160)
-        }
+        self.viewModel.requestData()
     }
     
+    lazy var tableView:UITableView = {
+        let view = UITableView.init(frame: CGRect.zero, style: .plain)
+        view.register(YWAccountCell.self, forCellReuseIdentifier: NSStringFromClass(YWAccountCell.self))
+        view.separatorStyle = .none
+        view.delegate = self
+        view.dataSource = self
+        if #available(iOS 11, *) {
+            view.estimatedRowHeight = 56.0
+            view.estimatedSectionFooterHeight = 0
+            view.estimatedSectionHeaderHeight = 0
+            view.contentInsetAdjustmentBehavior = .never
+        }
+        return view
+    }()
     
     lazy var htmBtn: UIButton = {
         let view = UIButton(type: .custom)
@@ -61,14 +80,40 @@ class YWAccountCtrl: YWBaseViewController, YWViewModelBased{
         self.viewModel.navigator.push(YWModulePaths.search.url)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func viewModelResponse() {
+        
+        self.viewModel.accountSubject.subscribe(onNext: { [weak self] success in
+            guard let `self` = self else {return}
+            self.view.endEditing(true)
+            if success {
+                self.tableView.reloadData()
+            }
+        }).disposed(by: disposeBag)
     }
-    */
+    
+    func bindViewModel() {
+    }
 
+}
+
+extension YWAccountCtrl: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.viewModel.datas.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(YWAccountCell.self), for: indexPath) as! YWAccountCell
+        if self.viewModel.datas.count > indexPath.row {
+            let model = self.viewModel.datas[indexPath.row]
+            cell.model = model
+        }
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        56.0
+    }
+    
+    
 }
