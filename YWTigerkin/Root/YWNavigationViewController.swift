@@ -58,11 +58,30 @@ class YWNavigationViewController: UINavigationController , UINavigationControlle
 
 extension YWNavigationViewController {
     
+    @objc func goBackAction(){
+        self.popViewController(animated: true)
+    }
+    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
         
         super.pushViewController(viewController, animated: animated)
+
+        if self.viewControllers.count > 1 {
+            viewController.navigationItem.hidesBackButton = true
+            var target: UIViewController?
+            if let ctrl = viewController as? YWBaseViewController {
+                target = ctrl } else {target = self}
+            let image = UIImage(named: "nav_back")
+            let backButton = UIButton(type: .custom)
+            backButton.setImage(image, for: .normal)
+            backButton.addTarget(target, action: #selector(goBackAction), for: .touchUpInside)
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+            
+            //viewController.navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsets(top: 0, left: -6, bottom: 0, right: 0)
+        }
+        
     }
 }

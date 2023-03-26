@@ -61,7 +61,16 @@ PODS:
   - SwifterSwift/UIKit (5.2.0)
   - Then (3.0.0)
   - URLNavigator (2.4.1)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYImage/WebP (1.0.4):
+    - YYImage/Core
   - YYModel (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - CryptoSwift
@@ -84,7 +93,9 @@ DEPENDENCIES:
   - SwifterSwift
   - Then
   - URLNavigator
+  - YYImage/WebP
   - YYModel
+  - YYWebImage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -111,7 +122,10 @@ SPEC REPOS:
     - SwifterSwift
     - Then
     - URLNavigator
+    - YYCache
+    - YYImage
     - YYModel
+    - YYWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
@@ -137,8 +151,11 @@ SPEC CHECKSUMS:
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: eff758263a1e483a50f83d12ce39ed74ae0d1028
+PODFILE CHECKSUM: d7093fa3e427761bafa8653ae21ca4cf4b493921
 
 COCOAPODS: 1.11.2

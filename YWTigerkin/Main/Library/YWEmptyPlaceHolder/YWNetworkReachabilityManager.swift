@@ -1,6 +1,6 @@
 //
-//  HCNetworkReachabilityManager.swift
-//  URLDEMO
+//  YWNetworkReachabilityManager.swift
+//
 //
 //  Created by odd on 7/16/22.
 //
@@ -8,19 +8,19 @@
 import UIKit
 import Alamofire
 
-enum HCReachabilityStatus {
+enum YWReachabilityStatus {
     case notRechable
     case unknown
     case ethernetOrWiFi
     case wwan
 }
 
-@objcMembers class HCNetworkReachabilityManager: NSObject {
+@objcMembers class YWNetworkReachabilityManager: NSObject {
     let ccc: NetworkReachabilityManager? = nil
     
-    static let instance: HCNetworkReachabilityManager = HCNetworkReachabilityManager()
+    static let instance: YWNetworkReachabilityManager = YWNetworkReachabilityManager()
 
-    class func shared() -> HCNetworkReachabilityManager {
+    class func shared() -> YWNetworkReachabilityManager {
         return instance
     }
     
@@ -33,7 +33,7 @@ enum HCReachabilityStatus {
     }
     
     // 只能调用一次监听一次
-    func netWorkReachability(reachabilityStatus: @escaping(HCReachabilityStatus) ->Void) {
+    func netWorkReachability(reachabilityStatus: @escaping(YWReachabilityStatus) ->Void) {
         let manager = NetworkReachabilityManager.init()
         manager!.startListening { (status) in
             if status == NetworkReachabilityManager.NetworkReachabilityStatus.reachable(.ethernetOrWiFi) {

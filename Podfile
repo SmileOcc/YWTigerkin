@@ -119,6 +119,9 @@ pod 'MBProgressHUD'
 pod 'CryptoSwift'
 
 pod 'YYModel'
+pod 'YYWebImage'
+pod 'YYImage/WebP'
+pod 'YYText'
 
 #pod 'RxDataSources'
 

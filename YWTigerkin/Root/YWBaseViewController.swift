@@ -13,21 +13,36 @@ import NSObject_Rx
 
 class YWBaseViewController: UIViewController, HasDisposeBag {
 
+    deinit {
+        print(">>>>>>> \(NSStringFromClass(type(of: self)).split(separator: ".").last!) deinit")
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "YW"
-        self.view.backgroundColor = UIColor.random
+        self.view.backgroundColor = UIColor.hexColor("0xeeeeee")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func bindViewModel() {
+        
     }
-    */
+    
+    func viewModelResponse() {
+//        viewModel.loginSuccessSubject.subscribe(onNext: {[weak self] (success) in
+//            guard let `self` = self else {return}
+//
+//        }).disposed(by: disposeBag)
+    }
+    @objc func goBackAction() {
+        if let viewControllers = self.navigationController?.viewControllers, viewControllers.count > 1 {
+            if viewControllers.last == self {
+                self.navigationController?.popViewController(animated: true)
+                return
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
+   
+    }
 
 }

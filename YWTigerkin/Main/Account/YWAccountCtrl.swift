@@ -24,6 +24,7 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
         viewModelResponse()
         bindHUD()
         
+        
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.left.equalTo(self.view.snp.left).offset(16)
@@ -31,8 +32,31 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
             make.top.equalTo(self.view.snp.top).offset(12)
             make.bottom.equalTo(self.view.snp.bottom)
         }
-        
+        self.addRefreshHeader()
         self.viewModel.requestData()
+    }
+    func addRefreshHeader() {
+        tableView.addHeaderRefreshBlock(headerBlock: {[weak self] in
+            guard let `self` = self else {return}
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tableView.reloadData()
+                //self.tableView.mj_header.endRefreshing()
+                self.tableView.showRequestTip([kTotalPageKey:"2",kCurrentPageKye:"1"])
+//                self.tableView.showRequestTip(nil)
+
+            })
+        }, footerBlock: {
+           
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tableView.reloadData()
+                //self.tableView.mj_header.endRefreshing()
+//                self.tableView.showRequestTip(nil)
+                self.tableView.showRequestTip([kTotalPageKey:"1",kCurrentPageKye:"1"])
+
+
+            })
+        }, startRefreshing: false)
     }
     
     lazy var tableView:UITableView = {
@@ -80,7 +104,7 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
         self.viewModel.navigator.push(YWModulePaths.search.url)
     }
 
-    func viewModelResponse() {
+    override func viewModelResponse() {
         
         self.viewModel.accountSubject.subscribe(onNext: { [weak self] success in
             guard let `self` = self else {return}
@@ -91,7 +115,7 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
         }).disposed(by: disposeBag)
     }
     
-    func bindViewModel() {
+    override func bindViewModel() {
     }
 
 }
@@ -115,5 +139,9 @@ extension YWAccountCtrl: UITableViewDelegate,UITableViewDataSource {
         56.0
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchAction()
+    }
     
 }

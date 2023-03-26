@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */; };
+		624BE06529CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */; };
+		624BE06829CDD2FE0071CD57 /* YWAdvsEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */; };
+		624BE06A29CDD31F0071CD57 /* YWAdvsEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06929CDD31F0071CD57 /* YWAdvsEventsManager.swift */; };
+		624BE06D29CDE2F70071CD57 /* YWThemesColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06C29CDE2F70071CD57 /* YWThemesColors.swift */; };
+		624BE07029CF29E80071CD57 /* JKRegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06F29CF29E80071CD57 /* JKRegexHelper.swift */; };
+		624BE07229D01E500071CD57 /* YWRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE07129D01E500071CD57 /* YWRefreshFooter.swift */; };
 		62F68B9129AB5E190023EC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68B9029AB5E190023EC3C /* AppDelegate.swift */; };
 		62F68B9329AB5E190023EC3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68B9229AB5E190023EC3C /* SceneDelegate.swift */; };
 		62F68B9529AB5E190023EC3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68B9429AB5E190023EC3C /* ViewController.swift */; };
@@ -72,7 +79,7 @@
 		62F68C3329BA21570023EC3C /* YWButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3229BA21570023EC3C /* YWButton+Extension.swift */; };
 		62F68C3529BF51700023EC3C /* YWView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3429BF51700023EC3C /* YWView+Extension.swift */; };
 		62F68C3729C0A5B10023EC3C /* YWString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3629C0A5B10023EC3C /* YWString+Extension.swift */; };
-		62F68C3A29C1FC3E0023EC3C /* HCNetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3929C1FC3E0023EC3C /* HCNetworkReachabilityManager.swift */; };
+		62F68C3A29C1FC3E0023EC3C /* YWNetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3929C1FC3E0023EC3C /* YWNetworkReachabilityManager.swift */; };
 		62F68C3C29C1FC4D0023EC3C /* ODBlankPageTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3B29C1FC4D0023EC3C /* ODBlankPageTipView.swift */; };
 		62F68C3E29C1FC590023EC3C /* UIScrollView+ODBlankPageTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C3D29C1FC590023EC3C /* UIScrollView+ODBlankPageTipView.swift */; };
 		62F68C4129C1FDCF0023EC3C /* YWDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68C4029C1FDCF0023EC3C /* YWDate.swift */; };
@@ -86,6 +93,13 @@
 
 /* Begin PBXFileReference section */
 		288D7EC254B0498AFFA713DA /* Pods-YWTigerkin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.debug.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.debug.xcconfig"; sourceTree = "<group>"; };
+		624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshHeader.swift; sourceTree = "<group>"; };
+		624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshAuotNormalFooter.swift; sourceTree = "<group>"; };
+		624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAdvsEventsModel.swift; sourceTree = "<group>"; };
+		624BE06929CDD31F0071CD57 /* YWAdvsEventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAdvsEventsManager.swift; sourceTree = "<group>"; };
+		624BE06C29CDE2F70071CD57 /* YWThemesColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWThemesColors.swift; sourceTree = "<group>"; };
+		624BE06F29CF29E80071CD57 /* JKRegexHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKRegexHelper.swift; sourceTree = "<group>"; };
+		624BE07129D01E500071CD57 /* YWRefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshFooter.swift; sourceTree = "<group>"; };
 		62F68B8D29AB5E190023EC3C /* YWTigerkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YWTigerkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F68B9029AB5E190023EC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62F68B9229AB5E190023EC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +169,7 @@
 		62F68C3229BA21570023EC3C /* YWButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWButton+Extension.swift"; sourceTree = "<group>"; };
 		62F68C3429BF51700023EC3C /* YWView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWView+Extension.swift"; sourceTree = "<group>"; };
 		62F68C3629C0A5B10023EC3C /* YWString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWString+Extension.swift"; sourceTree = "<group>"; };
-		62F68C3929C1FC3E0023EC3C /* HCNetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCNetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		62F68C3929C1FC3E0023EC3C /* YWNetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YWNetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		62F68C3B29C1FC4D0023EC3C /* ODBlankPageTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODBlankPageTipView.swift; sourceTree = "<group>"; };
 		62F68C3D29C1FC590023EC3C /* UIScrollView+ODBlankPageTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ODBlankPageTipView.swift"; sourceTree = "<group>"; };
 		62F68C4029C1FDCF0023EC3C /* YWDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWDate.swift; sourceTree = "<group>"; };
@@ -187,6 +201,41 @@
 				ED243E67DE8D7369D64DEEDA /* Pods-YWTigerkin.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		624BE06129CB3AF40071CD57 /* YWRefreshHeader */ = {
+			isa = PBXGroup;
+			children = (
+				624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */,
+				624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */,
+				624BE07129D01E500071CD57 /* YWRefreshFooter.swift */,
+			);
+			path = YWRefreshHeader;
+			sourceTree = "<group>";
+		};
+		624BE06629CDD2CA0071CD57 /* YWAdvManager */ = {
+			isa = PBXGroup;
+			children = (
+				624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */,
+				624BE06929CDD31F0071CD57 /* YWAdvsEventsManager.swift */,
+			);
+			path = YWAdvManager;
+			sourceTree = "<group>";
+		};
+		624BE06B29CDE2BE0071CD57 /* YWThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				624BE06C29CDE2F70071CD57 /* YWThemesColors.swift */,
+			);
+			path = YWThemeManager;
+			sourceTree = "<group>";
+		};
+		624BE06E29CF29BA0071CD57 /* JKSwiftExtension */ = {
+			isa = PBXGroup;
+			children = (
+				624BE06F29CF29E80071CD57 /* JKRegexHelper.swift */,
+			);
+			path = JKSwiftExtension;
 			sourceTree = "<group>";
 		};
 		62F68B8429AB5E190023EC3C = {
@@ -318,6 +367,8 @@
 		62F68BBA29B0CBDA0023EC3C /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				624BE06E29CF29BA0071CD57 /* JKSwiftExtension */,
+				624BE06129CB3AF40071CD57 /* YWRefreshHeader */,
 				62F68C3829C1FC290023EC3C /* YWEmptyPlaceHolder */,
 				62F68C2B29BA1C8B0023EC3C /* YWRequest */,
 				62F68BEC29B21F010023EC3C /* Navigator */,
@@ -344,6 +395,8 @@
 		62F68BC029B0CDC80023EC3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				624BE06B29CDE2BE0071CD57 /* YWThemeManager */,
+				624BE06629CDD2CA0071CD57 /* YWAdvManager */,
 				62F68C3F29C1FDB30023EC3C /* YWDateManager */,
 				62F68C2229BA107A0023EC3C /* Extensions */,
 				62F68C1F29BA0F800023EC3C /* YWHud */,
@@ -517,7 +570,7 @@
 			children = (
 				62F68C3D29C1FC590023EC3C /* UIScrollView+ODBlankPageTipView.swift */,
 				62F68C3B29C1FC4D0023EC3C /* ODBlankPageTipView.swift */,
-				62F68C3929C1FC3E0023EC3C /* HCNetworkReachabilityManager.swift */,
+				62F68C3929C1FC3E0023EC3C /* YWNetworkReachabilityManager.swift */,
 			);
 			path = YWEmptyPlaceHolder;
 			sourceTree = "<group>";
@@ -695,6 +748,7 @@
 				62F68C4C29C34B330023EC3C /* HUDViewModelBase.swift in Sources */,
 				62F68BE729B0E53E0023EC3C /* YWUserAPI.swift in Sources */,
 				62F68C0B29B61C9C0023EC3C /* YWHomeModel.swift in Sources */,
+				624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */,
 				62F68B9529AB5E190023EC3C /* ViewController.swift in Sources */,
 				62F68C2F29BA1E1C0023EC3C /* YWNavigationController+Extension.swift in Sources */,
 				62F68C0D29BA0D6B0023EC3C /* YWAccountCenterCtrl.swift in Sources */,
@@ -705,6 +759,7 @@
 				62F68BE129B0E1840023EC3C /* API.swift in Sources */,
 				62F68BF629B227F30023EC3C /* YWNavigatorMap.swift in Sources */,
 				62F68BE329B0E1BD0023EC3C /* YWNetworkLoggerPlugin.swift in Sources */,
+				624BE06529CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift in Sources */,
 				62F68C1E29BA0E760023EC3C /* YWSearchResultViewModel.swift in Sources */,
 				62F68BCC29B0D32E0023EC3C /* YWGlobalConfigManager.swift in Sources */,
 				62F68BEE29B21F390023EC3C /* YWNavigatorPaths.swift in Sources */,
@@ -722,13 +777,16 @@
 				62F68BC329B0CE0B0023EC3C /* YWConstant.swift in Sources */,
 				62F68C1129BA0D9B0023EC3C /* YWSettingCtrl.swift in Sources */,
 				62F68C0629B61A850023EC3C /* YWCategoryViewModel.swift in Sources */,
-				62F68C3A29C1FC3E0023EC3C /* HCNetworkReachabilityManager.swift in Sources */,
+				62F68C3A29C1FC3E0023EC3C /* YWNetworkReachabilityManager.swift in Sources */,
 				62F68BE529B0E3240023EC3C /* YWLoginAPI.swift in Sources */,
+				624BE06D29CDE2F70071CD57 /* YWThemesColors.swift in Sources */,
 				62F68BFB29B2291B0023EC3C /* YWSearchViewModel.swift in Sources */,
 				62F68BD729B0DB320023EC3C /* YWTargetType.swift in Sources */,
 				62F68BFF29B2299A0023EC3C /* YWSearchAPI.swift in Sources */,
+				624BE06829CDD2FE0071CD57 /* YWAdvsEventsModel.swift in Sources */,
 				62F68BFD29B2297C0023EC3C /* YWSearchService.swift in Sources */,
 				62F68BB029AB75B30023EC3C /* YWHomeCtrl.swift in Sources */,
+				624BE07229D01E500071CD57 /* YWRefreshFooter.swift in Sources */,
 				62F68BB729AB7DDC0023EC3C /* YWWebHtmlImageCtrl.swift in Sources */,
 				62F68BD529B0D6610023EC3C /* YWUserHelper.swift in Sources */,
 				62F68C3329BA21570023EC3C /* YWButton+Extension.swift in Sources */,
@@ -736,6 +794,7 @@
 				62F68C4429C341E40023EC3C /* YWAccountCell.swift in Sources */,
 				62F68BE929B0E6CE0023EC3C /* YWUserService.swift in Sources */,
 				62F68C3E29C1FC590023EC3C /* UIScrollView+ODBlankPageTipView.swift in Sources */,
+				624BE06A29CDD31F0071CD57 /* YWAdvsEventsManager.swift in Sources */,
 				62F68C4A29C346E30023EC3C /* YWAccountItemModel.swift in Sources */,
 				62F68C3C29C1FC4D0023EC3C /* ODBlankPageTipView.swift in Sources */,
 				62F68C3529BF51700023EC3C /* YWView+Extension.swift in Sources */,
@@ -748,6 +807,7 @@
 				62F68C2A29BA1A5D0023EC3C /* YWNSObject+Extension.swift in Sources */,
 				62F68C2D29BA1D640023EC3C /* YWOrigRequest.swift in Sources */,
 				62F68BA729AB74F10023EC3C /* YWBaseViewController.swift in Sources */,
+				624BE07029CF29E80071CD57 /* JKRegexHelper.swift in Sources */,
 				62F68C3729C0A5B10023EC3C /* YWString+Extension.swift in Sources */,
 				62F68C2429BA10CB0023EC3C /* YWColor+Extension.swift in Sources */,
 			);
