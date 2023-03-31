@@ -51,6 +51,12 @@ class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
             .subscribe(onNext: { (text) in
             print("输入：\(text)")
         })
+        
+        let arr = ["a","3","c"]
+        let range = 0...arr.count - 1
+        for i in range.reversed() {
+            print("kkk: \(i)")// 2 1 0
+        }
     }
     
     func textReplace() {

@@ -28,6 +28,12 @@ let kListKey = "list"
 let kPageSize10 = 10
 let kPageSize20 = 20
 
+let kGoodsWidth = (KSCREEN_WIDTH - kPadding * 3.0) / 2.0
+let kPadding:CGFloat        =     12.0
+let kBottomPadding:CGFloat  =     12.0
+let kColumnIndex2   =     2
+let kColumnIndex3   =     3
+
 class YWConstant: NSObject {
 
     @objc public static let sharedAppDelegate = UIApplication.shared.delegate
