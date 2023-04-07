@@ -9,7 +9,7 @@ import Foundation
 
 extension UIView{
     
-    public func current() -> UIViewController? {
+    public func viewController() -> UIViewController? {
         weak var parentResponder: UIResponder? = self
         while parentResponder != nil {
             parentResponder = parentResponder!.next

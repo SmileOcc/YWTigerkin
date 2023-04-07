@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol YWCollectionCellDelegate:NSObjectProtocol {
+@objc protocol YWCollectionCellDelegate:NSObjectProtocol {
     
 }
 
-protocol YWCollectCCellProtocol:NSObjectProtocol {
-    var model:YWCollectionCellModelProtocol? { get set}
-    var delegate:YWCollectionCellDelegate? { get set }
+@objc protocol YWCollectCCellProtocol:NSObjectProtocol {
+    @objc var model:YWCollectionCellModelProtocol? { get set}
+    @objc weak var delegate:YWCollectionCellDelegate? { get set }
     //var channelId:String {get}
 }

@@ -9,4 +9,7 @@ import UIKit
 
 class YWAdvsEventsManager: NSObject {
 
+    static func advEventTarget(target:Any?, advEventModel:YWAdvsEventsModel) {
+        
+    }
 }

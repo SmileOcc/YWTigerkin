@@ -53,7 +53,7 @@ extension YWThemeHandleManagerView: YWCustomerLayoutDataSource, YWCustomerLayout
     }
     
     func customerLayoutThemeMenusSection(_ collectionView: UICollectionView) -> Int {
-        
+        return self.themeMenuDataIndex()
     }
     
     func customerLayoutDidLayoutDone() {

@@ -72,6 +72,16 @@ class YWAdvsEventsModel: NSObject, NSCoding {
         return ""
     }
     
+    
+
+    init(specialModel:YWAdvEventSpecialModel) {
+        
+        super.init()
+        self.actionType = specialModel.pageType
+        self.url = specialModel.url
+        self.name = specialModel.name
+        self.imageUrl = specialModel.images
+    }
  
 }
 

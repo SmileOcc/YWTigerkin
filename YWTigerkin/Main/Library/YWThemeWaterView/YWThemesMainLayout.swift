@@ -192,7 +192,7 @@ extension YWThemesMainLayout {
                     let sectionAttributelist = sectionModule.childRowsCaclulateFramesWithBottomOffset(lastSectionHeight, i)
                     sectionAttributes.append(contentsOf: sectionAttributelist)
                     
-                    self.columnHeightsArray[i] = sectionModule.sectionBottom()
+                    self.columnHeightsArray.append(sectionModule.sectionBottom())
                     
                     var sectionFooter = 0.0
                     if tDataSource.responds(to: #selector(YWCustomerLayoutDataSource.customerLayoutSectionFooterHeight(_:_:_:))) {
@@ -204,7 +204,8 @@ extension YWThemesMainLayout {
                             headerAttributes.frame = CGRect(x: 0.0, y: lastSectionHeight, width: self.collectionView!.frame.size.width, height: sectionFooter)
                             self.allAttributesItemListArray.append(headerAttributes)
                             self.footerSectionHeightDic[i] = headerAttributes
-                            self.columnHeightsArray[i] = headerAttributes.frame.maxY
+                            //self.columnHeightsArray[i] = headerAttributes.frame.maxY
+                            self.columnHeightsArray.append(headerAttributes.frame.maxY)
                         }
                     }
                     

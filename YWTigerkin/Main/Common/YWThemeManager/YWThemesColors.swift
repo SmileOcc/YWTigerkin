@@ -23,6 +23,11 @@ class YWThemesColors: NSObject {
         return AutoFitHexColor(lightHex: "#111111", darkHex: "#000000")
 
     }
+    
+    class var col_f6f6f6:UIColor {
+        return AutoFitHexColor(lightHex: "#f6f6f6", darkHex: "#f6f6f6")
+    }
+    
     class var col_999999:UIColor {
         return AutoFitHexColor(lightHex: "#999999", darkHex: "#1C1C1C")
     }

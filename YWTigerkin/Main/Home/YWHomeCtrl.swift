@@ -11,6 +11,12 @@ import Then
 class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
     
     var viewModel: YWHomeViewModel!
+    
+    lazy var themesMainView: YWThemesMainView = {
+        let view = YWThemesMainView(frame: self.view.bounds, firstChannel: "", channelId: "", title: "")
+        view.backgroundColor = UIColor.random
+        return view
+    }()
 
     let label = UILabel().then {
         $0.textAlignment = .center
@@ -34,6 +40,15 @@ class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
         
         self.view.addSubview(label)
         self.view.addSubview(inputTf)
+        self.view.addSubview(self.themesMainView)
+        
+        self.themesMainView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.themesMainView.viewDidShow()
+        self.themesMainView.addListViewRefresh()
+    
         
         label.snp.makeConstraints { make in
             make.left.equalTo(self.view.snp.left).offset(16)
