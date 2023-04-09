@@ -158,6 +158,8 @@ pod 'JXPagingView/Paging'
 #pod 'Onfido'
 #pod 'OnfidoExtended'
 
+#轮播组件
+pod 'FSPagerView'
 
 pod 'Then'
 end

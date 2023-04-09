@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.6.1)
   - CryptoSwift (1.5.1)
+  - FSPagerView (0.8.3)
   - IQKeyboardManagerSwift (6.5.10)
   - JXPagingView/Paging (2.1.2)
   - JXSegmentedView (1.2.7)
@@ -75,6 +76,7 @@ PODS:
 
 DEPENDENCIES:
   - CryptoSwift
+  - FSPagerView
   - IQKeyboardManagerSwift (~> 6.5.5)
   - JXPagingView/Paging
   - JXSegmentedView (= 1.2.7)
@@ -103,6 +105,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - CryptoSwift
+    - FSPagerView
     - IQKeyboardManagerSwift
     - JXPagingView
     - JXSegmentedView
@@ -133,6 +136,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
   JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
@@ -160,6 +164,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 62a80ab19503d0d026f426ab791ed04103a863d8
+PODFILE CHECKSUM: 5c8d0042084da4fdefb2fcbe74f836714783fc3b
 
 COCOAPODS: 1.11.2
