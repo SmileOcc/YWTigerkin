@@ -33,6 +33,20 @@ class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "home"
+        
+        #if DEV
+        self.title = "home-dev"
+        #elseif PRD
+        self.title = "home-prd"
+        #else
+        
+        #endif
+
+        #if TEST_SIT
+        
+        #elseif TEST_DEV
+        
+        #endif
         // Do any additional setup after loading the view.
         
         // count计算表情符号错误的，方式与oc length方式不一样，要用utf16

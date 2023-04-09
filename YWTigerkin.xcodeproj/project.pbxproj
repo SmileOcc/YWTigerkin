@@ -12,6 +12,8 @@
 		6203BD9929D9458D00FF063F /* YWThemesMainsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BD9829D9458D00FF063F /* YWThemesMainsModel.swift */; };
 		6203BD9E29DD7D7800FF063F /* YWThemeModulModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BD9D29DD7D7800FF063F /* YWThemeModulModel.swift */; };
 		6203BDA029E04BF700FF063F /* YWTimer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BD9F29E04BF700FF063F /* YWTimer+Extension.swift */; };
+		6203BDA629E3002500FF063F /* Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6203BDA529E3002500FF063F /* Info_DEV.plist */; };
+		6203BDA829E3005F00FF063F /* Info_PRD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6203BDA729E3005F00FF063F /* Info_PRD.plist */; };
 		624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */; };
 		624BE06529CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */; };
 		624BE06829CDD2FE0071CD57 /* YWAdvsEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */; };
@@ -114,12 +116,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004D9C014ED38D0BCCD3B519 /* Pods-YWTigerkin.prd.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.prd.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.prd.xcconfig"; sourceTree = "<group>"; };
 		288D7EC254B0498AFFA713DA /* Pods-YWTigerkin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.debug.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.debug.xcconfig"; sourceTree = "<group>"; };
 		6203BD9429D9220F00FF063F /* YWAsinglesAdvCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAsinglesAdvCCell.swift; sourceTree = "<group>"; };
 		6203BD9629D9265100FF063F /* YWAsingleCCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAsingleCCellModel.swift; sourceTree = "<group>"; };
 		6203BD9829D9458D00FF063F /* YWThemesMainsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWThemesMainsModel.swift; sourceTree = "<group>"; };
 		6203BD9D29DD7D7800FF063F /* YWThemeModulModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWThemeModulModel.swift; sourceTree = "<group>"; };
 		6203BD9F29E04BF700FF063F /* YWTimer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWTimer+Extension.swift"; sourceTree = "<group>"; };
+		6203BDA529E3002500FF063F /* Info_DEV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_DEV.plist; sourceTree = "<group>"; };
+		6203BDA729E3005F00FF063F /* Info_PRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PRD.plist; sourceTree = "<group>"; };
 		624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshHeader.swift; sourceTree = "<group>"; };
 		624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshAuotNormalFooter.swift; sourceTree = "<group>"; };
 		624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAdvsEventsModel.swift; sourceTree = "<group>"; };
@@ -222,6 +227,7 @@
 		62F68C4929C346E30023EC3C /* YWAccountItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAccountItemModel.swift; sourceTree = "<group>"; };
 		62F68C4B29C34B330023EC3C /* HUDViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewModelBase.swift; sourceTree = "<group>"; };
 		62F68C4D29C34E080023EC3C /* YWUIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWUIViewController+Extension.swift"; sourceTree = "<group>"; };
+		6F7A9777A4871DF4065A54A4 /* Pods-YWTigerkin.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.dev.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.dev.xcconfig"; sourceTree = "<group>"; };
 		D80CD5CD02A6E1E11EDF2028 /* Pods_YWTigerkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YWTigerkin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED243E67DE8D7369D64DEEDA /* Pods-YWTigerkin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWTigerkin.release.xcconfig"; path = "Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +249,8 @@
 			children = (
 				288D7EC254B0498AFFA713DA /* Pods-YWTigerkin.debug.xcconfig */,
 				ED243E67DE8D7369D64DEEDA /* Pods-YWTigerkin.release.xcconfig */,
+				6F7A9777A4871DF4065A54A4 /* Pods-YWTigerkin.dev.xcconfig */,
+				004D9C014ED38D0BCCD3B519 /* Pods-YWTigerkin.prd.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -366,6 +374,8 @@
 				62F68B9929AB5E1F0023EC3C /* Assets.xcassets */,
 				62F68B9B29AB5E1F0023EC3C /* LaunchScreen.storyboard */,
 				62F68B9E29AB5E1F0023EC3C /* Info.plist */,
+				6203BDA729E3005F00FF063F /* Info_PRD.plist */,
+				6203BDA529E3002500FF063F /* Info_DEV.plist */,
 				62F68BD029B0D5640023EC3C /* YWTigerkin-Bridging-Header.h */,
 			);
 			path = YWTigerkin;
@@ -777,7 +787,9 @@
 			files = (
 				62F68B9D29AB5E1F0023EC3C /* LaunchScreen.storyboard in Resources */,
 				62F68B9A29AB5E1F0023EC3C /* Assets.xcassets in Resources */,
+				6203BDA629E3002500FF063F /* Info_DEV.plist in Resources */,
 				62F68B9829AB5E190023EC3C /* Main.storyboard in Resources */,
+				6203BDA829E3005F00FF063F /* Info_PRD.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,6 +967,199 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6203BDA129E2FF0600FF063F /* DEV */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = DEV;
+		};
+		6203BDA229E2FF0600FF063F /* DEV */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F7A9777A4871DF4065A54A4 /* Pods-YWTigerkin.dev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LU6255RGX8;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YWTigerkin/Info_DEV.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = UIUserInterfaceStyleLight;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.od.ywtigerkin.dev;
+				PRODUCT_NAME = "$(TARGET_NAME).dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEV";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "YWTigerkin/YWTigerkin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				YX_PRODUCT_BUNDLE_IDENTIFIER = com.od.ywtigerkin.dev;
+				YX_PRODUCT_NAME = "YWTigerkin[dev]";
+				YX_VERSION = 1.0.0;
+			};
+			name = DEV;
+		};
+		6203BDA329E2FF2100FF063F /* PRD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = PRD;
+		};
+		6203BDA429E2FF2100FF063F /* PRD */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 004D9C014ED38D0BCCD3B519 /* Pods-YWTigerkin.prd.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LU6255RGX8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YWTigerkin/Info_PRD.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = UIUserInterfaceStyleLight;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.od.ywtigerkin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRD RELEASE";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = PRD;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "YWTigerkin/YWTigerkin-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				YX_PRODUCT_BUNDLE_IDENTIFIER = "";
+				YX_PRODUCT_NAME = "YWTigerkin[prd]";
+				YX_VERSION = 1.0.0;
+			};
+			name = PRD;
+		};
 		62F68B9F29AB5E1F0023EC3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1093,7 +1298,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.od.ywtigerkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1102,6 +1307,9 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				YX_PRODUCT_BUNDLE_IDENTIFIER = "";
+				YX_PRODUCT_NAME = "";
+				YX_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -1127,7 +1335,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.od.ywtigerkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1135,6 +1343,9 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "YWTigerkin/YWTigerkin-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				YX_PRODUCT_BUNDLE_IDENTIFIER = "";
+				YX_PRODUCT_NAME = "";
+				YX_VERSION = "";
 			};
 			name = Release;
 		};
@@ -1145,7 +1356,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62F68B9F29AB5E1F0023EC3C /* Debug */,
+				6203BDA129E2FF0600FF063F /* DEV */,
 				62F68BA029AB5E1F0023EC3C /* Release */,
+				6203BDA329E2FF2100FF063F /* PRD */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1154,7 +1367,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62F68BA229AB5E1F0023EC3C /* Debug */,
+				6203BDA229E2FF0600FF063F /* DEV */,
 				62F68BA329AB5E1F0023EC3C /* Release */,
+				6203BDA429E2FF2100FF063F /* PRD */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

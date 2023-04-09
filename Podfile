@@ -162,6 +162,76 @@ pod 'JXPagingView/Paging'
 pod 'FSPagerView'
 
 pod 'Then'
+
+# post_install 是在pod install 执行之后执行
+#【对应的pre_install 则是在pod install 执行之前】
+# 以下代码的作用是在执行pod install 之后，对SIT、DEV、UAT、MOCK等build configuration执行一些build setting设置
+# 其中
+# 1、DEBUG_INFORMATION_FORMAT会影响到Bugly的使用
+# 2、GCC_PREPROCESSOR_DEFINITIONS和SWIFT_ACTIVE_COMPILATION_CONDITIONS会影响到MLeaksFinder的使用
+post_install do |installer|
+    # 用于记录Debug模式下DEBUG_INFORMATION_FORMAT的值
+    $D_DEBUG_INFORMATION_FORMAT = 'dwarf-with-dsym'
+
+    # 用于记录Debug模式下ONLY_ACTIVE_ARCH的值
+    $D_ONLY_ACTIVE_ARCH = 'YES'
+
+    # 用于记录Debug模式下ENABLE_TESTABILITY的值
+    $D_ENABLE_TESTABILITY = 'YES'
+
+    # 用于记录Debug模式下GCC_OPTIMIZATION_LEVEL的值
+    $D_GCC_OPTIMIZATION_LEVEL = 0
+
+    # 用于记录Debug模式下SWIFT_ACTIVE_COMPILATION_CONDITIONS的值
+    $D_SWIFT_ACTIVE_COMPILATION_CONDITIONS = 'DEBUG'
+
+    # 用于记录Debug模式下MTL_ENABLE_DEBUG_INFO的值
+    $D_MTL_ENABLE_DEBUG_INFO = 'INCLUDE_SOURCE'
+
+    # 用于记录Debug模式下SWIFT_COMPILATION_MODE的值
+    $D_SWIFT_COMPILATION_MODE = 'singlefile'
+
+    # 用于记录Debug模式下SWIFT_OPTIMIZATION_LEVEL的值
+    $D_SWIFT_OPTIMIZATION_LEVEL = '-Onone'
+
+    installer.pods_project.build_configurations.each do |configuration|
+        if configuration.name == 'Debug'
+            $D_ONLY_ACTIVE_ARCH = configuration.build_settings['ONLY_ACTIVE_ARCH']
+            $D_ENABLE_TESTABILITY = configuration.build_settings['ENABLE_TESTABILITY']
+            $D_GCC_OPTIMIZATION_LEVEL = configuration.build_settings['GCC_OPTIMIZATION_LEVEL']
+            $D_ENABLE_NS_ASSERTIONS = configuration.build_settings['ENABLE_NS_ASSERTIONS']
+            $D_SWIFT_ACTIVE_COMPILATION_CONDITIONS = configuration.build_settings['SWIFT_ACTIVE_COMPILATION_CONDITIONS']
+            $D_MTL_ENABLE_DEBUG_INFO = configuration.build_settings['MTL_ENABLE_DEBUG_INFO']
+            $D_SWIFT_OPTIMIZATION_LEVEL = configuration.build_settings['SWIFT_OPTIMIZATION_LEVEL']
+        end
+    end
+
+    installer.pods_project.build_configurations.each do |configuration|
+        if configuration.name == 'DEV' || configuration.name == 'SIT' || configuration.name == 'MOCK' || configuration.name == 'UAT'
+            configuration.build_settings['DEBUG_INFORMATION_FORMAT'] = $D_DEBUG_INFORMATION_FORMAT
+            configuration.build_settings['ONLY_ACTIVE_ARCH'] = $D_ONLY_ACTIVE_ARCH
+            configuration.build_settings['ENABLE_TESTABILITY'] = $D_ENABLE_TESTABILITY
+            configuration.build_settings['GCC_OPTIMIZATION_LEVEL'] = $D_GCC_OPTIMIZATION_LEVEL
+
+            # FIXME : 此处直接赋值，是因为不知道为什么用Debug中的值赋值后无效，暂时先使用直接赋值的方式
+            configuration.build_settings['ENABLE_NS_ASSERTIONS'] = 'YES'
+
+            # GCC_PREPROCESSOR_DEFINITIONS不采用Debug模式覆盖的模式，直接追加
+            configuration.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << " DEBUG=1"
+            configuration.build_settings['SWIFT_ACTIVE_COMPILATION_CONDITIONS'] = $D_SWIFT_ACTIVE_COMPILATION_CONDITIONS
+            configuration.build_settings['MTL_ENABLE_DEBUG_INFO'] = $D_MTL_ENABLE_DEBUG_INFO
+            
+            # FIXME : 此处直接赋值，是因为不知道为什么用Debug中的值赋值后无效，暂时先使用直接赋值的方式
+            configuration.build_settings['SWIFT_COMPILATION_MODE'] = $D_SWIFT_COMPILATION_MODE
+            
+            configuration.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = $D_SWIFT_OPTIMIZATION_LEVEL
+        end
+    end
+    
+    
+end
+
+
 end
 
 
