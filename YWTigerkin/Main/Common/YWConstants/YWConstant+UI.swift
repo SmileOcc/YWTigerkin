@@ -50,9 +50,8 @@ extension YWConstant {
 
      @return 导航栏高度
      */
-    @objc public class func navBarHeight() -> CGFloat {
-        return YWConstant.deviceScaleEqualToXStyle() ? 88.0 : 64.0
-    }
+    @objc public static let navBarHeight = YWConstant.deviceScaleEqualToXStyle() ? 88.0 : 64.0
+    
     /**
      标签栏高度
 
@@ -82,11 +81,12 @@ extension YWConstant {
         return YWConstant.deviceScaleEqualToXStyle() ? 34.0 : 0.0
     }
 
-    @objc public class func statusBarHeight() -> CGFloat {
-        return YWConstant.deviceScaleEqualToXStyle() ? 44.0 : 20.0
-    }
+    @objc public static let statusBarHeight = YWConstant.deviceScaleEqualToXStyle() ? 44.0 : 20.0
 
     @objc public class func safeAreaInsetsBottomHeight() -> CGFloat {
         return YWConstant.deviceScaleEqualToXStyle() ? 34.0 : 0.0
     }
+    
+    @objc public static let safeBottom = tabBarPadding()
+
 }

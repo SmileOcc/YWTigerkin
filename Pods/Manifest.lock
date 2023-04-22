@@ -34,6 +34,7 @@ PODS:
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SAMKeychain (1.5.3)
+  - SHFullscreenPopGestureSwift (1.2.1)
   - SnapKit (5.6.0)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - RxGesture
   - RxSwift
   - SAMKeychain
+  - SHFullscreenPopGestureSwift
   - SnapKit
   - SwifterSwift
   - Then
@@ -123,6 +125,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SAMKeychain
+    - SHFullscreenPopGestureSwift
     - SnapKit
     - SwifterSwift
     - Then
@@ -154,6 +157,7 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SHFullscreenPopGestureSwift: 96c20749695c8fbf14a29feb5ece469d7a909a41
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
@@ -164,6 +168,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 55ded59183f712e64c1fe2a6529a7a96b021bf4a
+PODFILE CHECKSUM: 10c831712b7464add12f21a35b8b155597f487cd
 
 COCOAPODS: 1.11.2

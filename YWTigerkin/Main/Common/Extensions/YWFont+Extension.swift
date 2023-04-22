@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 ///< 适配，屏幕宽高适配比例， iPhone6 模板设计
 let kAutoSizeScale_X = ((KSCREEN_HEIGHT == 667.0) ? 1.0 : (KSCREEN_WIDTH / 375.0))
@@ -26,6 +27,18 @@ func kAutoConvertWithScreenH_Value(_ value:CGFloat) -> CGFloat {
 
 extension UIFont {
 
+    class func mediumFont(_ size:CGFloat) -> UIFont {
+        return UIFont.systemFont(ofSize: size, weight: .medium)
+    }
+    
+    class func regularFont(_ size:CGFloat) -> UIFont {
+        return UIFont.systemFont(ofSize: size, weight: .regular)
+    }
+    
+    class func boldFont(_ size:CGFloat) -> UIFont {
+        return UIFont.boldSystemFont(ofSize: size)
+    }
+    
     ///< 自适配 字体大小
    class func kAutoSystemFont(_ size:CGFloat) -> UIFont {
         return .systemFont(ofSize: kAutoConvertWithScreenW_Value(size))

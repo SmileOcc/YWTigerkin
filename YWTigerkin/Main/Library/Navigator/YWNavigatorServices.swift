@@ -13,6 +13,10 @@ typealias NavigatorServicesType = NavigatorProtocol
 class YWNavigatorServices: Navigator{
 
     static let shareInstance = YWNavigatorServices()
+    
+    @objc func pushPath(_ path: String, context: Any?, animated: Bool) {
+        push(path as URLConvertible, context: context, from: nil, animated: animated)
+    }
 }
 
 //@objcMembers class YWNavigatorServices: NSObject, NavigatorProtocol {

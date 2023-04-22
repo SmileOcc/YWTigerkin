@@ -49,6 +49,19 @@ public struct YWNavigationMap {
 
             return viewController
         }
+        
+        // 视频
+        navigator.register(YWModulePaths.video.url) { (url, values, context) -> UIViewController? in
+            
+            if let navigatable = context as? YWNavigatable<YWVideoViewModel> {
+                let vc = YWVideoCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+
+            return nil
+        }
+        
+        
 
         
         

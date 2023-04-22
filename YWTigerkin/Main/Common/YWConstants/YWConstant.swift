@@ -18,7 +18,7 @@ import UIKit
 
 let KSCREEN_WIDTH = YWConstant.screenWidth
 let KSCREEN_HEIGHT = YWConstant.screenHeight
-let kNav_Height = YWConstant.navBarHeight()
+let kNav_Height = YWConstant.navBarHeight
 
 //判断表格数据空白页和分页的字段key
 let kTotalPageKey = "pageCount"
@@ -36,7 +36,7 @@ let kColumnIndex3   =     3
 
 class YWConstant: NSObject {
 
-    @objc public static let sharedAppDelegate = UIApplication.shared.delegate
+//    @objc public static let sharedAppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     class func kKeyWindow() -> UIWindow? {
         var  window: UIWindow? =  nil
@@ -50,7 +50,7 @@ class YWConstant: NSObject {
         }
         
         if window == nil {
-            window = YWConstant.sharedAppDelegate?.window ?? UIWindow()
+            window = YWAppDelegate?.window ?? UIWindow()
         }
         return window
     }

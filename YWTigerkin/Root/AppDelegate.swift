@@ -15,9 +15,13 @@ func YWLog<T>(_ message: T, file: String = #file, function: String = #function, 
     #endif
 }
 
+let YWAppDelegate = UIApplication.shared.delegate as? AppDelegate
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var screen_set:SCREEN_SET = .set_port
 
     var window: UIWindow?
     var tab: YWTabBarViewController?
@@ -31,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public let navigator = YWNavigatorServices.shareInstance
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        YWFullScreenPop.configure()
+        
         YWNavigationMap.initialize(navigator: navigator, services: appServices)
 
         YWLog("开始----")

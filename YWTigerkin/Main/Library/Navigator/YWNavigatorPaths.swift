@@ -31,6 +31,9 @@ public protocol YWModuleType {
     // 搜索
     case search
     
+    // 视频
+    case video
+    
     
 }
 
@@ -49,6 +52,8 @@ extension YWModulePaths: YWModuleType {
             return "userCenter/set/"
         case .search:
             return "search/"
+        case .video:
+            return "video/"
         }
     }
     

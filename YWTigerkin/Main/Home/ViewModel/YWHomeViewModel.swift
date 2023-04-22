@@ -11,11 +11,13 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-class YWHomeViewModel: YWServicesViewModel, HasDisposeBag  {
+class YWHomeViewModel: HUDServicesViewModel, HasDisposeBag  {
     typealias Services = AppServices
     
     var navigator: NavigatorServicesType!
     
+    var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
+
 //    var loginResponse: HCResultResponse<JSONAny>?
     var loginResponse: YWResultResponse<YWHomeModel>?
 

@@ -8,10 +8,12 @@
 import UIKit
 import Then
 
-class YWHomeCtrl: YWBaseViewController, YWViewModelBased{
+class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
     
     var viewModel: YWHomeViewModel!
     
+    var networkingHUD: YWProgressHUD! = YWProgressHUD()
+
     lazy var themesMainView: YWThemesMainView = {
         let view = YWThemesMainView(frame: self.view.bounds, firstChannel: "", channelId: "", title: "")
         view.backgroundColor = UIColor.random
