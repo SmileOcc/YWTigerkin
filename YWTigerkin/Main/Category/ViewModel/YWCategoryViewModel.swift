@@ -14,7 +14,7 @@ import NSObject_Rx
 class YWCategoryViewModel: YWServicesViewModel, HasDisposeBag  {
     typealias Services = HasYWLoginService & HasYWUserService
     
-    var navigator: NavigatorServicesType!
+    var navigator: YWNavigatorServicesType!
     
 //    var loginResponse: HCResultResponse<JSONAny>?
     var loginResponse: YWResultResponse<YWHomeModel>?

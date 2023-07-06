@@ -76,7 +76,9 @@ echo "\033[33;1m打包方式method=${method} "
 mobileprovision_name="iPhone Distribution: Shenzhen Inovance Technology Co., Ltd."
 
 # 项目的bundleID，手动管理Profile时必填
-bundle_identifier="com.od.ywtigerkin"
+#bundle_identifier="com.od.ywtigerkin"
+#调试这个可以打包成功
+bundle_identifier="com.od.ywtigerkin.dev"
 
 
 

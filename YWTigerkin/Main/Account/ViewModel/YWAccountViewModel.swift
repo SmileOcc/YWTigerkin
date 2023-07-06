@@ -16,7 +16,7 @@ class YWAccountViewModel: HUDServicesViewModel, HasDisposeBag  {
     
     var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
 
-    var navigator: NavigatorServicesType!
+    var navigator: YWNavigatorServicesType!
     
 //    var loginResponse: HCResultResponse<JSONAny>?
     var accountResponse: YWResultResponse<YWHomeModel>?
@@ -71,6 +71,7 @@ class YWAccountViewModel: HUDServicesViewModel, HasDisposeBag  {
             let model = YWAccountItemModel()
             model.title = "其他"
             model.imgName = "settings"
+            model.id = "\(i)"
             if i == 0 {
                 model.title = "设置"
             } else if i == 1 {
@@ -87,7 +88,7 @@ class YWAccountViewModel: HUDServicesViewModel, HasDisposeBag  {
             self.datas.append(model)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.hudSubject.onNext(.hide)
             self.accountSubject.onNext(true)
         })

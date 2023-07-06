@@ -61,6 +61,7 @@ PODS:
   - SwifterSwift/StoreKit (5.2.0)
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
+  - SwiftyStoreKit (0.16.1)
   - Then (3.0.0)
   - URLNavigator (2.4.1)
   - YYCache (1.0.4)
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - SHFullscreenPopGestureSwift
   - SnapKit
   - SwifterSwift
+  - SwiftyStoreKit
   - Then
   - URLNavigator
   - YYImage/WebP
@@ -128,6 +130,7 @@ SPEC REPOS:
     - SHFullscreenPopGestureSwift
     - SnapKit
     - SwifterSwift
+    - SwiftyStoreKit
     - Then
     - URLNavigator
     - YYCache
@@ -160,6 +163,7 @@ SPEC CHECKSUMS:
   SHFullscreenPopGestureSwift: 96c20749695c8fbf14a29feb5ece469d7a909a41
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -168,6 +172,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 10c831712b7464add12f21a35b8b155597f487cd
+PODFILE CHECKSUM: 568c44d5c91544d89bc30e29bab956a77905ffb1
 
 COCOAPODS: 1.11.2

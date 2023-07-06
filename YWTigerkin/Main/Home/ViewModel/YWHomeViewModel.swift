@@ -14,7 +14,7 @@ import NSObject_Rx
 class YWHomeViewModel: HUDServicesViewModel, HasDisposeBag  {
     typealias Services = AppServices
     
-    var navigator: NavigatorServicesType!
+    var navigator: YWNavigatorServicesType!
     
     var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
 

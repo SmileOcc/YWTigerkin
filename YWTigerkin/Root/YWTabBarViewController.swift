@@ -13,11 +13,11 @@ let navColor = UIColor(red: 41/255, green: 160/255, blue: 230/255, alpha: 1)
 
 class YWTabBarViewController: UITabBarController {
 
-    private var navigator: NavigatorServicesType?
+    private var navigator: YWNavigatorServicesType?
     
     let disposeBag = DisposeBag()
     
-    init(navigator: NavigatorServicesType) {
+    init(navigator: YWNavigatorServicesType) {
         self.navigator = navigator
 //        UITabBar.appearance().unselectedItemTintColor = UIColor.gray
 //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.black], for: .selected)
@@ -39,7 +39,7 @@ class YWTabBarViewController: UITabBarController {
         self.tabBar.tintColor = UIColor.black
     }
     
-    func configureRootVCS(navigator: NavigatorProtocol, services:AppServices) {
+    func configureRootVCS(navigator: YWNavigatorServicesType, services:AppServices) {
         
         let homeCtrl = YWHomeCtrl.instantiate(withViewModel: YWHomeViewModel(), andServices: services, andNavigator: navigator)
         let homeNav = YWNavigationViewController(rootViewController: homeCtrl)

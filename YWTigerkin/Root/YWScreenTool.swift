@@ -80,7 +80,7 @@ public struct YWScreenTool {
         
         if isPortrait {
             
-            //YWAppDelegate?.screen_set = .set_port
+            YWAppDelegate?.screen_set = .set_port
             
 
             let value = UIInterfaceOrientation.portrait.rawValue
@@ -89,7 +89,7 @@ public struct YWScreenTool {
             
         } else {
             
-//            YWAppDelegate?.screen_set = .set_land
+            YWAppDelegate?.screen_set = .set_land
 
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
 

@@ -8,3 +8,6 @@
 #import "MJRefresh.h"
 #import <YYWebImage/YYWebImage.h>
 #import "YYText.h"
+
+#import <CommonCrypto/CommonDigest.h>
+

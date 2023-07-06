@@ -163,7 +163,12 @@ pod 'FSPagerView'
 
 pod 'Then'
 
+
+#JZNavigationExtension
+#FDFullScreenPopGestureSwift
 pod 'SHFullscreenPopGestureSwift'
+
+pod 'SwiftyStoreKit'
 
 # post_install 是在pod install 执行之后执行
 #【对应的pre_install 则是在pod install 执行之前】

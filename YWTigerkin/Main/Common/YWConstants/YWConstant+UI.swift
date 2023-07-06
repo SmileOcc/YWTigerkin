@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 extension YWConstant {
+    
+    @objc public static let screenFrame:CGRect = UIScreen.main.bounds
+
     /**
      屏幕宽度
      */

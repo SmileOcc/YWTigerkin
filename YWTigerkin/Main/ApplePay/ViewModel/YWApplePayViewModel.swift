@@ -6,7 +6,22 @@
 //
 
 import UIKit
+import URLNavigator
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
-class YWApplePayViewModel: YWServicesViewModel {
+class YWApplePayViewModel: HUDServicesViewModel ,HasDisposeBag {
+    
+    var navigator: YWNavigatorServicesType!
+    var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
 
+    typealias Services = HasYWSearchService
+    
+    
+    var services: Services! {
+        didSet {
+            
+        }
+    }
 }

@@ -12,4 +12,5 @@ class YWAccountItemModel: YWBaseModel {
     var title:String?
     var desc:String?
     var imgName:String?
+    var id: String?
 }

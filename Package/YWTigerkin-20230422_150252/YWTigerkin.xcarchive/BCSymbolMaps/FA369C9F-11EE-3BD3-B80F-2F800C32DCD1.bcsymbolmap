@@ -1,0 +1,308 @@
+BCSymbolMap Version: 2.0
+Apple clang version 13.0.0 (clang-1300.0.29.30)
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
+iPhoneOS15.2.sdk
+/Users/odd/Library/Developer/Xcode/DerivedData/YWTigerkin-clocgrvgglwcztezesozohdmclxg/Build/Intermediates.noindex/ArchiveIntermediates/YWTigerkin/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/MMKV.build/DerivedSources/MMKV_vers.c
+/Users/odd/Documents/occ/git/YWTigerkin/Pods
++[MMKV initialize]
+__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1IDnEEPKc
++[MMKV initializeMMKV:]
++[MMKV initializeMMKV:logLevel:]
++[MMKV initializeMMKV:groupDir:logLevel:]
++[MMKV defaultMMKV]
++[MMKV defaultMMKVWithCryptKey:]
++[MMKV mmkvWithID:]
++[MMKV mmkvWithID:mode:]
++[MMKV mmkvWithID:cryptKey:]
++[MMKV mmkvWithID:cryptKey:mode:]
++[MMKV mmkvWithID:rootPath:]
++[MMKV mmkvWithID:relativePath:]
++[MMKV mmkvWithID:cryptKey:rootPath:]
++[MMKV mmkvWithID:cryptKey:relativePath:]
++[MMKV mmkvWithID:cryptKey:rootPath:mode:]
+-[MMKV initWithMMapID:cryptKey:rootPath:mode:]
+-[MMKV dealloc]
+-[MMKV mmapID]
+-[MMKV onMemoryWarning]
++[MMKV didEnterBackground]
++[MMKV didBecomeActive]
+-[MMKV clearAll]
+-[MMKV clearMemoryCache]
+-[MMKV close]
+-[MMKV trim]
+-[MMKV cryptKey]
+-[MMKV reKey:]
+-[MMKV checkReSetCryptKey:]
+-[MMKV setObject:forKey:]
+-[MMKV setBool:forKey:]
+-[MMKV setInt32:forKey:]
+-[MMKV setUInt32:forKey:]
+-[MMKV setInt64:forKey:]
+-[MMKV setUInt64:forKey:]
+-[MMKV setFloat:forKey:]
+-[MMKV setDouble:forKey:]
+-[MMKV setString:forKey:]
+-[MMKV setDate:forKey:]
+-[MMKV setData:forKey:]
+-[MMKV getObjectOfClass:forKey:]
+-[MMKV getBoolForKey:]
+-[MMKV getBoolForKey:defaultValue:]
+-[MMKV getBoolForKey:defaultValue:hasValue:]
+-[MMKV getInt32ForKey:]
+-[MMKV getInt32ForKey:defaultValue:]
+-[MMKV getInt32ForKey:defaultValue:hasValue:]
+-[MMKV getUInt32ForKey:]
+-[MMKV getUInt32ForKey:defaultValue:]
+-[MMKV getUInt32ForKey:defaultValue:hasValue:]
+-[MMKV getInt64ForKey:]
+-[MMKV getInt64ForKey:defaultValue:]
+-[MMKV getInt64ForKey:defaultValue:hasValue:]
+-[MMKV getUInt64ForKey:]
+-[MMKV getUInt64ForKey:defaultValue:]
+-[MMKV getUInt64ForKey:defaultValue:hasValue:]
+-[MMKV getFloatForKey:]
+-[MMKV getFloatForKey:defaultValue:]
+-[MMKV getFloatForKey:defaultValue:hasValue:]
+-[MMKV getDoubleForKey:]
+-[MMKV getDoubleForKey:defaultValue:]
+-[MMKV getDoubleForKey:defaultValue:hasValue:]
+-[MMKV getStringForKey:]
+-[MMKV getStringForKey:defaultValue:]
+-[MMKV getStringForKey:defaultValue:hasValue:]
+-[MMKV getDateForKey:]
+-[MMKV getDateForKey:defaultValue:]
+-[MMKV getDateForKey:defaultValue:hasValue:]
+-[MMKV getDataForKey:]
+-[MMKV getDataForKey:defaultValue:]
+-[MMKV getDataForKey:defaultValue:hasValue:]
+-[MMKV getValueSizeForKey:actualSize:]
+-[MMKV writeValueForKey:toBuffer:]
+-[MMKV containsKey:]
+-[MMKV count]
+-[MMKV totalSize]
+-[MMKV actualSize]
++[MMKV pageSize]
++[MMKV version]
+-[MMKV enumerateKeys:]
+-[MMKV allKeys]
+-[MMKV removeValueForKey:]
+-[MMKV removeValuesForKeys:]
+-[MMKV sync]
+-[MMKV async]
+-[MMKV checkContentChanged]
++[MMKV onAppTerminate]
+___22+[MMKV onAppTerminate]_block_invoke
++[MMKV enableAutoCleanUp:]
+___26+[MMKV enableAutoCleanUp:]_block_invoke
++[MMKV disableAutoCleanUp]
++[MMKV tryAutoCleanUpInstances]
+___31+[MMKV tryAutoCleanUpInstances]_block_invoke
+___copy_helper_block_e8_32o
+___destroy_helper_block_e8_32o
++[MMKV mmkvBasePath]
++[MMKV setMMKVBasePath:]
+-[MMKV setValue:forKey:]
+-[MMKV setValue:forKeyPath:]
++[MMKV mmapKeyWithMMapID:rootPath:]
++[MMKV isFileValid:]
++[MMKV isFileValid:rootPath:]
++[MMKV backupOneMMKV:rootPath:toDirectory:]
++[MMKV restoreOneMMKV:rootPath:fromDirectory:]
++[MMKV backupAll:toDirectory:]
++[MMKV restoreAll:fromDirectory:]
++[MMKV backupMultiProcessMMKV:toDirectory:]
++[MMKV restoreMultiProcessMMKV:fromDirectory:]
++[MMKV backupAllMultiProcessToDirectory:]
++[MMKV restoreAllMultiProcessFromDirectory:]
++[MMKV registerHandler:]
+__ZL10LogHandlerN4mmkv12MMKVLogLevelEPKciS2_P8NSString
+__ZL12ErrorHandlerRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN4mmkv13MMKVErrorTypeE
+__ZL20ContentChangeHandlerRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
++[MMKV unregiserHandler]
++[MMKV setLogLevel:]
+-[MMKV migrateFromUserDefaults:]
+___32-[MMKV migrateFromUserDefaults:]_block_invoke
+___copy_helper_block_e8_32o40r
+___destroy_helper_block_e8_32o40r
++[MMKV tranlateData:key:kv:]
+___clang_call_terminate
+__ZN4mmkv10ScopedLockINS_10ThreadLockEED2Ev
+_OBJC_CLASSLIST_REFERENCES_$_
+_OBJC_SELECTOR_REFERENCES_
+_OBJC_CLASSLIST_REFERENCES_$_.1
+_OBJC_SELECTOR_REFERENCES_.3
+__ZL13g_instanceDic
+__ZL6g_lock
+_OBJC_SELECTOR_REFERENCES_.5
+_OBJC_SELECTOR_REFERENCES_.7
+_OBJC_CLASSLIST_REFERENCES_$_.8
+_OBJC_SELECTOR_REFERENCES_.10
+_OBJC_SELECTOR_REFERENCES_.12
+_OBJC_SELECTOR_REFERENCES_.14
+__ZL25g_isRunningInAppExtension
+_OBJC_CLASSLIST_REFERENCES_$_.15
+_OBJC_SELECTOR_REFERENCES_.17
+_OBJC_SELECTOR_REFERENCES_.19
+_OBJC_CLASSLIST_REFERENCES_$_.22
+_OBJC_SELECTOR_REFERENCES_.24
+_OBJC_SELECTOR_REFERENCES_.26
+_OBJC_SELECTOR_REFERENCES_.28
+_OBJC_SELECTOR_REFERENCES_.30
+_OBJC_SELECTOR_REFERENCES_.32
+__ZL25g_hasCalledInitializeMMKV
+__ZL10g_basePath
+_OBJC_SELECTOR_REFERENCES_.37
+__ZL11g_groupPath
+_OBJC_SELECTOR_REFERENCES_.42
+_OBJC_SELECTOR_REFERENCES_.45
+_OBJC_SELECTOR_REFERENCES_.48
+_OBJC_SELECTOR_REFERENCES_.50
+_OBJC_SELECTOR_REFERENCES_.52
+_OBJC_SELECTOR_REFERENCES_.54
+_OBJC_CLASSLIST_REFERENCES_$_.55
+_OBJC_SELECTOR_REFERENCES_.57
+_OBJC_SELECTOR_REFERENCES_.59
+_OBJC_CLASSLIST_REFERENCES_$_.60
+_OBJC_SELECTOR_REFERENCES_.62
+_OBJC_SELECTOR_REFERENCES_.64
+_OBJC_SELECTOR_REFERENCES_.66
+_OBJC_SELECTOR_REFERENCES_.68
+_OBJC_SELECTOR_REFERENCES_.71
+_OBJC_SELECTOR_REFERENCES_.76
+_OBJC_CLASSLIST_REFERENCES_$_.77
+_OBJC_SELECTOR_REFERENCES_.79
+_OBJC_SELECTOR_REFERENCES_.81
+_OBJC_SELECTOR_REFERENCES_.83
+_OBJC_SELECTOR_REFERENCES_.85
+_OBJC_SELECTOR_REFERENCES_.87
+_OBJC_SELECTOR_REFERENCES_.89
+_OBJC_SELECTOR_REFERENCES_.91
+_OBJC_SELECTOR_REFERENCES_.93
+_OBJC_SELECTOR_REFERENCES_.95
+_OBJC_SELECTOR_REFERENCES_.97
+_OBJC_SELECTOR_REFERENCES_.99
+_OBJC_SELECTOR_REFERENCES_.101
+_OBJC_SELECTOR_REFERENCES_.103
+_OBJC_SELECTOR_REFERENCES_.105
+_OBJC_SELECTOR_REFERENCES_.108
+___block_descriptor_32_e21_v32?08"MMKV"16^B24l
+___block_literal_global
+_OBJC_SELECTOR_REFERENCES_.111
+__ZL16g_maxIdleSeconds
+__ZL18g_autoCleanUpTimer
+___block_descriptor_32_e5_v8?0l
+___block_literal_global.114
+_OBJC_SELECTOR_REFERENCES_.116
+_OBJC_CLASSLIST_REFERENCES_$_.119
+_OBJC_SELECTOR_REFERENCES_.121
+_OBJC_SELECTOR_REFERENCES_.123
+_OBJC_SELECTOR_REFERENCES_.125
+___block_descriptor_48_e8_32o_e15_v32?0816^B24l
+_OBJC_SELECTOR_REFERENCES_.128
+_OBJC_SELECTOR_REFERENCES_.132
+_OBJC_SELECTOR_REFERENCES_.134
+_OBJC_SELECTOR_REFERENCES_.136
+_OBJC_SELECTOR_REFERENCES_.140
+_OBJC_SELECTOR_REFERENCES_.143
+_OBJC_SELECTOR_REFERENCES_.145
+_OBJC_SELECTOR_REFERENCES_.147
+_OBJC_SELECTOR_REFERENCES_.149
+_OBJC_SELECTOR_REFERENCES_.152
+_OBJC_SELECTOR_REFERENCES_.155
+_OBJC_SELECTOR_REFERENCES_.158
+_OBJC_SELECTOR_REFERENCES_.161
+__ZL17g_callbackHandler
+_OBJC_SELECTOR_REFERENCES_.163
+_OBJC_SELECTOR_REFERENCES_.165
+_OBJC_SELECTOR_REFERENCES_.167
+_OBJC_SELECTOR_REFERENCES_.169
+_OBJC_SELECTOR_REFERENCES_.171
+_OBJC_SELECTOR_REFERENCES_.173
+_OBJC_SELECTOR_REFERENCES_.176
+_OBJC_SELECTOR_REFERENCES_.178
+___block_descriptor_48_e8_32o40r_e15_v32?0816^B24l
+_OBJC_SELECTOR_REFERENCES_.181
+_OBJC_SELECTOR_REFERENCES_.183
+_OBJC_SELECTOR_REFERENCES_.185
+_OBJC_CLASSLIST_REFERENCES_$_.186
+_OBJC_SELECTOR_REFERENCES_.188
+_OBJC_SELECTOR_REFERENCES_.190
+_OBJC_SELECTOR_REFERENCES_.192
+_OBJC_SELECTOR_REFERENCES_.194
+_OBJC_SELECTOR_REFERENCES_.196
+_OBJC_SELECTOR_REFERENCES_.198
+_OBJC_SELECTOR_REFERENCES_.200
+_OBJC_SELECTOR_REFERENCES_.202
+_OBJC_CLASSLIST_REFERENCES_$_.204
+_OBJC_CLASSLIST_REFERENCES_$_.205
+__OBJC_$_CLASS_METHODS_MMKV
+__OBJC_METACLASS_RO_$_MMKV
+__OBJC_$_INSTANCE_METHODS_MMKV
+_OBJC_IVAR_$_MMKV.m_mmapID
+_OBJC_IVAR_$_MMKV.m_mmapKey
+_OBJC_IVAR_$_MMKV.m_mmkv
+_OBJC_IVAR_$_MMKV.m_lastAccessTime
+__OBJC_$_INSTANCE_VARIABLES_MMKV
+__OBJC_CLASS_RO_$_MMKV
+_OBJC_SELECTOR_REFERENCES_.330
+_OBJC_SELECTOR_REFERENCES_.333
+/Users/odd/Documents/occ/git/YWTigerkin/Pods/MMKV/iOS/MMKV/MMKV/libMMKV.mm
+~ScopedLock
+MMKVCore/Core/ScopedLock.hpp
+unlock
+MMKV/iOS/MMKV/MMKV/libMMKV.mm
+__destroy_helper_block_e8_32o40r
+__copy_helper_block_e8_32o40r
+__32-[MMKV migrateFromUserDefaults:]_block_invoke
+ScopedLock
+lock
+ContentChangeHandler
+c_str
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/include/c++/v1/string
+data
+__get_pointer
+__is_long
+ErrorHandler
+LogHandler
+~basic_string
+deallocate
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/include/c++/v1/__memory/allocator_traits.h
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/include/c++/v1/memory
+__libcpp_deallocate
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/include/c++/v1/new
+__do_deallocate_handle_size<>
+__libcpp_operator_delete<void *>
+__get_long_pointer
+md5
+__destroy_helper_block_e8_32o
+__copy_helper_block_e8_32o
+__31+[MMKV tryAutoCleanUpInstances]_block_invoke
+__26+[MMKV enableAutoCleanUp:]_block_invoke
+__22+[MMKV onAppTerminate]_block_invoke
+basic_string
+__init
+assign
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/include/c++/v1/__string
+copy
+__set_short_size
+__set_long_size
+__set_long_cap
+__set_long_pointer
+allocate
+__libcpp_allocate
+__libcpp_operator_new<unsigned long>
+__recommend
+__align_it<16>
+operator=
+__move_assign
+__zero
+length
+size
+__get_short_size
+__get_long_size
+empty
+basic_string<nullptr_t>
+__get_short_pointer
+__OBJC_METACLASS_RO_$_PodsDummy_MMKV
+__OBJC_CLASS_RO_$_PodsDummy_MMKV
+/Users/odd/Documents/occ/git/YWTigerkin/Pods/Target Support Files/MMKV/MMKV-dummy.m

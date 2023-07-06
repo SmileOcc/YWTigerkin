@@ -141,7 +141,22 @@ extension YWAccountCtrl: UITableViewDelegate,UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if self.viewModel.datas.count > indexPath.row {
+            let model = self.viewModel.datas[indexPath.row]
+            if model.id == "5" {
+                self.goOtherAction()
+            }
+        }
+        return;
         searchAction()
+    }
+    
+    func goOtherAction() {
+        let otherViewModel = YWOtherTestViewModel()
+        let context = YWNavigatable(viewModel: otherViewModel)
+
+        self.viewModel.navigator.pushPath(YWModulePaths.settingOther.url, context: context, animated: true)
     }
     
 }

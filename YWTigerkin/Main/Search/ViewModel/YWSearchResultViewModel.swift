@@ -13,7 +13,7 @@ import NSObject_Rx
 
 class YWSearchResultViewModel: YWServicesViewModel,HasDisposeBag {
 
-    var navigator: NavigatorServicesType!
+    var navigator: YWNavigatorServicesType!
 
     typealias Services = HasYWSearchService
     
