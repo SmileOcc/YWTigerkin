@@ -68,6 +68,9 @@ public enum YWLoginAPI {
 
 extension YWLoginAPI: YWTargetType {
     
+    public var requestCache: Bool? {
+        false
+    }
     public var path: String {
         switch self {
             /*验证手机号是否注册

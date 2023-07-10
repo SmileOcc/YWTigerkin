@@ -48,6 +48,7 @@ public protocol YWTargetType: TargetType {
     var servicePath: String { get }
     var contentType: String? { get }
     var requestType: YWRequestType { get }
+    var requestCache: Bool? {get}
 }
 
 @objc public class YWHeaders: NSObject {

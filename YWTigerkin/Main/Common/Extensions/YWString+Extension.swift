@@ -17,11 +17,43 @@ func YWIsEmptyString(_ obj:Any?) -> Bool {
     return true
 }
 
+extension String.Encoding{
+    public static let gbk: String.Encoding = .init(rawValue:CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue)))
+}
+
+//extension String.Encoding{
+//    public static let gbk: String.Encoding = .init(rawValue: 2147485234)
+//}
 // MARK: - 一：字符串基本的扩展
 public extension String {
     
+    init?(gbkData: Data) {
+            //获取GBK编码, 使用GB18030是因为它向下兼容GBK
+            let cfEncoding = CFStringEncodings.GB_18030_2000
+            let encoding = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEncoding.rawValue))
+            //从GBK编码的Data里初始化NSString, 返回的NSString是UTF-16编码
+            if let str = NSString(data: gbkData, encoding: encoding) {
+                self = str as String
+            } else {
+                return nil
+            }
+        }
+        
+        var gbkData: Data {
+            let cfEncoding = CFStringEncodings.GB_18030_2000
+            let encoding = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEncoding.rawValue))
+            let gbkData = (self as NSString).data(using: encoding)!
+            return gbkData
+        }
+    
+    
     // MARK: 1.1、字符串的长度
-    /// 字符串的长度
+    
+    //字符长度
+    var kLenght: Int {
+        return self.utf8.count
+    }
+    /// 字符串的长度（个数）
     var length: Int {
         let string = self
         return string.count
@@ -147,6 +179,71 @@ public extension String {
         return nil
     }
     
+    /// Data转字符串/JSON字符串
+    static func DataToJSONString(_ data: Data) -> String? {
+        let jsonString = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+        return jsonString
+    }
+    
+    /// 字符串/JSON字符串转Data
+    static func JSONStringToData(_ jsonString: String) -> Data? {
+        let data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        return data
+    }
+    /// 字典/数组转JSON字符串
+    static func ObjectToJSONString(_ object: Any) -> String? {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: object, options: [])
+            let jsonString = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            return jsonString
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    /// JSON字符串转字典/数组
+    static func JSONStringToObject(_ jsonString: String) -> Any? {
+        let jsonData: Data = jsonString.data(using: .utf8)!
+        let object = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+        return object
+    }
+    
+    /// 字典/数组转Data
+    static func ObjectToData(_ object: Any) -> Data? {
+        do {
+            return try JSONSerialization.data(withJSONObject: object, options: [])
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    /// Data转字典/数组
+    static func DataToObject(_ data: Data) -> Any? {
+        do {
+            let object = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            return object
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    /// Data转UIImage
+    static func DataToUIImage(_ data: Data) -> UIImage? {
+        let image = UIImage(data: data)
+        return image
+    }
+    
+    /// UIImage转Data
+    static func UIImageToData(_ image: UIImage) -> Data? {
+        //let pngImageData = image.pngData()
+        let jpegImageData = image.jpegData(compressionQuality: 1)
+        return jpegImageData
+    }
+
+
     // MARK: 1.13、转成拼音
     /// 转成拼音
     /// - Parameter isLatin: true：带声调，false：不带声调，默认 false

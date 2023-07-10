@@ -61,9 +61,11 @@ PODS:
   - SwifterSwift/StoreKit (5.2.0)
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
+  - SwiftlyCache (1.1.8)
   - SwiftyStoreKit (0.16.1)
   - Then (3.0.0)
   - URLNavigator (2.4.1)
+  - VIMediaCache (0.4)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
@@ -97,9 +99,11 @@ DEPENDENCIES:
   - SHFullscreenPopGestureSwift
   - SnapKit
   - SwifterSwift
+  - SwiftlyCache
   - SwiftyStoreKit
   - Then
   - URLNavigator
+  - VIMediaCache
   - YYImage/WebP
   - YYModel
   - YYText
@@ -130,9 +134,11 @@ SPEC REPOS:
     - SHFullscreenPopGestureSwift
     - SnapKit
     - SwifterSwift
+    - SwiftlyCache
     - SwiftyStoreKit
     - Then
     - URLNavigator
+    - VIMediaCache
     - YYCache
     - YYImage
     - YYModel
@@ -163,15 +169,17 @@ SPEC CHECKSUMS:
   SHFullscreenPopGestureSwift: 96c20749695c8fbf14a29feb5ece469d7a909a41
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  SwiftlyCache: 166de69910162c0ea5487921eececbe27252fdda
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
+  VIMediaCache: aa650f82cb114c68a343beb4e67416cf5eb2f3a2
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 568c44d5c91544d89bc30e29bab956a77905ffb1
+PODFILE CHECKSUM: ae2e6a0f5fd92364d38648b8148748374d841fc3
 
 COCOAPODS: 1.11.2

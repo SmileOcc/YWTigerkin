@@ -116,6 +116,23 @@ private extension YWNetworkLoggerPlugin {
             output += [stringData]
         }
         
+        //缓存数据
+        if let data = data, let dataStr = String.DataToJSONString(data), let tTary = target as? YWTargetType, tTary.requestCache == true{
+            let requestPath = tTary.path.md5cc()
+            var md5Key = ""
+            
+            switch tTary.task {
+            case .requestParameters(let parameters, _):
+                print("\(parameters)")
+                md5Key = String.ObjectToJSONString(parameters) ?? ""
+            default:
+                print("")
+            }
+            
+            YWRequestCacheManager.saveCache(value: dataStr, key: requestPath + md5Key)
+        }
+        
+        
         return output
     }
 }

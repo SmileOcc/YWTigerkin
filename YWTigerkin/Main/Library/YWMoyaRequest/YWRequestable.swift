@@ -64,6 +64,24 @@ public extension YWRequestable {
     
     func request<T: Codable>(_ target: API, response: YWResultResponse<T>?) -> Disposable {
         
+        if let isCache = target.requestCache, isCache == true {
+            let requestPath = target.path.md5cc()
+            var paramdMd5 = ""
+            
+            switch target.task {
+            case .requestParameters(let parameters, _):
+                paramdMd5 = String.ObjectToJSONString(parameters) ?? ""
+            default:
+                print("")
+            }
+            if let cacheString = YWRequestCacheManager.shareInstance.requestCaceh(key: requestPath + paramdMd5), let cacheDic = String.JSONStringToObject(cacheString) as? [String:Any] {
+                
+                let resultCache:YWResult<T> = YWResult.init(params: cacheDic, isCache: true)
+                response?(.success(resultCache, YWResponseCode(rawValue: resultCache.statusCode)))
+                
+            }
+        }
+        
         
         return networking.rx.request(target).map(YWResult<T>.self).subscribe(onSuccess: { (result) in
             

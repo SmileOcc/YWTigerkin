@@ -9,6 +9,8 @@ import UIKit
 import WebKit
 import SnapKit
 
+
+
 class YWWebHtmlImageCtrl: YWBaseViewController, WKNavigationDelegate {
 
     var completeBlock: ((CGFloat,Bool)->Void)?
@@ -20,6 +22,26 @@ class YWWebHtmlImageCtrl: YWBaseViewController, WKNavigationDelegate {
         view.navigationDelegate = self
         return view
     }()
+    
+    
+    func webHtml() -> String {
+        let tWidth = 100.0
+        let contentStr = "ni hao"
+        let str = String.init(format: """
+                                    <html class="white">
+                                    <head>
+                                    <meta http-equiv ="Content-Type" content="text/html; charset=utf-8"/>
+                                    <meta name = "viewport" content="width = %f, initial-scale = 1, user-scalable=no"/>
+                                    <style>img{max-width:%f !important; height:auto!important;}</style>
+                                    </head>
+                                    <body>
+                                    <div class="content">%@</div>
+                                    </body>
+                                    </html>
+                                    """, tWidth,tWidth * 0.9, contentStr)
+        
+        return str
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

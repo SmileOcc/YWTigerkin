@@ -38,6 +38,9 @@ public enum YWSearchAPI {
 
 extension YWSearchAPI: YWTargetType {
     
+    public var requestCache: Bool? {
+        true
+    }
     public var path: String {
         switch self {
        

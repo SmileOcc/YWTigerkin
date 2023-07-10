@@ -17,6 +17,10 @@ public enum YWCommonAPI {
 }
 
 extension YWCommonAPI: YWTargetType {
+    public var requestCache: Bool? {
+        false
+    }
+    
     
     public var path: String {
         switch self {

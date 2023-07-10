@@ -38,6 +38,9 @@ public enum YWUserAPI {
 
 extension YWUserAPI: YWTargetType {
     
+    public var requestCache: Bool? {
+        false
+    }
     public var path: String {
         switch self {
        
