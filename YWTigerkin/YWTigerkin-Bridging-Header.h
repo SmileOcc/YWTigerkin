@@ -11,3 +11,4 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
+#import "VIMediaCache.h"

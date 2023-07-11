@@ -174,6 +174,10 @@ pod 'SwiftlyCache'
 
 #视频边下边播
 pod 'VIMediaCache'
+
+#相册选择 视频裁剪
+pod 'HXPHPicker'
+
 # post_install 是在pod install 执行之后执行
 #【对应的pre_install 则是在pod install 执行之前】
 # 以下代码的作用是在执行pod install 之后，对SIT、DEV、UAT、MOCK等build configuration执行一些build setting设置
@@ -244,7 +248,7 @@ post_install do |installer|
            target.build_configurations.each do |config|
                config.build_settings["DEVELOPMENT_TEAM"] = ""
                #config.build_settings["CODE_SIGN_IDENTITY"] = ""
-               config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+               config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
 
             end
        end

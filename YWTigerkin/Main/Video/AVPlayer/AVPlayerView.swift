@@ -43,6 +43,8 @@ class AVPlayerView: UIView {
     
     var cancelLoadingQueue:DispatchQueue?
     
+    var resourceLoaderManager:VIResourceLoaderManager?
+
     init() {
         super.init(frame: YWConstant.screenFrame)
         initSubView()
@@ -80,27 +82,42 @@ class AVPlayerView: UIView {
         sourceScheme = components?.scheme
         cacheFileKey = sourceURL?.absoluteString
         
-        queryCacheOperation = WebCacheManager.shared().queryURLFromDiskMemory(key: cacheFileKey ?? "", cacheQueryCompletedBlock: { [weak self] (data, hasCache) in
-            DispatchQueue.main.async {[weak self] in
-                if !hasCache {
-                    self?.sourceURL = self?.sourceURL?.absoluteString.urlScheme(scheme: "streaming")
-                } else {
-                    self?.sourceURL = URL.init(fileURLWithPath: data as? String ?? "")
-                }
-                if let url = self?.sourceURL {
-                    self?.urlAsset = AVURLAsset.init(url: url, options: nil)
-                    self?.urlAsset?.resourceLoader.setDelegate(self, queue: DispatchQueue.main)
-                    if let asset = self?.urlAsset {
-                        self?.playerItem = AVPlayerItem.init(asset: asset)
-                        self?.playerItem?.addObserver(self!, forKeyPath: "status", options: [.initial, .new], context: nil)
-                        self?.player = AVPlayer.init(playerItem: self?.playerItem)
-                        self?.playerLayer.player = self?.player
-//                        self?.player.replaceCurrentItem(with: self?.playerItem)
-                        self?.addProgressObserver()
-                    }
-                }
+        self.resourceLoaderManager = VIResourceLoaderManager()
+        self.playerItem = self.resourceLoaderManager?.playerItem(with: self.sourceURL)
+        
+        if let configuration = VICacheManager.cacheConfiguration(for: sourceURL) {
+            print("=====cache: \(configuration.progress)")
+            if configuration.progress >= 1.0 {
+                print("cache completed")
             }
-        }, exten: "mp4")
+        }
+        self.player = AVPlayer(playerItem: self.playerItem)
+        
+        self.playerLayer.player = self.player
+        self.addProgressObserver()
+        self.playerItem?.addObserver(self, forKeyPath: "status", options: [.initial, .new], context: nil)
+        
+//        queryCacheOperation = WebCacheManager.shared().queryURLFromDiskMemory(key: cacheFileKey ?? "", cacheQueryCompletedBlock: { [weak self] (data, hasCache) in
+//            DispatchQueue.main.async {[weak self] in
+//                if !hasCache {
+//                    self?.sourceURL = self?.sourceURL?.absoluteString.urlScheme(scheme: "streaming")
+//                } else {
+//                    self?.sourceURL = URL.init(fileURLWithPath: data as? String ?? "")
+//                }
+//                if let url = self?.sourceURL {
+//                    self?.urlAsset = AVURLAsset.init(url: url, options: nil)
+//                    self?.urlAsset?.resourceLoader.setDelegate(self, queue: DispatchQueue.main)
+//                    if let asset = self?.urlAsset {
+//                        self?.playerItem = AVPlayerItem.init(asset: asset)
+//                        self?.playerItem?.addObserver(self!, forKeyPath: "status", options: [.initial, .new], context: nil)
+//                        self?.player = AVPlayer.init(playerItem: self?.playerItem)
+//                        self?.playerLayer.player = self?.player
+////                        self?.player.replaceCurrentItem(with: self?.playerItem)
+//                        self?.addProgressObserver()
+//                    }
+//                }
+//            }
+//        }, exten: "mp4")
     }
     
     func cancelLoading() {
@@ -144,15 +161,21 @@ class AVPlayerView: UIView {
     }
     
     func play() {
-        AVPlayerManager.shared().play(player: player!)
+        if let tPlay = player {
+            AVPlayerManager.shared().play(player: tPlay)
+        }
     }
     
     func pause() {
-        AVPlayerManager.shared().pause(player: player!)
+        if let tPlay = player {
+            AVPlayerManager.shared().pause(player: tPlay)
+        }
     }
     
     func replay() {
-        AVPlayerManager.shared().replay(player: player!)
+        if let tPlay = player {
+            AVPlayerManager.shared().replay(player: tPlay)
+        }
     }
     
     func rate() -> CGFloat {

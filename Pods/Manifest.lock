@@ -2,9 +2,35 @@ PODS:
   - Alamofire (5.6.1)
   - CryptoSwift (1.5.1)
   - FSPagerView (0.8.3)
+  - HXPHPicker (1.4.1):
+    - HXPHPicker/Full (= 1.4.1)
+  - HXPHPicker/Camera (1.4.1):
+    - HXPHPicker/Core
+  - HXPHPicker/Core (1.4.1)
+  - HXPHPicker/Editor (1.4.1):
+    - HXPHPicker/Editor/KF (= 1.4.1)
+    - HXPHPicker/Editor/Lite (= 1.4.1)
+  - HXPHPicker/Editor/KF (1.4.1):
+    - HXPHPicker/Editor/Lite
+    - Kingfisher (~> 7.0)
+  - HXPHPicker/Editor/Lite (1.4.1):
+    - HXPHPicker/Core
+  - HXPHPicker/Full (1.4.1):
+    - HXPHPicker/Camera
+    - HXPHPicker/Editor
+    - HXPHPicker/Picker
+  - HXPHPicker/Picker (1.4.1):
+    - HXPHPicker/Picker/KF (= 1.4.1)
+    - HXPHPicker/Picker/Lite (= 1.4.1)
+  - HXPHPicker/Picker/KF (1.4.1):
+    - HXPHPicker/Picker/Lite
+    - Kingfisher (~> 7.0)
+  - HXPHPicker/Picker/Lite (1.4.1):
+    - HXPHPicker/Core
   - IQKeyboardManagerSwift (6.5.10)
   - JXPagingView/Paging (2.1.2)
   - JXSegmentedView (1.2.7)
+  - Kingfisher (7.2.4)
   - lottie-ios (3.3.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -81,6 +107,7 @@ PODS:
 DEPENDENCIES:
   - CryptoSwift
   - FSPagerView
+  - HXPHPicker
   - IQKeyboardManagerSwift (~> 6.5.5)
   - JXPagingView/Paging
   - JXSegmentedView (= 1.2.7)
@@ -114,9 +141,11 @@ SPEC REPOS:
     - Alamofire
     - CryptoSwift
     - FSPagerView
+    - HXPHPicker
     - IQKeyboardManagerSwift
     - JXPagingView
     - JXSegmentedView
+    - Kingfisher
     - lottie-ios
     - Masonry
     - MBProgressHUD
@@ -149,9 +178,11 @@ SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  HXPHPicker: de3830309eef9a38e37d1ba1596b005f90840a9e
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
   JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
+  Kingfisher: 2457be2121734e69e54a2312ecc0150eb9ae70b3
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -180,6 +211,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ae2e6a0f5fd92364d38648b8148748374d841fc3
+PODFILE CHECKSUM: 4eadeb478b1e65763fcfbc3df4ae85ea9b5d1567
 
 COCOAPODS: 1.11.2

@@ -81,3 +81,15 @@ class YWTestModel: Codable {
     var name: String?
     var isSelect: Bool = false
 }
+
+class YWTestNobject: NSObject {
+    var name: String?
+    var code: Int = 0
+    var isSelect: Bool = false
+    
+    func dataFormDic(dic:[String:Any]) {
+        self.name = dic["name"] as? String ?? ""
+        self.code = dic["code"] as? Int ?? 0
+        self.isSelect = dic["select"] as? Bool ?? false
+    }
+}
