@@ -359,7 +359,7 @@ class YWWebCtrl: YWBaseViewController, HUDViewModelBased{
     
     
     func originalUrl() -> URL? {
-        if let urlString = self.viewModel.url, urlString.hasPrefix("http:") == false {
+        if let urlString = self.viewModel.url, urlString.hasPrefix("http") == false {
             return nil
         }
         if let urlString = self.viewModel.url, let url = URL(string: urlString) {
