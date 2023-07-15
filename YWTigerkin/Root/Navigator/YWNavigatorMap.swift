@@ -93,6 +93,17 @@ public struct YWNavigationMap {
 
             return nil
         }
+        
+        // 网页
+        navigator.register(YWModulePaths.webPage.url) { (url, values, context) -> UIViewController? in
+            
+            if let navigatable = context as? YWNavigatable<YWWebViewModel> {
+                let vc = YWWebCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+
+            return nil
+        }
 
         
         

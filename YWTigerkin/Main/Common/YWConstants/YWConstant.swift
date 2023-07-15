@@ -36,7 +36,7 @@ let kColumnIndex3   =     3
 
 class YWConstant: NSObject {
 
-//    @objc public static let sharedAppDelegate = UIApplication.shared.delegate as! AppDelegate
+    @objc public static let sharedAppDelegate = UIApplication.shared.delegate
     
     class func kKeyWindow() -> UIWindow? {
         var  window: UIWindow? =  nil

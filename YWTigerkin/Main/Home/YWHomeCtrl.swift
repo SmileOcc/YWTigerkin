@@ -36,6 +36,7 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
         super.viewDidLoad()
         self.title = "home"
         
+        self.bindHUD()
         #if DEV
         self.title = "home-dev"
         #elseif PRD

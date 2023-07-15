@@ -84,6 +84,8 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
             } else if i == 4 {
                 model.title = "版本"
                 model.desc = "v_\(YWConstant.appVersion ?? "")"
+            } else if i == 5 {
+                model.title = "网页"
             }
             self.datas.append(model)
         }

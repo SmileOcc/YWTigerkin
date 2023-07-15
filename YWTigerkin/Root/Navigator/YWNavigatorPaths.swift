@@ -43,6 +43,9 @@ public protocol YWModuleType {
     // 抖音视频
     case douYinVidoe
     
+    // 网页
+    case webPage
+    
     
 }
 
@@ -69,6 +72,8 @@ extension YWModulePaths: YWModuleType {
             return "payCenter/"
         case .douYinVidoe:
             return "douYinVideo/"
+        case .webPage:
+            return "webPage/"
         }
     }
     

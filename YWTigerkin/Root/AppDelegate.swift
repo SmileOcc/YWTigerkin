@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var screen_set:SCREEN_SET = .set_port
 
+    var rotateScreen = false
+
     var window: UIWindow?
     var tab: YWTabBarViewController?
 
