@@ -307,6 +307,7 @@ class YWWebCtrl: YWBaseViewController, HUDViewModelBased{
         }
         
         // 在这判断 网页http, 本地文件， html字符串加载显示
+        // 或者协议在跳转
         if #available(iOS 13.0, *) {
             var windinUrl = url
             if windinUrl == nil {
@@ -373,6 +374,7 @@ class YWWebCtrl: YWBaseViewController, HUDViewModelBased{
         //处理html内容显示
         return nil
     }
+    // 或者协议在跳转
     
     func webViewLoadRequest() {
         if let url = self.originalUrl() {

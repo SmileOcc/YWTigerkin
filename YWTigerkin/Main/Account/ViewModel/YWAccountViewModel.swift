@@ -77,7 +77,7 @@ class YWAccountViewModel: HUDServicesViewModel, HasDisposeBag  {
             } else if i == 1 {
                 model.title = "通知"
             } else if i == 2 {
-                model.title = "关于"
+                model.title = "分享^"
             } else if i == 3 {
                 model.title = "活动"
                 model.desc = "最新活动"

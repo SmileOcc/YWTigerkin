@@ -12,3 +12,10 @@
 #import <CommonCrypto/CommonDigest.h>
 
 #import "VIMediaCache.h"
+
+
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKExtension/ShareSDK+Extension.h>
+//#import <WechatConnector/WechatConnector.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
+#import <ShareSDK/ShareSDK+Base.h>

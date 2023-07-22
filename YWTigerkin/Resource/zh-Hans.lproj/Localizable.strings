@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  YWTigerkin
+
+  Created by odd on 7/22/23.
+  
+*/
+
+title = "你好";
+share_community = "社区";
+share_whatsApp = "WhatsApp";
+share_telegram = "Telegram";
+share_line = "Line";
+share_facebook = "Facebook";
+share_wechat = "微信";
+share_wechatFriend = "朋友圈";
+share_twitter = "Twitter";
+share_instagram = "Instagram";
+share_save_pic = "保存图片";
+share_copy_url = "复制";
+share_more = "更多";
+cancel_btn = "Cancel";

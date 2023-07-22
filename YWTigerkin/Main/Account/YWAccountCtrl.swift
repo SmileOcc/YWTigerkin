@@ -144,6 +144,25 @@ extension YWAccountCtrl: UITableViewDelegate,UITableViewDataSource {
 
         if self.viewModel.datas.count > indexPath.row {
             let model = self.viewModel.datas[indexPath.row]
+            if model.id == "2" {
+              
+                let config = YWShareConfig()
+                config.title = "title"
+                config.desc = "desc"
+                config.pageUrl = "https://baidu.com"
+                config.thirdItems = [.wechat,.sinaweibo,.QQ,.facebook,.twitter,.telegram,.instagram]
+                config.toolsItems = [.ywuSocial,.ywSaveImage,.ywCopy,.ywMore]
+                config.shareType = .image
+                config.imageData = self.view.xz_snapshotImage
+                YWShareManager.shared.share(config) {[weak self] (platform, result, onlyTap) in
+                    guard let `self` = self else {return}
+                    print("分享平台：\(platform) 是否点击:\(onlyTap)")
+                    if onlyTap == true {
+                        
+                    }
+                }
+                return
+            }
             if model.id == "5" {
                 self.goOtherAction()
             }

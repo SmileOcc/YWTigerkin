@@ -8,6 +8,14 @@
 import Foundation
 import UIKit
 
+public enum FontType:String {
+    case Regular    = "PingFangSC-Regular"
+    case Medium     = "PingFangSC-Medium"
+    case Semibold   = "PingFangSC-Semibold"
+    case Light      = "PingFangSC-Light"
+    case Ultralight = "PingFangSC-Ultralight"
+    case Thin       = "PingFangSC-Thin"
+}
 ///< 适配，屏幕宽高适配比例， iPhone6 模板设计
 let kAutoSizeScale_X = ((KSCREEN_HEIGHT == 667.0) ? 1.0 : (KSCREEN_WIDTH / 375.0))
 let kAutoSizeScale_Y = ((KSCREEN_HEIGHT == 667.0) ? 1.0 : (KSCREEN_HEIGHT / 667.0))
@@ -27,6 +35,23 @@ func kAutoConvertWithScreenH_Value(_ value:CGFloat) -> CGFloat {
 
 extension UIFont {
 
+    //设置PingFang字体名称和大小
+    class func font(withName name:FontType, withSize size:CGFloat) -> UIFont {
+        return UIFont.init(name: name.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    class func fscRegular(_ size: CGFloat) -> UIFont {
+        font(withName: .Regular, withSize: size)
+    }
+    
+    class func fscMedium(_ size: CGFloat) -> UIFont {
+        font(withName: .Medium, withSize: size)
+    }
+    
+    class func fscSemibold(_ size: CGFloat) -> UIFont {
+        font(withName: .Semibold, withSize: size)
+    }
+    
     class func mediumFont(_ size:CGFloat) -> UIFont {
         return UIFont.systemFont(ofSize: size, weight: .medium)
     }

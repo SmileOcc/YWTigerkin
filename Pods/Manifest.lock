@@ -38,6 +38,39 @@ PODS:
   - MMKV (1.2.13):
     - MMKVCore (~> 1.2.13)
   - MMKVCore (1.2.13)
+  - mob_sharesdk (4.4.6):
+    - mob_sharesdk/ShareSDK (= 4.4.6)
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDK (4.4.6):
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKExtension (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Facebook (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Instagram (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Line (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Messenger (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Telegram (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Twitter (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/WeChat (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/WhatsApp (4.4.6):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - MOBFoundation (3.2.34)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (15.0.0):
@@ -116,6 +149,16 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh (= 3.2.0)
   - MMKV
+  - mob_sharesdk
+  - mob_sharesdk/ShareSDKExtension
+  - mob_sharesdk/ShareSDKPlatforms/Facebook
+  - mob_sharesdk/ShareSDKPlatforms/Instagram
+  - mob_sharesdk/ShareSDKPlatforms/Line
+  - mob_sharesdk/ShareSDKPlatforms/Messenger
+  - mob_sharesdk/ShareSDKPlatforms/Telegram
+  - mob_sharesdk/ShareSDKPlatforms/Twitter
+  - mob_sharesdk/ShareSDKPlatforms/WeChat
+  - mob_sharesdk/ShareSDKPlatforms/WhatsApp
   - Moya/RxSwift
   - "NSObject+Rx"
   - Reusable (~> 4.1.1)
@@ -152,6 +195,8 @@ SPEC REPOS:
     - MJRefresh
     - MMKV
     - MMKVCore
+    - mob_sharesdk
+    - MOBFoundation
     - Moya
     - "NSObject+Rx"
     - Reusable
@@ -189,6 +234,8 @@ SPEC CHECKSUMS:
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MMKV: aac95d817a100479445633f2b3ed8961b4ac5043
   MMKVCore: 3388952ded307e41b3ed8a05892736a236ed1b8e
+  mob_sharesdk: 5dbc669a4ee1004c6b4ea95730857d2e6d103aa6
+  MOBFoundation: 778c8aa4760cece62b8b7725c88ca280b4004801
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
@@ -211,6 +258,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 4eadeb478b1e65763fcfbc3df4ae85ea9b5d1567
+PODFILE CHECKSUM: c4e6b2352f6ea675323ab6a4f9b900ce81019446
 
 COCOAPODS: 1.11.2

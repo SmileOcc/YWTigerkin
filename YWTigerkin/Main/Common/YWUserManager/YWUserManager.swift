@@ -15,7 +15,8 @@ class YWUserManager: NSObject {
     public static let YWUser =  "YWUser"
     public static let YWUserToken = "YWUserToken"
     public static let YWUserUUID = "YWUserUUID"
-    
+    public static let YWLanguage =  "YWLanguage"
+
     public static let notiUpdateUUID      = "noti_updateUUID"                 //uuid 改变
     public static let notiLogin           = "noti_login"                      //登录成功
     public static let notiLoginOut        = "noti_loginOut"                   //退出登录
@@ -254,5 +255,49 @@ class YWUserManager: NSObject {
 //                } as YWResultResponse<YWLoginUser>).disposed(by: YWUserManager.shared().disposeBag)
 //        }
         
+    }
+}
+
+
+extension YWUserManager {
+    
+    /// 当前选择的语言
+    /// 1简体2繁体3英文
+    /// - Returns: 选择的语言
+    class func curLanguage() -> YWLanguageType {
+//        let mmkv = MMKV.default()
+//        mmkv.set(Int32(YXLanguageType.EN.rawValue), forKey: YXUserManager.YXLanguage)
+//        return YXLanguageType.EN
+        let mmkv = MMKV.default()
+        let curLanguage = mmkv?.int32(forKey: YWUserManager.YWLanguage) ?? 0
+        
+        if curLanguage == 0 { //没有存储
+            var defaultLanguage:YWLanguageType = .CN
+            let languages = NSLocale.preferredLanguages
+            let language = languages.first
+            //zh_Hans 表示简体中文
+            if language?.hasPrefix("zh-Hans") ?? false {//简体
+                defaultLanguage = .CN
+            } else if language?.hasPrefix("zh-Hant") ?? false {//繁体
+                defaultLanguage = .HK
+            } else if language?.hasPrefix("ms") ?? false {//马来语
+                defaultLanguage = .ML
+            } else if language?.hasPrefix("th") ?? false {//泰语
+                defaultLanguage = .TH
+            }
+            mmkv?.set(Int32(defaultLanguage.rawValue), forKey: YWUserManager.YWLanguage)
+            return defaultLanguage
+        }
+        return YWLanguageType(rawValue: Int(curLanguage)) ?? YWLanguageType.EN  //有存储
+    }
+    
+    /// 是否当前语言是英文的模式.
+    @objc class func isENMode() -> Bool {
+        let lang = self.curLanguage()
+        if lang == .EN || lang == .TH || lang == .ML {
+            return true
+        } else {
+            return false
+        }
     }
 }

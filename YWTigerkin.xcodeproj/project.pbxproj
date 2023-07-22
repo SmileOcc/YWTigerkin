@@ -45,6 +45,14 @@
 		627DD74229EEBF81004859A7 /* YWVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627DD74129EEBF81004859A7 /* YWVideoModel.swift */; };
 		627DD74429F3AD8F004859A7 /* YWNavBarBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627DD74329F3AD8F004859A7 /* YWNavBarBaseView.swift */; };
 		627DD74729F3B6DD004859A7 /* YWFullScreenPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627DD74629F3B6DD004859A7 /* YWFullScreenPop.swift */; };
+		628E3AA52A6B8BD700D10622 /* YWLanguageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AA42A6B8BD700D10622 /* YWLanguageUtility.swift */; };
+		628E3AA72A6B8DAB00D10622 /* YWShareSDKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AA62A6B8DAB00D10622 /* YWShareSDKHelper.swift */; };
+		628E3AA92A6BA90800D10622 /* YWLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AA82A6BA90800D10622 /* YWLog.swift */; };
+		628E3AAB2A6BB66300D10622 /* YWShareBottomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AAA2A6BB66300D10622 /* YWShareBottomAlertView.swift */; };
+		628E3AAD2A6BB67D00D10622 /* YWShareItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AAC2A6BB67D00D10622 /* YWShareItemModel.swift */; };
+		628E3AAF2A6BBB9900D10622 /* YWShareImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AAE2A6BBB9900D10622 /* YWShareImageContentView.swift */; };
+		628E3AB12A6BC7AD00D10622 /* YWButton+RepeatTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AB02A6BC7AD00D10622 /* YWButton+RepeatTap.swift */; };
+		628E3AB52A6BEA7600D10622 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 628E3AB72A6BEA7600D10622 /* Localizable.strings */; };
 		62940BE72A3EDF6D004148E3 /* 内购图.png in Resources */ = {isa = PBXBuildFile; fileRef = 62940BE62A3EDF6D004148E3 /* 内购图.png */; };
 		62940BE92A3EE06E004148E3 /* YWApplePayCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940BE82A3EE06E004148E3 /* YWApplePayCtrl.swift */; };
 		62940BEB2A3EE086004148E3 /* YWApplePayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940BEA2A3EE086004148E3 /* YWApplePayManager.swift */; };
@@ -107,6 +115,7 @@
 		62940C752A62BB2E004148E3 /* YWWKWebView+Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940C742A62BB2E004148E3 /* YWWKWebView+Capture.swift */; };
 		62940C782A62BBE4004148E3 /* UIView+YwCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940C772A62BBE4004148E3 /* UIView+YwCapture.swift */; };
 		62940C7A2A62BC1E004148E3 /* UIScrollView+YwCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940C792A62BC1E004148E3 /* UIScrollView+YwCapture.swift */; };
+		62940C7D2A63B8B5004148E3 /* YWShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940C7C2A63B8B4004148E3 /* YWShareManager.swift */; };
 		62F68B9129AB5E190023EC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68B9029AB5E190023EC3C /* AppDelegate.swift */; };
 		62F68B9329AB5E190023EC3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68B9229AB5E190023EC3C /* SceneDelegate.swift */; };
 		62F68B9529AB5E190023EC3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F68B9429AB5E190023EC3C /* ViewController.swift */; };
@@ -225,6 +234,16 @@
 		627DD74129EEBF81004859A7 /* YWVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWVideoModel.swift; sourceTree = "<group>"; };
 		627DD74329F3AD8F004859A7 /* YWNavBarBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWNavBarBaseView.swift; sourceTree = "<group>"; };
 		627DD74629F3B6DD004859A7 /* YWFullScreenPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWFullScreenPop.swift; sourceTree = "<group>"; };
+		628E3AA42A6B8BD700D10622 /* YWLanguageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLanguageUtility.swift; sourceTree = "<group>"; };
+		628E3AA62A6B8DAB00D10622 /* YWShareSDKHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWShareSDKHelper.swift; sourceTree = "<group>"; };
+		628E3AA82A6BA90800D10622 /* YWLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLog.swift; sourceTree = "<group>"; };
+		628E3AAA2A6BB66300D10622 /* YWShareBottomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWShareBottomAlertView.swift; sourceTree = "<group>"; };
+		628E3AAC2A6BB67D00D10622 /* YWShareItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWShareItemModel.swift; sourceTree = "<group>"; };
+		628E3AAE2A6BBB9900D10622 /* YWShareImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWShareImageContentView.swift; sourceTree = "<group>"; };
+		628E3AB02A6BC7AD00D10622 /* YWButton+RepeatTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWButton+RepeatTap.swift"; sourceTree = "<group>"; };
+		628E3AB62A6BEA7600D10622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		628E3AB82A6BEA9F00D10622 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		628E3AB92A6BEAC700D10622 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		62940BE62A3EDF6D004148E3 /* 内购图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "内购图.png"; sourceTree = "<group>"; };
 		62940BE82A3EE06E004148E3 /* YWApplePayCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWApplePayCtrl.swift; sourceTree = "<group>"; };
 		62940BEA2A3EE086004148E3 /* YWApplePayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWApplePayManager.swift; sourceTree = "<group>"; };
@@ -287,6 +306,7 @@
 		62940C742A62BB2E004148E3 /* YWWKWebView+Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWWKWebView+Capture.swift"; sourceTree = "<group>"; };
 		62940C772A62BBE4004148E3 /* UIView+YwCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+YwCapture.swift"; sourceTree = "<group>"; };
 		62940C792A62BC1E004148E3 /* UIScrollView+YwCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+YwCapture.swift"; sourceTree = "<group>"; };
+		62940C7C2A63B8B4004148E3 /* YWShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWShareManager.swift; sourceTree = "<group>"; };
 		62F68B8D29AB5E190023EC3C /* YWTigerkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YWTigerkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F68B9029AB5E190023EC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62F68B9229AB5E190023EC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -494,6 +514,22 @@
 			path = YWFullScreenPopGesture;
 			sourceTree = "<group>";
 		};
+		628E3AA32A6B8BAE00D10622 /* YWLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				628E3AA42A6B8BD700D10622 /* YWLanguageUtility.swift */,
+			);
+			path = YWLanguage;
+			sourceTree = "<group>";
+		};
+		628E3AB22A6BE95B00D10622 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				628E3AB72A6BEA7600D10622 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		62940BE52A3EDF40004148E3 /* ApplePay */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +715,41 @@
 			path = ViewCapture;
 			sourceTree = "<group>";
 		};
+		62940C7B2A63B812004148E3 /* YWShareManager */ = {
+			isa = PBXGroup;
+			children = (
+				62940C7C2A63B8B4004148E3 /* YWShareManager.swift */,
+				628E3AA62A6B8DAB00D10622 /* YWShareSDKHelper.swift */,
+				628E3AAA2A6BB66300D10622 /* YWShareBottomAlertView.swift */,
+				628E3AAC2A6BB67D00D10622 /* YWShareItemModel.swift */,
+				628E3AAE2A6BBB9900D10622 /* YWShareImageContentView.swift */,
+			);
+			path = YWShareManager;
+			sourceTree = "<group>";
+		};
+		62940C7E2A6B80BD004148E3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				62940C802A6B80E7004148E3 /* View */,
+				62940C7F2A6B80DF004148E3 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		62940C7F2A6B80DF004148E3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		62940C802A6B80E7004148E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		62F68B8429AB5E190023EC3C = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +771,7 @@
 		62F68B8F29AB5E190023EC3C /* YWTigerkin */ = {
 			isa = PBXGroup;
 			children = (
+				628E3AB22A6BE95B00D10622 /* Resource */,
 				62F68BA529AB74C80023EC3C /* Root */,
 				62F68BA429AB74A30023EC3C /* Main */,
 				62F68BD129B0D5650023EC3C /* TTestOC.h */,
@@ -720,6 +792,7 @@
 		62F68BA429AB74A30023EC3C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				62940C7E2A6B80BD004148E3 /* Login */,
 				62940C662A5DA0F2004148E3 /* YWNativeRouter */,
 				62940C4A2A5D947D004148E3 /* YWWeb */,
 				62940BF82A4FF2A7004148E3 /* Video */,
@@ -851,6 +924,8 @@
 		62F68BC029B0CDC80023EC3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				628E3AA32A6B8BAE00D10622 /* YWLanguage */,
+				62940C7B2A63B812004148E3 /* YWShareManager */,
 				62940C762A62BBA1004148E3 /* ViewCapture */,
 				62940C6F2A627695004148E3 /* YWUserManager */,
 				62940C432A5A9D6C004148E3 /* YWRequestCache */,
@@ -891,6 +966,7 @@
 			children = (
 				62F68BCE29B0D4B60023EC3C /* YWKeyChainUtil.swift */,
 				62940C412A595E48004148E3 /* YWTools.swift */,
+				628E3AA82A6BA90800D10622 /* YWLog.swift */,
 			);
 			path = YWUtils;
 			sourceTree = "<group>";
@@ -1018,6 +1094,7 @@
 				62940C3D2A5137AE004148E3 /* YWNotification+Extension.swift */,
 				62940C3F2A51382A004148E3 /* YWNSattributedString+Extension.swift */,
 				62940C482A5C4968004148E3 /* YWNSString+Extension.swift */,
+				628E3AB02A6BC7AD00D10622 /* YWButton+RepeatTap.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1095,6 +1172,7 @@
 				62F68B8A29AB5E190023EC3C /* Frameworks */,
 				62F68B8B29AB5E190023EC3C /* Resources */,
 				2927D9E9DB868C311C5F6285 /* [CP] Embed Pods Frameworks */,
+				058D720A0BE14B268DD52AF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1128,6 +1206,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-HK",
+				"zh-Hans",
 			);
 			mainGroup = 62F68B8429AB5E190023EC3C;
 			productRefGroup = 62F68B8E29AB5E190023EC3C /* Products */;
@@ -1147,6 +1227,7 @@
 				62940BE72A3EDF6D004148E3 /* 内购图.png in Resources */,
 				62F68B9D29AB5E1F0023EC3C /* LaunchScreen.storyboard in Resources */,
 				62F68B9A29AB5E1F0023EC3C /* Assets.xcassets in Resources */,
+				628E3AB52A6BEA7600D10622 /* Localizable.strings in Resources */,
 				6203BDA629E3002500FF063F /* Info_DEV.plist in Resources */,
 				62F68B9829AB5E190023EC3C /* Main.storyboard in Resources */,
 				6203BDA829E3005F00FF063F /* Info_PRD.plist in Resources */,
@@ -1156,6 +1237,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		058D720A0BE14B268DD52AF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1C030E2844A445E52B6D9F5D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1210,6 +1308,7 @@
 				62940C302A51298E004148E3 /* YWBaseImageView.swift in Sources */,
 				62940C632A5D9D9B004148E3 /* YWNetworkTypeJSActionHandler.swift in Sources */,
 				624BE07529D054E40071CD57 /* YWThemesMainView.swift in Sources */,
+				628E3AA72A6B8DAB00D10622 /* YWShareSDKHelper.swift in Sources */,
 				62F68BB229AB75C80023EC3C /* YWAccountCtrl.swift in Sources */,
 				62F68BAB29AB75470023EC3C /* YWTabBarViewController.swift in Sources */,
 				62F68C3129BA20980023EC3C /* YWFont+Extension.swift in Sources */,
@@ -1217,6 +1316,7 @@
 				62F68C0829B61AAB0023EC3C /* YWAccountViewModel.swift in Sources */,
 				62F68BBF29B0CD250023EC3C /* YWUrlRouterConstant.swift in Sources */,
 				62940C7A2A62BC1E004148E3 /* UIScrollView+YwCapture.swift in Sources */,
+				628E3AB12A6BC7AD00D10622 /* YWButton+RepeatTap.swift in Sources */,
 				62F68C0429B61A650023EC3C /* YWHomeViewModel.swift in Sources */,
 				62F68BCF29B0D4B60023EC3C /* YWKeyChainUtil.swift in Sources */,
 				62F68C1529BA0DCE0023EC3C /* YWMessageCenterCtrl.swift in Sources */,
@@ -1228,6 +1328,7 @@
 				62940C732A62770F004148E3 /* YWLoginUser.swift in Sources */,
 				62F68BE729B0E53E0023EC3C /* YWUserAPI.swift in Sources */,
 				62940C682A5DA124004148E3 /* YWGotoNativeProtocol.swift in Sources */,
+				628E3AA52A6B8BD700D10622 /* YWLanguageUtility.swift in Sources */,
 				62F68C0B29B61C9C0023EC3C /* YWHomeModel.swift in Sources */,
 				624BE09629D5BCAF0071CD57 /* YWAsinglViewModule.swift in Sources */,
 				624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */,
@@ -1284,6 +1385,7 @@
 				624BE08E29D312990071CD57 /* YWWaterFallViewModule.swift in Sources */,
 				62F68BC329B0CE0B0023EC3C /* YWConstant.swift in Sources */,
 				62F68C1129BA0D9B0023EC3C /* YWSettingCtrl.swift in Sources */,
+				62940C7D2A63B8B5004148E3 /* YWShareManager.swift in Sources */,
 				62940BFF2A4FF682004148E3 /* YWDouYinVideoCtrl.swift in Sources */,
 				62940C402A51382A004148E3 /* YWNSattributedString+Extension.swift in Sources */,
 				62F68C0629B61A850023EC3C /* YWCategoryViewModel.swift in Sources */,
@@ -1309,12 +1411,15 @@
 				62F68C3329BA21570023EC3C /* YWButton+Extension.swift in Sources */,
 				62F68C1929BA0E010023EC3C /* YWMessageActivityCtrl.swift in Sources */,
 				62940C2D2A51293A004148E3 /* MusicAlbumView.swift in Sources */,
+				628E3AAF2A6BBB9900D10622 /* YWShareImageContentView.swift in Sources */,
 				62940C032A4FFA44004148E3 /* YWDouYinVideoModel.swift in Sources */,
 				62940BF02A3EEF77004148E3 /* YWApplePayViewModel.swift in Sources */,
 				62940C782A62BBE4004148E3 /* UIView+YwCapture.swift in Sources */,
+				628E3AAB2A6BB66300D10622 /* YWShareBottomAlertView.swift in Sources */,
 				627DD74429F3AD8F004859A7 /* YWNavBarBaseView.swift in Sources */,
 				624BE07F29D05D9C0071CD57 /* YWCollectCCellProtocol.swift in Sources */,
 				62940C1C2A5127F8004148E3 /* AVPlayerView.swift in Sources */,
+				628E3AA92A6BA90800D10622 /* YWLog.swift in Sources */,
 				62F68C4429C341E40023EC3C /* YWAccountCell.swift in Sources */,
 				627DD74229EEBF81004859A7 /* YWVideoModel.swift in Sources */,
 				62940C162A500D32004148E3 /* YWCircyleAdvCCell.swift in Sources */,
@@ -1324,6 +1429,7 @@
 				62940C492A5C4968004148E3 /* YWNSString+Extension.swift in Sources */,
 				624BE06A29CDD31F0071CD57 /* YWAdvsEventsManager.swift in Sources */,
 				62F68C4A29C346E30023EC3C /* YWAccountItemModel.swift in Sources */,
+				628E3AAD2A6BB67D00D10622 /* YWShareItemModel.swift in Sources */,
 				62F68C3C29C1FC4D0023EC3C /* ODBlankPageTipView.swift in Sources */,
 				624BE08C29D0637C0071CD57 /* YWThemesMainLayout.swift in Sources */,
 				62F68C3529BF51700023EC3C /* YWView+Extension.swift in Sources */,
@@ -1376,6 +1482,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		628E3AB72A6BEA7600D10622 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				628E3AB62A6BEA7600D10622 /* en */,
+				628E3AB82A6BEA9F00D10622 /* zh-HK */,
+				628E3AB92A6BEAC700D10622 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		62F68B9629AB5E190023EC3C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1399,6 +1515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1502,6 +1619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1598,6 +1716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1659,6 +1778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
