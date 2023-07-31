@@ -21,7 +21,8 @@ public protocol YWModuleType {
 
 @objc enum YWModulePaths: Int {
 
-    
+    //登录
+    case login
     // 用户中心
     case userCenter
  
@@ -58,6 +59,8 @@ extension YWModulePaths: YWModuleType {
     
     var path: String {
         switch self {
+        case .login:
+            return "user/login/"
         case .userCenter:
             return "userCenter/"
         case .userCenterSet:

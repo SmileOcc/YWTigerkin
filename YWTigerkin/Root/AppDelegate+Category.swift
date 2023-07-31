@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import IQKeyboardManagerSwift
 
 extension AppDelegate {
     
     func yw_Application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
         
+        cofigureKeyboardManager()
         //调试分享
         YWShareSDKHelper.instance.isTestAllPlatform = true
         // 多语言读取文件
@@ -39,5 +41,10 @@ extension AppDelegate {
     
     func configureButtonRepeat() {
         UIButton.initializeMethod()
+    }
+    
+    func cofigureKeyboardManager() {
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = false
+
     }
 }

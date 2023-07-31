@@ -53,6 +53,24 @@
 		628E3AAF2A6BBB9900D10622 /* YWShareImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AAE2A6BBB9900D10622 /* YWShareImageContentView.swift */; };
 		628E3AB12A6BC7AD00D10622 /* YWButton+RepeatTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AB02A6BC7AD00D10622 /* YWButton+RepeatTap.swift */; };
 		628E3AB52A6BEA7600D10622 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 628E3AB72A6BEA7600D10622 /* Localizable.strings */; };
+		628E3ABB2A6C1C9700D10622 /* YWLoginCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ABA2A6C1C9700D10622 /* YWLoginCtrl.swift */; };
+		628E3ABD2A6C1CF600D10622 /* YWLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ABC2A6C1CF600D10622 /* YWLoginViewModel.swift */; };
+		628E3ABF2A6C206900D10622 /* YXLoginTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ABE2A6C206900D10622 /* YXLoginTitleView.swift */; };
+		628E3AC12A6C326800D10622 /* YWSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AC02A6C326800D10622 /* YWSignInView.swift */; };
+		628E3AC32A6C32CE00D10622 /* YWTipsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AC22A6C32CE00D10622 /* YWTipsTextField.swift */; };
+		628E3AC52A6C34C000D10622 /* YWPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AC42A6C34C000D10622 /* YWPhoneTextField.swift */; };
+		628E3AC72A6C34F500D10622 /* YWSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AC62A6C34F500D10622 /* YWSecureTextField.swift */; };
+		628E3AC92A6C350C00D10622 /* YWTimeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AC82A6C350C00D10622 /* YWTimeTextField.swift */; };
+		628E3ACB2A71563600D10622 /* YWHideTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ACA2A71563600D10622 /* YWHideTextField.swift */; };
+		628E3ACD2A71573800D10622 /* YWQuickLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ACC2A71573800D10622 /* YWQuickLoginView.swift */; };
+		628E3ACF2A7158FE00D10622 /* YWDeclareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ACE2A7158FE00D10622 /* YWDeclareView.swift */; };
+		628E3AD12A715B0700D10622 /* YWAccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AD02A715B0700D10622 /* YWAccountHeaderView.swift */; };
+		628E3AD32A715D0200D10622 /* YWConstant+Op.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AD22A715D0200D10622 /* YWConstant+Op.swift */; };
+		628E3AD52A73F04200D10622 /* YWLoginCtrl+Exten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AD42A73F04200D10622 /* YWLoginCtrl+Exten.swift */; };
+		628E3AD82A73F1D900D10622 /* YWUserBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AD72A73F1D900D10622 /* YWUserBanner.swift */; };
+		628E3ADA2A73F2A500D10622 /* YWLoginAdvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AD92A73F2A500D10622 /* YWLoginAdvView.swift */; };
+		628E3ADD2A73F61800D10622 /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ADC2A73F61800D10622 /* NSString+Check.m */; };
+		628E3ADF2A73FF9100D10622 /* YWH5Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ADE2A73FF9100D10622 /* YWH5Urls.swift */; };
 		62940BE72A3EDF6D004148E3 /* 内购图.png in Resources */ = {isa = PBXBuildFile; fileRef = 62940BE62A3EDF6D004148E3 /* 内购图.png */; };
 		62940BE92A3EE06E004148E3 /* YWApplePayCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940BE82A3EE06E004148E3 /* YWApplePayCtrl.swift */; };
 		62940BEB2A3EE086004148E3 /* YWApplePayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940BEA2A3EE086004148E3 /* YWApplePayManager.swift */; };
@@ -244,6 +262,25 @@
 		628E3AB62A6BEA7600D10622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		628E3AB82A6BEA9F00D10622 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		628E3AB92A6BEAC700D10622 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		628E3ABA2A6C1C9700D10622 /* YWLoginCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLoginCtrl.swift; sourceTree = "<group>"; };
+		628E3ABC2A6C1CF600D10622 /* YWLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLoginViewModel.swift; sourceTree = "<group>"; };
+		628E3ABE2A6C206900D10622 /* YXLoginTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXLoginTitleView.swift; sourceTree = "<group>"; };
+		628E3AC02A6C326800D10622 /* YWSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWSignInView.swift; sourceTree = "<group>"; };
+		628E3AC22A6C32CE00D10622 /* YWTipsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWTipsTextField.swift; sourceTree = "<group>"; };
+		628E3AC42A6C34C000D10622 /* YWPhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWPhoneTextField.swift; sourceTree = "<group>"; };
+		628E3AC62A6C34F500D10622 /* YWSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWSecureTextField.swift; sourceTree = "<group>"; };
+		628E3AC82A6C350C00D10622 /* YWTimeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWTimeTextField.swift; sourceTree = "<group>"; };
+		628E3ACA2A71563600D10622 /* YWHideTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWHideTextField.swift; sourceTree = "<group>"; };
+		628E3ACC2A71573800D10622 /* YWQuickLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWQuickLoginView.swift; sourceTree = "<group>"; };
+		628E3ACE2A7158FE00D10622 /* YWDeclareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWDeclareView.swift; sourceTree = "<group>"; };
+		628E3AD02A715B0700D10622 /* YWAccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAccountHeaderView.swift; sourceTree = "<group>"; };
+		628E3AD22A715D0200D10622 /* YWConstant+Op.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWConstant+Op.swift"; sourceTree = "<group>"; };
+		628E3AD42A73F04200D10622 /* YWLoginCtrl+Exten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YWLoginCtrl+Exten.swift"; sourceTree = "<group>"; };
+		628E3AD72A73F1D900D10622 /* YWUserBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWUserBanner.swift; sourceTree = "<group>"; };
+		628E3AD92A73F2A500D10622 /* YWLoginAdvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLoginAdvView.swift; sourceTree = "<group>"; };
+		628E3ADB2A73F61800D10622 /* NSString+Check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		628E3ADC2A73F61800D10622 /* NSString+Check.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		628E3ADE2A73FF9100D10622 /* YWH5Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWH5Urls.swift; sourceTree = "<group>"; };
 		62940BE62A3EDF6D004148E3 /* 内购图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "内购图.png"; sourceTree = "<group>"; };
 		62940BE82A3EE06E004148E3 /* YWApplePayCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWApplePayCtrl.swift; sourceTree = "<group>"; };
 		62940BEA2A3EE086004148E3 /* YWApplePayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWApplePayManager.swift; sourceTree = "<group>"; };
@@ -530,6 +567,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		628E3AD62A73F1C300D10622 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				628E3AD72A73F1D900D10622 /* YWUserBanner.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		62940BE52A3EDF40004148E3 /* ApplePay */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,8 +775,11 @@
 		62940C7E2A6B80BD004148E3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				628E3AD62A73F1C300D10622 /* Model */,
 				62940C802A6B80E7004148E3 /* View */,
 				62940C7F2A6B80DF004148E3 /* ViewModel */,
+				628E3ABA2A6C1C9700D10622 /* YWLoginCtrl.swift */,
+				628E3AD42A73F04200D10622 /* YWLoginCtrl+Exten.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -739,6 +787,7 @@
 		62940C7F2A6B80DF004148E3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				628E3ABC2A6C1CF600D10622 /* YWLoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -746,6 +795,16 @@
 		62940C802A6B80E7004148E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				628E3ABE2A6C206900D10622 /* YXLoginTitleView.swift */,
+				628E3AC02A6C326800D10622 /* YWSignInView.swift */,
+				628E3AC22A6C32CE00D10622 /* YWTipsTextField.swift */,
+				628E3AC42A6C34C000D10622 /* YWPhoneTextField.swift */,
+				628E3AC62A6C34F500D10622 /* YWSecureTextField.swift */,
+				628E3AC82A6C350C00D10622 /* YWTimeTextField.swift */,
+				628E3ACA2A71563600D10622 /* YWHideTextField.swift */,
+				628E3ACC2A71573800D10622 /* YWQuickLoginView.swift */,
+				628E3ACE2A7158FE00D10622 /* YWDeclareView.swift */,
+				628E3AD92A73F2A500D10622 /* YWLoginAdvView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -771,13 +830,15 @@
 		62F68B8F29AB5E190023EC3C /* YWTigerkin */ = {
 			isa = PBXGroup;
 			children = (
-				628E3AB22A6BE95B00D10622 /* Resource */,
-				62F68BA529AB74C80023EC3C /* Root */,
+				62F68BBA29B0CBDA0023EC3C /* Library */,
+				62F68BC029B0CDC80023EC3C /* Common */,
 				62F68BA429AB74A30023EC3C /* Main */,
 				62F68BD129B0D5650023EC3C /* TTestOC.h */,
 				62F68BD229B0D5650023EC3C /* TTestOC.m */,
 				62F68B9229AB5E190023EC3C /* SceneDelegate.swift */,
 				62F68B9429AB5E190023EC3C /* ViewController.swift */,
+				628E3AB22A6BE95B00D10622 /* Resource */,
+				62F68BA529AB74C80023EC3C /* Root */,
 				62F68B9629AB5E190023EC3C /* Main.storyboard */,
 				62F68B9929AB5E1F0023EC3C /* Assets.xcassets */,
 				62F68B9B29AB5E1F0023EC3C /* LaunchScreen.storyboard */,
@@ -801,9 +862,6 @@
 				62F68C1229BA0DAA0023EC3C /* Message */,
 				62F68C0E29BA0D720023EC3C /* Setting */,
 				62F68BF729B228600023EC3C /* Search */,
-				62F68BC029B0CDC80023EC3C /* Common */,
-				62F68BBA29B0CBDA0023EC3C /* Library */,
-				62F68BB829B0CB380023EC3C /* Services */,
 				62F68BB529AB7D970023EC3C /* Web */,
 				62F68BAE29AB75640023EC3C /* Category */,
 				62F68BAD29AB75570023EC3C /* Account */,
@@ -815,6 +873,8 @@
 		62F68BA529AB74C80023EC3C /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				62F68BEC29B21F010023EC3C /* Navigator */,
+				62F68BB829B0CB380023EC3C /* Services */,
 				62F68B9029AB5E190023EC3C /* AppDelegate.swift */,
 				6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */,
 				62F68BA629AB74F10023EC3C /* YWBaseViewController.swift */,
@@ -822,7 +882,6 @@
 				62F68BAA29AB75470023EC3C /* YWTabBarViewController.swift */,
 				627DD74329F3AD8F004859A7 /* YWNavBarBaseView.swift */,
 				6203BDAB29E444BE00FF063F /* YWScreenTool.swift */,
-				62F68BEC29B21F010023EC3C /* Navigator */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -948,6 +1007,8 @@
 				62F68BC629B0D01C0023EC3C /* YWConstant+UI.swift */,
 				62F68BC829B0D1730023EC3C /* YWConstant+Common.swift */,
 				62F68BD429B0D6610023EC3C /* YWUserHelper.swift */,
+				628E3AD22A715D0200D10622 /* YWConstant+Op.swift */,
+				628E3ADE2A73FF9100D10622 /* YWH5Urls.swift */,
 			);
 			path = YWConstants;
 			sourceTree = "<group>";
@@ -1095,6 +1156,8 @@
 				62940C3F2A51382A004148E3 /* YWNSattributedString+Extension.swift */,
 				62940C482A5C4968004148E3 /* YWNSString+Extension.swift */,
 				628E3AB02A6BC7AD00D10622 /* YWButton+RepeatTap.swift */,
+				628E3ADB2A73F61800D10622 /* NSString+Check.h */,
+				628E3ADC2A73F61800D10622 /* NSString+Check.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1129,6 +1192,7 @@
 			isa = PBXGroup;
 			children = (
 				62F68C4329C341E30023EC3C /* YWAccountCell.swift */,
+				628E3AD02A715B0700D10622 /* YWAccountHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1302,6 +1366,7 @@
 			files = (
 				62F68BC929B0D1730023EC3C /* YWConstant+Common.swift in Sources */,
 				62F68BC729B0D01C0023EC3C /* YWConstant+UI.swift in Sources */,
+				628E3ACD2A71573800D10622 /* YWQuickLoginView.swift in Sources */,
 				62F68BF429B221060023EC3C /* YWNavigatorServices.swift in Sources */,
 				62F68C1729BA0DEC0023EC3C /* YWMessageSystemCtrl.swift in Sources */,
 				62F68C2829BA19B50023EC3C /* YWColor+Theme.swift in Sources */,
@@ -1311,11 +1376,13 @@
 				628E3AA72A6B8DAB00D10622 /* YWShareSDKHelper.swift in Sources */,
 				62F68BB229AB75C80023EC3C /* YWAccountCtrl.swift in Sources */,
 				62F68BAB29AB75470023EC3C /* YWTabBarViewController.swift in Sources */,
+				628E3AD82A73F1D900D10622 /* YWUserBanner.swift in Sources */,
 				62F68C3129BA20980023EC3C /* YWFont+Extension.swift in Sources */,
 				624BE08A29D0628F0071CD57 /* YWThemeMultiCCellModel.swift in Sources */,
 				62F68C0829B61AAB0023EC3C /* YWAccountViewModel.swift in Sources */,
 				62F68BBF29B0CD250023EC3C /* YWUrlRouterConstant.swift in Sources */,
 				62940C7A2A62BC1E004148E3 /* UIScrollView+YwCapture.swift in Sources */,
+				628E3AC92A6C350C00D10622 /* YWTimeTextField.swift in Sources */,
 				628E3AB12A6BC7AD00D10622 /* YWButton+RepeatTap.swift in Sources */,
 				62F68C0429B61A650023EC3C /* YWHomeViewModel.swift in Sources */,
 				62F68BCF29B0D4B60023EC3C /* YWKeyChainUtil.swift in Sources */,
@@ -1329,6 +1396,7 @@
 				62F68BE729B0E53E0023EC3C /* YWUserAPI.swift in Sources */,
 				62940C682A5DA124004148E3 /* YWGotoNativeProtocol.swift in Sources */,
 				628E3AA52A6B8BD700D10622 /* YWLanguageUtility.swift in Sources */,
+				628E3ADF2A73FF9100D10622 /* YWH5Urls.swift in Sources */,
 				62F68C0B29B61C9C0023EC3C /* YWHomeModel.swift in Sources */,
 				624BE09629D5BCAF0071CD57 /* YWAsinglViewModule.swift in Sources */,
 				624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */,
@@ -1338,6 +1406,7 @@
 				6203BDAA29E43E4B00FF063F /* AppDelegate+Category.swift in Sources */,
 				62F68B9529AB5E190023EC3C /* ViewController.swift in Sources */,
 				62F68C2F29BA1E1C0023EC3C /* YWNavigationController+Extension.swift in Sources */,
+				628E3ABF2A6C206900D10622 /* YXLoginTitleView.swift in Sources */,
 				62940C6C2A5DA23F004148E3 /* YWNativeUrlParser.swift in Sources */,
 				62F68C0D29BA0D6B0023EC3C /* YWAccountCenterCtrl.swift in Sources */,
 				62F68BF929B228930023EC3C /* YWSearchCtrl.swift in Sources */,
@@ -1350,6 +1419,7 @@
 				62F68BF629B227F30023EC3C /* YWNavigatorMap.swift in Sources */,
 				62F68BE329B0E1BD0023EC3C /* YWNetworkLoggerPlugin.swift in Sources */,
 				624BE08429D060810071CD57 /* YWThemesCCell.swift in Sources */,
+				628E3AC52A6C34C000D10622 /* YWPhoneTextField.swift in Sources */,
 				624BE06529CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift in Sources */,
 				624BE08729D0619B0071CD57 /* YWCustomThemeMultiModule.swift in Sources */,
 				62F68C1E29BA0E760023EC3C /* YWSearchResultViewModel.swift in Sources */,
@@ -1367,9 +1437,11 @@
 				62F68BDD29B0E0E50023EC3C /* YWResponseCode.swift in Sources */,
 				62940C362A512EE6004148E3 /* WebCombineOperation.swift in Sources */,
 				62940C572A5D9CDB004148E3 /* YWCommandJSActionHandler.swift in Sources */,
+				628E3AD32A715D0200D10622 /* YWConstant+Op.swift in Sources */,
 				62F68BD329B0D5650023EC3C /* TTestOC.m in Sources */,
 				62F68C4829C3468F0023EC3C /* YWBaseModel.swift in Sources */,
 				62F68B9129AB5E190023EC3C /* AppDelegate.swift in Sources */,
+				628E3ACB2A71563600D10622 /* YWHideTextField.swift in Sources */,
 				62F68BB429AB75DD0023EC3C /* YWCategoryCtrl.swift in Sources */,
 				62940C612A5D9D77004148E3 /* YWJSActionUtil.swift in Sources */,
 				62940C422A595E48004148E3 /* YWTools.swift in Sources */,
@@ -1382,6 +1454,7 @@
 				627DD74029EEBF60004859A7 /* YWVideoViewModel.swift in Sources */,
 				62F68C4E29C34E080023EC3C /* YWUIViewController+Extension.swift in Sources */,
 				62940BF42A3EF254004148E3 /* YWOtherTestViewModel.swift in Sources */,
+				628E3ABD2A6C1CF600D10622 /* YWLoginViewModel.swift in Sources */,
 				624BE08E29D312990071CD57 /* YWWaterFallViewModule.swift in Sources */,
 				62F68BC329B0CE0B0023EC3C /* YWConstant.swift in Sources */,
 				62F68C1129BA0D9B0023EC3C /* YWSettingCtrl.swift in Sources */,
@@ -1390,6 +1463,7 @@
 				62940C402A51382A004148E3 /* YWNSattributedString+Extension.swift in Sources */,
 				62F68C0629B61A850023EC3C /* YWCategoryViewModel.swift in Sources */,
 				62940C2C2A51293A004148E3 /* FocusView.swift in Sources */,
+				628E3AC12A6C326800D10622 /* YWSignInView.swift in Sources */,
 				62F68C3A29C1FC3E0023EC3C /* YWNetworkReachabilityManager.swift in Sources */,
 				62F68BE529B0E3240023EC3C /* YWLoginAPI.swift in Sources */,
 				624BE06D29CDE2F70071CD57 /* YWThemesColors.swift in Sources */,
@@ -1397,11 +1471,13 @@
 				62940C2A2A51293A004148E3 /* HoverTextView.swift in Sources */,
 				62F68BD729B0DB320023EC3C /* YWTargetType.swift in Sources */,
 				62F68BFF29B2299A0023EC3C /* YWSearchAPI.swift in Sources */,
+				628E3AC72A6C34F500D10622 /* YWSecureTextField.swift in Sources */,
 				624BE06829CDD2FE0071CD57 /* YWAdvsEventsModel.swift in Sources */,
 				62F68BFD29B2297C0023EC3C /* YWSearchService.swift in Sources */,
 				624BE07B29D05A010071CD57 /* YWCustomerLayoutSectionModuleProtocol.swift in Sources */,
 				62F68BB029AB75B30023EC3C /* YWHomeCtrl.swift in Sources */,
 				62940C6E2A5DA512004148E3 /* YWGoToNativeManager.swift in Sources */,
+				628E3ADD2A73F61800D10622 /* NSString+Check.m in Sources */,
 				624BE07229D01E500071CD57 /* YWRefreshFooter.swift in Sources */,
 				62940BF22A3EF238004148E3 /* YWOhterTestCtrl.swift in Sources */,
 				62F68BB729AB7DDC0023EC3C /* YWWebHtmlImageCtrl.swift in Sources */,
@@ -1409,6 +1485,7 @@
 				62940C712A6276B1004148E3 /* YWUserManager.swift in Sources */,
 				62940C282A51293A004148E3 /* SharePopView.swift in Sources */,
 				62F68C3329BA21570023EC3C /* YWButton+Extension.swift in Sources */,
+				628E3ABB2A6C1C9700D10622 /* YWLoginCtrl.swift in Sources */,
 				62F68C1929BA0E010023EC3C /* YWMessageActivityCtrl.swift in Sources */,
 				62940C2D2A51293A004148E3 /* MusicAlbumView.swift in Sources */,
 				628E3AAF2A6BBB9900D10622 /* YWShareImageContentView.swift in Sources */,
@@ -1428,7 +1505,10 @@
 				62F68C3E29C1FC590023EC3C /* UIScrollView+ODBlankPageTipView.swift in Sources */,
 				62940C492A5C4968004148E3 /* YWNSString+Extension.swift in Sources */,
 				624BE06A29CDD31F0071CD57 /* YWAdvsEventsManager.swift in Sources */,
+				628E3ACF2A7158FE00D10622 /* YWDeclareView.swift in Sources */,
+				628E3AD52A73F04200D10622 /* YWLoginCtrl+Exten.swift in Sources */,
 				62F68C4A29C346E30023EC3C /* YWAccountItemModel.swift in Sources */,
+				628E3ADA2A73F2A500D10622 /* YWLoginAdvView.swift in Sources */,
 				628E3AAD2A6BB67D00D10622 /* YWShareItemModel.swift in Sources */,
 				62F68C3C29C1FC4D0023EC3C /* ODBlankPageTipView.swift in Sources */,
 				624BE08C29D0637C0071CD57 /* YWThemesMainLayout.swift in Sources */,
@@ -1455,6 +1535,7 @@
 				62940C072A4FFB44004148E3 /* YWCommonAPI.swift in Sources */,
 				62F68BD929B0DF7C0023EC3C /* YWGlobalURLConfigModel.swift in Sources */,
 				62940C382A512EE6004148E3 /* WebCacheManager.swift in Sources */,
+				628E3AD12A715B0700D10622 /* YWAccountHeaderView.swift in Sources */,
 				62F68C2A29BA1A5D0023EC3C /* YWNSObject+Extension.swift in Sources */,
 				62940C392A512EE6004148E3 /* WebDownloadOperation.swift in Sources */,
 				62F68C2D29BA1D640023EC3C /* YWOrigRequest.swift in Sources */,
@@ -1475,6 +1556,7 @@
 				624BE09229D31CA10071CD57 /* YWMultiColumnsGoodItemsViewModule.swift in Sources */,
 				62940C6A2A5DA177004148E3 /* YWNavtiveRouterConstant.swift in Sources */,
 				62F68C2429BA10CB0023EC3C /* YWColor+Extension.swift in Sources */,
+				628E3AC32A6C32CE00D10622 /* YWTipsTextField.swift in Sources */,
 				62940C0A2A5000C2004148E3 /* YWDouYinVideoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1570,6 +1652,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = DEV;
 		};
@@ -1667,6 +1750,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = PRD;
@@ -1681,6 +1765,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = LU6255RGX8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YWTigerkin/Info_PRD.plist;
@@ -1771,6 +1856,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1826,6 +1912,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

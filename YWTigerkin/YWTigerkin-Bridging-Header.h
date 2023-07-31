@@ -7,7 +7,9 @@
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
 #import <YYWebImage/YYWebImage.h>
-#import "YYText.h"
+#import <YYText/YYText.h>
+
+#import "NSString+Check.h"
 
 #import <CommonCrypto/CommonDigest.h>
 

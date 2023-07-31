@@ -49,12 +49,18 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
         super.viewDidLoad()
         self.title = "YW"
         self.view.backgroundColor = UIColor.hexColor("0xeeeeee")
-        
+        self.modalPresentationStyle = .fullScreen
+
         self.view.addSubview(baseNavBar)
         baseNavBar.snp.makeConstraints { make in
             make.left.right.top.equalTo(self.view)
             make.height.equalTo(YWConstant.navBarHeight)
         }
+        
+        _ = NotificationCenter.default.rx.notification(NSNotification.Name(YWUserManager.notiLogin))
+            .subscribe(onNext: { [weak self] notification in
+                
+            }).disposed(by: rx.disposeBag)
     }
     
     func bindViewModel() {
@@ -66,6 +72,11 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
 //            guard let `self` = self else {return}
 //
 //        }).disposed(by: disposeBag)
+    }
+    
+    //
+    @objc func refreshLoginInfoAction() {
+        
     }
     @objc func goBackAction() {
         if let viewControllers = self.navigationController?.viewControllers, viewControllers.count > 1 {

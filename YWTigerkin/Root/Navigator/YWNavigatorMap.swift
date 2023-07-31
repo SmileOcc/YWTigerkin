@@ -20,6 +20,16 @@ public struct YWNavigationMap {
         
         self.navigator = navigator
         
+        // 登录
+        navigator.register(YWModulePaths.login.url) { (url, values, context) -> UIViewController? in
+            
+            if let navigatable = context as? YWNavigatable<YWLoginViewModel> {
+                let vc = YWLoginCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+
+            return nil
+        }
         
         // 代码搜索
         navigator.register(YWModulePaths.search.url) { (url, values, context) -> UIViewController? in

@@ -19,6 +19,10 @@ class YWNavigatorServices: Navigator{
     @objc func pushPath(_ path: String, context: Any?, animated: Bool) {
         push(path as URLConvertible, context: context, from: nil, animated: animated)
     }
+    
+    @objc func presentPath(_ path: String, context: Any?, animated: Bool) {
+        present(path as URLConvertible, context: context, wrap: YWNavigationViewController.self, from: nil, animated: true, completion: nil)
+    }
 }
 
 //@objcMembers class YWNavigatorServices: NSObject, NavigatorProtocol {

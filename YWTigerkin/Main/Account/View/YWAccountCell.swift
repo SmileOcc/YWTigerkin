@@ -17,6 +17,11 @@ class YWAccountCell: UITableViewCell {
         }
     }
     
+    lazy var bgView: UIView = {
+        let view = UIView(frame: CGRect.zero)
+        return view
+    }()
+    
     lazy var imgView:UIImageView = {
         let view = UIImageView.init(frame: CGRect.zero)
         return view
@@ -51,15 +56,22 @@ class YWAccountCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
-        self.contentView.addSubview(imgView)
-        self.contentView.addSubview(titleLab)
-        self.contentView.addSubview(descLab)
-        self.contentView.addSubview(arrowImgView)
-        self.contentView.addSubview(lineView)
+        self.contentView.addSubview(bgView)
+        self.bgView.addSubview(imgView)
+        self.bgView.addSubview(titleLab)
+        self.bgView.addSubview(descLab)
+        self.bgView.addSubview(arrowImgView)
+        self.bgView.addSubview(lineView)
         
 //        imgView.backgroundColor = UIColor.random
 //        titleLab.backgroundColor = UIColor.random
 //        descLab.backgroundColor = UIColor.random
+        
+        bgView.snp.makeConstraints { make in
+            make.left.equalTo(self.snp.left).offset(16)
+            make.right.equalTo(self.snp.right).offset(-16)
+            make.top.bottom.equalTo(self)
+        }
         
         imgView.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left).offset(12)

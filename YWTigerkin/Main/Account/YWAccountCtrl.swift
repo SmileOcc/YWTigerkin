@@ -9,6 +9,7 @@ import UIKit
 import Reusable
 import RxSwift
 import RxCocoa
+import SHFullscreenPopGestureSwift
 
 class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
     
@@ -16,20 +17,30 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
 
     var viewModel: YWAccountViewModel!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.upateAccountInfo()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "account"
-        
+        self.sh_prefersNavigationBarHidden = true
+
         bindViewModel()
         viewModelResponse()
         bindHUD()
         
         
+        self.tableView.tableHeaderView = self.tableHeaderView
+        self.view.addSubview(headerBgView)
         self.view.addSubview(tableView)
+        
         tableView.snp.makeConstraints { make in
-            make.left.equalTo(self.view.snp.left).offset(16)
-            make.right.equalTo(self.view.snp.right).offset(-16)
-            make.top.equalTo(self.view.snp.top).offset(12)
+            make.left.equalTo(self.view.snp.left)
+            make.right.equalTo(self.view.snp.right)
+            make.top.equalTo(self.view.snp.top)
             make.bottom.equalTo(self.view.snp.bottom)
         }
         self.addRefreshHeader()
@@ -59,10 +70,42 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
         }, startRefreshing: false)
     }
     
+    lazy var headerBgView: UIView = {
+        let view = Init(UIView(), block: {
+            $0.frame = CGRect.init(x: 0, y: 0, width: YWConstant.screenWidth, height: 290)
+        })
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        
+        let thisBlueColor1 = YWThemesColors.col_themeColor.cgColor
+        let thisBlueColor = YWThemesColors.col_themeColor.withAlphaComponent(0.0).cgColor
+        gradientLayer.colors = [thisBlueColor1,
+                                thisBlueColor]
+        let gradientLocations:[NSNumber] = [0.0,1.0]
+        gradientLayer.locations = gradientLocations
+        gradientLayer.startPoint = CGPoint.init(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint.init(x: 0.5, y: 1)
+        
+        view.layer.addSublayer(gradientLayer)
+        
+        return view
+    }()
+    
+    lazy var tableHeaderView: YWAccountHeaderView = {
+        let view = YWAccountHeaderView(frame: CGRect.init(x: 0, y: 0, width: YWConstant.screenWidth, height: 200))
+        view.backgroundColor = UIColor.clear
+        view.loginBlock = {[weak self] in
+            guard let `self` = self else {return}
+            self.loginAction()
+        }
+        return view
+    }()
+    
     lazy var tableView:UITableView = {
         let view = UITableView.init(frame: CGRect.zero, style: .plain)
         view.register(YWAccountCell.self, forCellReuseIdentifier: NSStringFromClass(YWAccountCell.self))
         view.separatorStyle = .none
+        view.backgroundColor = UIColor.clear
         view.delegate = self
         view.dataSource = self
         if #available(iOS 11, *) {
@@ -92,6 +135,24 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
         return view
     }()
     
+    //MARK: - action
+    override func refreshLoginInfoAction() {
+        super.refreshLoginInfoAction()
+        
+        self.upateAccountInfo()
+    }
+    
+    @objc func upateAccountInfo() {
+        
+        if YWUserManager.isLogin() {
+            self.tableHeaderView.testIsLogin = true
+
+        } else {
+            self.tableHeaderView.testIsLogin = false
+
+        }
+    }
+    
     @objc func webAction() {
         
         let webCtrl = YWWebHtmlImageCtrl()
@@ -102,6 +163,13 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
     @objc func searchAction() {
         
         self.viewModel.navigator.push(YWModulePaths.search.url)
+    }
+    
+    @objc func loginAction() {
+        let loginViewModel = YWLoginViewModel(callBack: nil, vc: nil)
+        let context = YWNavigatable(viewModel: loginViewModel)
+
+        self.viewModel.navigator.presentPath(YWModulePaths.login.url, context: context, animated: true)
     }
 
     override func viewModelResponse() {
