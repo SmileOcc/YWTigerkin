@@ -16,6 +16,7 @@
 		6203BDA829E3005F00FF063F /* Info_PRD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6203BDA729E3005F00FF063F /* Info_PRD.plist */; };
 		6203BDAA29E43E4B00FF063F /* AppDelegate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */; };
 		6203BDAC29E444BE00FF063F /* YWScreenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BDAB29E444BE00FF063F /* YWScreenTool.swift */; };
+		624583702A7AA4D900041FF1 /* YWLocalConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */; };
 		624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */; };
 		624BE06529CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */; };
 		624BE06829CDD2FE0071CD57 /* YWAdvsEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */; };
@@ -227,6 +228,7 @@
 		6203BDA729E3005F00FF063F /* Info_PRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PRD.plist; sourceTree = "<group>"; };
 		6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Category.swift"; sourceTree = "<group>"; };
 		6203BDAB29E444BE00FF063F /* YWScreenTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWScreenTool.swift; sourceTree = "<group>"; };
+		6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLocalConfigManager.swift; sourceTree = "<group>"; };
 		624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshHeader.swift; sourceTree = "<group>"; };
 		624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshAuotNormalFooter.swift; sourceTree = "<group>"; };
 		624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAdvsEventsModel.swift; sourceTree = "<group>"; };
@@ -456,6 +458,14 @@
 				004D9C014ED38D0BCCD3B519 /* Pods-YWTigerkin.prd.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6245836E2A7AA47800041FF1 /* YWLocalConfigManager */ = {
+			isa = PBXGroup;
+			children = (
+				6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */,
+			);
+			path = YWLocalConfigManager;
 			sourceTree = "<group>";
 		};
 		624BE06129CB3AF40071CD57 /* YWRefreshHeader */ = {
@@ -1017,6 +1027,7 @@
 		62F68BC029B0CDC80023EC3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6245836E2A7AA47800041FF1 /* YWLocalConfigManager */,
 				628E3AA32A6B8BAE00D10622 /* YWLanguage */,
 				62940C7B2A63B812004148E3 /* YWShareManager */,
 				62940C762A62BBA1004148E3 /* ViewCapture */,
@@ -1586,6 +1597,7 @@
 				62940C452A5A9D90004148E3 /* YWRequestCacheManager.swift in Sources */,
 				62F68BA729AB74F10023EC3C /* YWBaseViewController.swift in Sources */,
 				62940BED2A3EE44E004148E3 /* YWApplePayProduct.swift in Sources */,
+				624583702A7AA4D900041FF1 /* YWLocalConfigManager.swift in Sources */,
 				624BE07029CF29E80071CD57 /* JKRegexHelper.swift in Sources */,
 				62940C2E2A51293A004148E3 /* CircleTextView.swift in Sources */,
 				62940C142A500D12004148E3 /* YWHomeOneGoodsCCell.swift in Sources */,

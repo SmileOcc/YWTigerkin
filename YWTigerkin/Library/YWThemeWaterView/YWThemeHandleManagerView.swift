@@ -232,7 +232,7 @@ extension YWThemeHandleManagerView: UICollectionViewDelegate,UICollectionViewDat
         
         if let modelSpeical = model.dataSource as? YWAdvEventSpecialModel {
             
-            let advEventModel = YWAdvsEventsModel(specialModel: modelSpeical)
+            let advEventModel = YWAdvsEventsModel(modelSpeical)
             
             if modelSpeical.pageType == .home {
                 

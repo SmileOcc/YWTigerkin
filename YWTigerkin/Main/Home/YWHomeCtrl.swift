@@ -88,6 +88,15 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
         for i in range.reversed() {
             print("kkk: \(i)")// 2 1 0
         }
+        
+        YWAdvsEventsManager.parseDeeplinkDic("ywtigerkin://action?actiontype=1&url=1&name=woment&source=deeplink")
+        
+        let advModel = YWAdvsEventsManager.parseAdvsEventsModel("ywtigerkin://action?actiontype=5&url=5&name=woment&source=deeplink")
+        YWLog(advModel.name)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+            YWAdvsEventsManager.instant.advEventTarget(target: self, advEventModel: advModel)
+        })
     }
     
     func textReplace() {

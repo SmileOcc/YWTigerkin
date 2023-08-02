@@ -7,7 +7,7 @@
 
 import Foundation
 
-func YWIsEmptyString(_ obj:Any?) -> Bool {
+func kIsEmpty(_ obj:Any?) -> Bool {
     if let objstr = obj as? String{
         return objstr.isEmpty
     }
@@ -15,6 +15,10 @@ func YWIsEmptyString(_ obj:Any?) -> Bool {
         return objstr.length > 0 ? false : true
     }
     return true
+}
+
+func kIsNotEmpty(_ obj:Any?) -> Bool {
+    return !kIsEmpty(obj)
 }
 
 extension String.Encoding{

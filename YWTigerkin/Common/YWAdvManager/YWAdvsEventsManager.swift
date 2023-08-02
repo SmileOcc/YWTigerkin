@@ -7,9 +7,67 @@
 
 import UIKit
 
-class YWAdvsEventsManager: NSObject {
 
-    func advEventTarget(target:Any?, advEventModel:YWAdvsEventsModel) {
+let kActiontype: String = "actiontype"
+/**
+ * 根据url解析Deeplink参数
+ * ywtigerkin://action?actiontype=1&url=1&name=woment&source=deeplink
+ */
+class YWAdvsEventsManager: NSObject {
+    
+    static let instant = YWAdvsEventsManager()
+    
+    static func parseAdvsEventsModel(_ url:String) -> YWAdvsEventsModel {
+        let paramDic = YWAdvsEventsManager.parseDeeplinkDic(url)
+        
+        let type = Int(paramDic[kActiontype] ?? "0") ?? 0
+        
+        let advModel:YWAdvsEventsModel = YWAdvsEventsModel()
+        advModel.url = url
+        advModel.actionType = AdvEventType.init(rawValue: type) ?? .unknow
+        advModel.name = paramDic["name"]
+        advModel.params = paramDic
+        return advModel
+    }
+
+    static func parseDeeplinkDic(_ url: String) -> [String:String] {
+        
+        var deeplinkParamDic:[String:String] = [:]
+        var deeplinkAddress = url
+        let componentKey = "actiontype="
+        if url.contains(find: componentKey) {
+            let componentObj = url.components(separatedBy: componentKey).last ?? ""
+            deeplinkAddress = componentKey + componentObj
+        }
+        
+        let arr = deeplinkAddress.components(separatedBy: "&")
+        
+        for str in arr {
+            if (str as NSString).range(of: "=").location != NSNotFound {
+                let key = str.components(separatedBy: "=").first ?? ""
+                var value = ""
+                if key == "url" {
+                    value = (str as NSString).substring(from: 4)
+                } else {
+                    value = (str as NSString).components(separatedBy: "=").last ?? ""
+                }
+                
+                var decodeValue = (value as NSString).removingPercentEncoding ?? ""
+                // 防止多次编码,判断如果还有百分号就再解码一次
+                if key == "url" && decodeValue.contains(find: "%") {
+                    decodeValue = decodeValue.removingPercentEncoding ?? ""
+                }
+                if key.kLenght > 0 && decodeValue.kLenght > 0 {
+                    deeplinkParamDic[key] = decodeValue
+                }
+            }
+        }
+        
+        YWLog("\n================================ Deeplink 参数 =======================================\n👉: \(deeplinkParamDic)")
+        return deeplinkParamDic
+    }
+    
+     func advEventTarget(target:Any?, advEventModel:YWAdvsEventsModel) {
         
         if let root = UIApplication.shared.delegate as? AppDelegate {
             
@@ -28,11 +86,19 @@ class YWAdvsEventsManager: NSObject {
                     }
                     
                     let context = YWNavigatable(viewModel: YWLoginViewModel(callBack: callback, vc: currentVC))
-                    navigator.pushPath(YWModulePaths.login.url, context: context, animated: true)
+//                    navigator.pushPath(YWModulePaths.login.url, context: context, animated: true)
+                    navigator.presentPath(YWModulePaths.login.url, context: context, animated: true)
                 }
             }
             
-            if false {
+            if true {
+                
+                if advEventModel.actionType == .douYinVideo {
+                    
+                    let context = YWNavigatable(viewModel: YWDouYinVideoViewModel(), userInfo: ["type":"1"])
+                    navigator.pushPath(YWModulePaths.douYinVidoe.url, context: context, animated: true)
+                }
+                
                 
             } else {//需要登录
                 

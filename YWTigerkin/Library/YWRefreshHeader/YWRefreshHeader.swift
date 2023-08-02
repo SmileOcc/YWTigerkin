@@ -31,9 +31,9 @@ class YWRefreshHeader: MJRefreshNormalHeader {
     var bannerModel:YWAdvsEventsModel? {
         didSet {
             if let model = bannerModel {
-                self.hideTitle = YWIsEmptyString(model.imageUrl)
+                self.hideTitle = kIsEmpty(model.imageUrl)
                 
-                if !self.scrollView.showDropBanner || YWIsEmptyString(model.imageUrl) {
+                if !self.scrollView.showDropBanner || kIsEmpty(model.imageUrl) {
                     self.bannerView.removeFromSuperview()
                     
                     self.tipLabel.attributedText = nil

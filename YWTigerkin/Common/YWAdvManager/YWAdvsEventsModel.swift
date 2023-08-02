@@ -20,10 +20,11 @@ enum AdverType: Int {
 enum AdvEventType: Int {
     case unknow = 0
     case home = 1
-    case cateogry = 2
-    case message = 3
-    case account = 4
-    case search = 5
+    case category = 2
+    case news = 3
+    case mine = 4
+    case douYinVideo = 5
+    
 }
 
 class YWAdvsEventsModel: NSObject, NSCoding {
@@ -31,6 +32,7 @@ class YWAdvsEventsModel: NSObject, NSCoding {
     //跳转类型
     var actionType: AdvEventType = .unknow
     var url:String?
+    var params:[String:String]?
     //标题
     var name:String?
     //id
@@ -62,8 +64,17 @@ class YWAdvsEventsModel: NSObject, NSCoding {
         
     }
     
-    func advActionType() -> AdvEventType {
+    override init() {
         
+    }
+    
+    func advActionType() -> AdvEventType {
+        if let strUrl = url, strUrl.hasPrefix(YWLocalConfigManager.appDeeplinkPrefix()) {
+            let parseMd = YWAdvsEventsManager.parseDeeplinkDic(strUrl)
+            let type = Int(parseMd[kActiontype] ?? "0") ?? 0
+            let eventType = AdvEventType.init(rawValue: type)
+            return eventType ?? .unknow
+        }
         return .unknow
     }
 
@@ -74,13 +85,15 @@ class YWAdvsEventsModel: NSObject, NSCoding {
     
     
 
-    init(specialModel:YWAdvEventSpecialModel) {
+    init(_ specialModel:YWAdvEventSpecialModel?) {
         
         super.init()
-        self.actionType = specialModel.pageType
-        self.url = specialModel.url
-        self.name = specialModel.name
-        self.imageUrl = specialModel.images
+        if let specialM = specialModel {
+            self.actionType = specialM.pageType
+            self.url = specialM.url
+            self.name = specialM.name
+            self.imageUrl = specialM.images
+        }
     }
  
 }
