@@ -10,6 +10,7 @@ import UIKit
 class YWAccountHeaderView: UIView {
 
     var loginBlock:(()->Void)?
+    var settingBlock:(()->Void)?
     
     var testIsLogin:Bool = false {
         didSet {
@@ -62,8 +63,21 @@ class YWAccountHeaderView: UIView {
         return view
     }()
     
+    lazy var settingButton: UIButton = {
+        let view = Init(UIButton(type: .custom), block: {
+            $0.setImage(YWThemesColors.col_themeImage(UIImage(named: "settings")), for: .normal)
+            $0.addTarget(self, action: #selector(settingAction), for: .touchUpInside)
+            $0.eventInterval = 0.5
+        })
+        return view
+    }()
+    
     @objc func loginAction() {
         self.loginBlock?()
+    }
+    
+    @objc func settingAction() {
+        self.settingBlock?()
     }
     
     override init(frame: CGRect) {
@@ -72,6 +86,7 @@ class YWAccountHeaderView: UIView {
         self.addSubview(headerImgView)
         self.addSubview(stackInfoView)
         self.addSubview(loginButton)
+        self.addSubview(settingButton)
         
         stackInfoView.addArrangedSubview(nickNameLabel)
         stackInfoView.addArrangedSubview(descLabel)
@@ -91,6 +106,11 @@ class YWAccountHeaderView: UIView {
             make.left.equalTo(self.headerImgView.snp.left)
             make.top.bottom.equalTo(self.headerImgView)
             make.right.equalTo(self.stackInfoView.snp.right)
+        }
+        
+        settingButton.snp.makeConstraints { make in
+            make.right.equalTo(self.snp.right).offset(-16)
+            make.top.equalTo(self.snp.top).offset(YWConstant.statusBarHeight + 20)
         }
     }
     

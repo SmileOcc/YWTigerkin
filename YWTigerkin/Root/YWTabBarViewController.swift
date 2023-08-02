@@ -9,7 +9,53 @@ import UIKit
 import RxSwift
 import RxCocoa
 import URLNavigator
-let navColor = UIColor(red: 41/255, green: 160/255, blue: 230/255, alpha: 1)
+let navColor = YWThemesColors.col_themeColor //UIColor(red: 41/255, green: 160/255, blue: 230/255, alpha: 1)
+
+@objc public enum YWTabIndex: Int {
+    case home           = 0         // 首页
+    case category       = 1         // 分类
+    case news           = 2         // 新闻
+    case mine           = 3         // 我的
+    
+    var title: String {
+        switch self {
+        case .home:
+            return YWLanguageUtility.kLang(key: "tab_home")
+        case .category:
+            return YWLanguageUtility.kLang(key: "tab_category")
+        case .news:
+            return YWLanguageUtility.kLang(key: "tab_news")
+        case .mine:
+            return YWLanguageUtility.kLang(key: "tab_mine")
+        }
+    }
+    
+    var img: String {
+        switch self {
+        case .home:
+            return "tab_home"
+        case .category:
+            return "tab_categories"
+        case .news:
+            return "tab_new"
+        case .mine:
+            return "tab_me"
+        }
+    }
+    
+    var selectImg: String {
+        switch self {
+        case .home:
+            return "tab_home_selected"
+        case .category:
+            return "tab_categories_selected"
+        case .news:
+            return "tab_new_select"
+        case .mine:
+            return "tab_me_selected"
+        }
+    }
+}
 
 class YWTabBarViewController: UITabBarController {
 
@@ -39,27 +85,33 @@ class YWTabBarViewController: UITabBarController {
         self.tabBar.tintColor = UIColor.black
     }
     
+    func configureNave(_ nav:YWNavigationViewController, _ index: YWTabIndex) {
+        nav.tabBarItem.title = index.title
+        nav.tabBarItem.image = UIImage(named: index.img)
+        nav.tabBarItem.selectedImage = UIImage(named: index.selectImg)
+    }
+    
     func configureRootVCS(navigator: YWNavigatorServicesType, services:AppServices) {
         
         let homeCtrl = YWHomeCtrl.instantiate(withViewModel: YWHomeViewModel(), andServices: services, andNavigator: navigator)
         let homeNav = YWNavigationViewController(rootViewController: homeCtrl)
-        homeNav.tabBarItem.title = "首页"
-        homeNav.tabBarItem.image = UIImage(named: "tab_home")
-        homeNav.tabBarItem.selectedImage = UIImage(named: "tab_home_selected")
+        self.configureNave(homeNav, YWTabIndex.home)
         
         let categoryCtrl = YWCategoryCtrl.instantiate(withViewModel: YWCategoryViewModel(), andServices: services, andNavigator: navigator)
         let categoryNav = YWNavigationViewController(rootViewController: categoryCtrl)
-        categoryNav.tabBarItem.title = "分类"
-        categoryNav.tabBarItem.image = UIImage(named: "tab_categories")
-        categoryNav.tabBarItem.selectedImage = UIImage(named: "tab_categories_selected")
+        self.configureNave(categoryNav, YWTabIndex.category)
+
         
+        let newsCtrl = YWNewsCtrl.instantiate(withViewModel: YWNewsViewModel(), andServices: services, andNavigator: navigator)
+        let newsNav = YWNavigationViewController(rootViewController: newsCtrl)
+        self.configureNave(newsNav, YWTabIndex.news)
+
         let accountCtrl = YWAccountCtrl.instantiate(withViewModel: YWAccountViewModel(), andServices: services, andNavigator: navigator)
         let accountNav = YWNavigationViewController(rootViewController: accountCtrl)
-        accountNav.tabBarItem.title = "中心"
-        accountNav.tabBarItem.image = UIImage(named: "tab_me")
-        accountNav.tabBarItem.selectedImage = UIImage(named: "tab_me_selected")
+        self.configureNave(accountNav, YWTabIndex.mine)
+
         
-        self.viewControllers = [homeNav,categoryNav,accountNav]
+        self.viewControllers = [homeNav,categoryNav,newsNav,accountNav]
     }
     
 

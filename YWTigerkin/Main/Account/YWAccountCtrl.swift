@@ -98,6 +98,11 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
             guard let `self` = self else {return}
             self.loginAction()
         }
+        view.settingBlock = {[weak self] in
+            guard let `self` = self else {return}
+            self.settingAction()
+            
+        }
         return view
     }()
     
@@ -170,6 +175,19 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
         let context = YWNavigatable(viewModel: loginViewModel)
 
         self.viewModel.navigator.presentPath(YWModulePaths.login.url, context: context, animated: true)
+    }
+    
+    @objc func settingAction() {
+        
+        YWUserManager.checkLogin({[weak self] isLogin in
+            guard let `self` = self else {return}
+            if isLogin {
+                let settingViewModel = YWSettingViewModel()
+                let context = YWNavigatable(viewModel: settingViewModel)
+                self.viewModel.navigator.pushPath(YWModulePaths.userCenterSet.url, context: context, animated: true)
+            }
+        }, isLogin: true)
+        
     }
 
     override func viewModelResponse() {

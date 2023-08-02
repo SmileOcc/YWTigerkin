@@ -20,15 +20,7 @@ class YWUserManager: NSObject {
     public static let YWLoginType =  "YWLoginType"
     
     
-    public static let notiUpdateUUID      = "noti_updateUUID"                 //uuid 改变
-    public static let notiLogin           = "noti_login"                      //登录成功
-    public static let notiLoginOut        = "noti_loginOut"                   //退出登录
-    public static let notiUpdateUserInfo        = "noti_updateUserInfo"       //更新用户信息
-    public static let notiUpdateToken           = "noti_updateToken"          //token 改变
-    public static let notiFirstLogin            = "noti_firstLogin"           //首次登录
     
-    public static let notiGoogleLogin            = "noti_notiGoogleLogin"           //登录
-
     
     static let instance: YWUserManager = YWUserManager()
 
@@ -58,7 +50,30 @@ class YWUserManager: NSObject {
             mmkv?.set(newValue, forKey: YWUserManager.YXCurToken)
         }
     }
-    
+    public class func checkLogin(_ loginBlock: @escaping(Bool) ->Void, isLogin: Bool? = false) {
+        if YWUserManager.isLogin() {
+            loginBlock(true)
+            return
+        } else if isLogin == false {
+            loginBlock(false)
+        }
+        
+        //强制登录，暂时的逻辑
+        if isLogin == true {
+            
+            let callback: (([String: Any])->Void)? = { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: {
+                    loginBlock(true)
+                })
+            }
+
+            
+            let loginViewModel = YWLoginViewModel(callBack: callback, vc: nil)
+            let context = YWNavigatable(viewModel: loginViewModel)
+
+            YWAppDelegate?.navigator.presentPath(YWModulePaths.login.url, context: context, animated: true)
+        }
+    }
     public class func isLogin() -> Bool {
         
         let token = YWUserManager.instance.curLoginUser?.token
@@ -106,6 +121,8 @@ class YWUserManager: NSObject {
 //            NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateUUID), object: nil)
         }
         
+        NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateResetRootView), object: nil)
+        
     }
     
     class func saveCurLoginUser() {
@@ -129,10 +146,6 @@ class YWUserManager: NSObject {
         YWUserManager.shared().curLoginUser = user
         YWUserManager.saveCurLoginUser()
         //YWUserManager.getUserBanner(complete: nil)
-        
-        NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiLogin), object: nil, userInfo: [YWUserManager.notiFirstLogin: YWUserManager.shared().curLoginUser?.appfirstLogin ?? false])
-        
-        NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateUUID), object: nil)
         
         if let appfirstLogin = YWUserManager.shared().curLoginUser?.appfirstLogin, appfirstLogin == true {
             // 注册
@@ -315,4 +328,24 @@ extension YWUserManager {
             return false
         }
     }
+}
+
+
+extension YWUserManager {
+    
+    public static let notiUpdateUUID      = "noti_updateUUID"                 //uuid 改变
+    public static let notiLogin           = "noti_login"                      //登录成功
+    public static let notiLoginOut        = "noti_loginOut"                   //退出登录
+    public static let notiUpdateUserInfo        = "noti_updateUserInfo"       //更新用户信息
+    public static let notiUpdateToken           = "noti_updateToken"          //token 改变
+    public static let notiFirstLogin            = "noti_firstLogin"           //首次登录
+    
+    public static let notiGoogleLogin            = "noti_notiGoogleLogin"     //登录
+
+    
+    public static let notiUpdateResetRootView   = "noti_updateResetRootView"  //重置根视图
+    
+    public static let notiRefreshDataView        = "noti_refreshDataView"  //刷新数据
+
+
 }

@@ -47,7 +47,7 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "YW"
+        
         self.view.backgroundColor = UIColor.hexColor("0xeeeeee")
         self.modalPresentationStyle = .fullScreen
 
@@ -57,6 +57,15 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
             make.height.equalTo(YWConstant.navBarHeight)
         }
         
+        _ = NotificationCenter.default.rx
+            .notification(Notification.Name(rawValue: YWUserManager.notiRefreshDataView))
+            .take(until: self.rx.deallocated)
+            .subscribe(onNext: { [weak self] (ntf) in
+                guard let `self` = self else { return }
+                
+                self.refreshLoginInfoAction()
+
+            })
         _ = NotificationCenter.default.rx.notification(NSNotification.Name(YWUserManager.notiLogin))
             .subscribe(onNext: { [weak self] notification in
                 

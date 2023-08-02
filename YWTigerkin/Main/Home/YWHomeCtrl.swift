@@ -34,13 +34,12 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "home"
         
         self.bindHUD()
         #if DEV
-        self.title = "home-dev"
+        //self.title = "home-dev"
         #elseif PRD
-        self.title = "home-prd"
+        //self.title = "home-prd"
         #else
         
         #endif
@@ -121,14 +120,10 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func refreshLoginInfoAction() {
+        super.refreshLoginInfoAction()
+        
+        YWLog("刷新登录数据")
     }
-    */
 
 }

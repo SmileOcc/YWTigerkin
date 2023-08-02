@@ -237,7 +237,7 @@ extension YWThemeHandleManagerView: UICollectionViewDelegate,UICollectionViewDat
             if modelSpeical.pageType == .home {
                 
             } else {
-                YWAdvsEventsManager.advEventTarget(target: self.viewController(), advEventModel: advEventModel)
+//                YWAdvsEventsManager.advEventTarget(target: self.viewController(), advEventModel: advEventModel)
             }
             return
         }

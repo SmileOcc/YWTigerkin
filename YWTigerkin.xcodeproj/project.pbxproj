@@ -71,6 +71,10 @@
 		628E3ADA2A73F2A500D10622 /* YWLoginAdvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AD92A73F2A500D10622 /* YWLoginAdvView.swift */; };
 		628E3ADD2A73F61800D10622 /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ADC2A73F61800D10622 /* NSString+Check.m */; };
 		628E3ADF2A73FF9100D10622 /* YWH5Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3ADE2A73FF9100D10622 /* YWH5Urls.swift */; };
+		628E3AE12A780A7D00D10622 /* YWSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AE02A780A7D00D10622 /* YWSettingViewModel.swift */; };
+		628E3AE42A780B6000D10622 /* YWSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AE32A780B6000D10622 /* YWSettingFooterView.swift */; };
+		628E3AE72A7948AC00D10622 /* YWNewsCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AE62A7948AC00D10622 /* YWNewsCtrl.swift */; };
+		628E3AEA2A7948D600D10622 /* YWNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E3AE92A7948D600D10622 /* YWNewsViewModel.swift */; };
 		62940BE72A3EDF6D004148E3 /* 内购图.png in Resources */ = {isa = PBXBuildFile; fileRef = 62940BE62A3EDF6D004148E3 /* 内购图.png */; };
 		62940BE92A3EE06E004148E3 /* YWApplePayCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940BE82A3EE06E004148E3 /* YWApplePayCtrl.swift */; };
 		62940BEB2A3EE086004148E3 /* YWApplePayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62940BEA2A3EE086004148E3 /* YWApplePayManager.swift */; };
@@ -281,6 +285,10 @@
 		628E3ADB2A73F61800D10622 /* NSString+Check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
 		628E3ADC2A73F61800D10622 /* NSString+Check.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
 		628E3ADE2A73FF9100D10622 /* YWH5Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWH5Urls.swift; sourceTree = "<group>"; };
+		628E3AE02A780A7D00D10622 /* YWSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWSettingViewModel.swift; sourceTree = "<group>"; };
+		628E3AE32A780B6000D10622 /* YWSettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWSettingFooterView.swift; sourceTree = "<group>"; };
+		628E3AE62A7948AC00D10622 /* YWNewsCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWNewsCtrl.swift; sourceTree = "<group>"; };
+		628E3AE92A7948D600D10622 /* YWNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWNewsViewModel.swift; sourceTree = "<group>"; };
 		62940BE62A3EDF6D004148E3 /* 内购图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "内购图.png"; sourceTree = "<group>"; };
 		62940BE82A3EE06E004148E3 /* YWApplePayCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWApplePayCtrl.swift; sourceTree = "<group>"; };
 		62940BEA2A3EE086004148E3 /* YWApplePayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWApplePayManager.swift; sourceTree = "<group>"; };
@@ -575,6 +583,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		628E3AE22A780B3F00D10622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				628E3AE32A780B6000D10622 /* YWSettingFooterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		628E3AE52A79487F00D10622 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				628E3AE82A7948B100D10622 /* ViewModel */,
+				628E3AE62A7948AC00D10622 /* YWNewsCtrl.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		628E3AE82A7948B100D10622 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				628E3AE92A7948D600D10622 /* YWNewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		62940BE52A3EDF40004148E3 /* ApplePay */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +886,7 @@
 		62F68BA429AB74A30023EC3C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				628E3AE52A79487F00D10622 /* News */,
 				62940C7E2A6B80BD004148E3 /* Login */,
 				62940C662A5DA0F2004148E3 /* YWNativeRouter */,
 				62940C4A2A5D947D004148E3 /* YWWeb */,
@@ -1090,6 +1124,7 @@
 		62F68C0E29BA0D720023EC3C /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				628E3AE22A780B3F00D10622 /* View */,
 				62F68C0F29BA0D7A0023EC3C /* ViewModel */,
 				62F68C1029BA0D9B0023EC3C /* YWSettingCtrl.swift */,
 			);
@@ -1099,6 +1134,7 @@
 		62F68C0F29BA0D7A0023EC3C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				628E3AE02A780A7D00D10622 /* YWSettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1414,6 +1450,7 @@
 				62F68BF229B220BF0023EC3C /* YWViewModelBased.swift in Sources */,
 				62940C5B2A5D9D1F004148E3 /* YWGotoNativeJSActionHandler.swift in Sources */,
 				62F68BBD29B0CC1E0023EC3C /* YWMoyaConfig.swift in Sources */,
+				628E3AE72A7948AC00D10622 /* YWNewsCtrl.swift in Sources */,
 				62940BEB2A3EE086004148E3 /* YWApplePayManager.swift in Sources */,
 				62F68BE129B0E1840023EC3C /* API.swift in Sources */,
 				62F68BF629B227F30023EC3C /* YWNavigatorMap.swift in Sources */,
@@ -1444,6 +1481,7 @@
 				628E3ACB2A71563600D10622 /* YWHideTextField.swift in Sources */,
 				62F68BB429AB75DD0023EC3C /* YWCategoryCtrl.swift in Sources */,
 				62940C612A5D9D77004148E3 /* YWJSActionUtil.swift in Sources */,
+				628E3AE42A780B6000D10622 /* YWSettingFooterView.swift in Sources */,
 				62940C422A595E48004148E3 /* YWTools.swift in Sources */,
 				6203BDAC29E444BE00FF063F /* YWScreenTool.swift in Sources */,
 				624BE09829D5BFD40071CD57 /* YWHomeChannelCCellModel.swift in Sources */,
@@ -1555,9 +1593,11 @@
 				62940C122A500CCD004148E3 /* YWThemeGoodsCCell.swift in Sources */,
 				624BE09229D31CA10071CD57 /* YWMultiColumnsGoodItemsViewModule.swift in Sources */,
 				62940C6A2A5DA177004148E3 /* YWNavtiveRouterConstant.swift in Sources */,
+				628E3AE12A780A7D00D10622 /* YWSettingViewModel.swift in Sources */,
 				62F68C2429BA10CB0023EC3C /* YWColor+Extension.swift in Sources */,
 				628E3AC32A6C32CE00D10622 /* YWTipsTextField.swift in Sources */,
 				62940C0A2A5000C2004148E3 /* YWDouYinVideoCell.swift in Sources */,
+				628E3AEA2A7948D600D10622 /* YWNewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

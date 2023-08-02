@@ -6,6 +6,12 @@
   
 */
 
+
+tab_home = "Home";
+tab_category = "Category";
+tab_news = "News";
+tab_mine = "Mine";
+
 title = "Hello!";  
 share_community = "Community";
 share_whatsApp = "WhatsApp";
@@ -157,3 +163,5 @@ fogot_pwd = "fogot pwd";
 "invitation_code_use"="Use Invitation Code";
 "invitation_code_enter"="Enter Invitation Code";
 "invitation_code_used"="Used Invitation Code:";
+
+logout = "logout";

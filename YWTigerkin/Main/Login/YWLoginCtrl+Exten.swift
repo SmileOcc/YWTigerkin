@@ -13,6 +13,7 @@ extension UIViewController {
     func loginSuccessBack(_ soureVc: UIViewController?, loginCallBack: (([String: Any])->Void)?) {
         
         if true {
+            
             //暂时统一用模态进入登录
             self.dismiss(animated: true)
             return;
@@ -59,7 +60,6 @@ extension UIViewController {
 //                }
 //
 //                // 不是tab,重置tab
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: YXUserManager.notiUpdateResetRootView), object: nil, userInfo: ["index" : YXTabIndex.market])
 //            }
         }
     }

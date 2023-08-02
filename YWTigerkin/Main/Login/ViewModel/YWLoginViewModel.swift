@@ -108,7 +108,7 @@ class YWLoginViewModel: HUDServicesViewModel , HasDisposeBag  {
                             mmkv?.set(self.areaCode.value, forKey: YWUserManager.YWDefCode)
                             mmkv?.set(self.accoutType.value.rawValue,forKey: YWUserManager.YWLoginType)
                             //通知 更新用户信息
-                            NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateUserInfo), object: nil)
+                            NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiRefreshDataView), object: nil)
                             
                             self.loginSuccessSubject.onNext(true)
                             if let loginCallBack = self.loginCallBack {
@@ -243,8 +243,8 @@ class YWLoginViewModel: HUDServicesViewModel , HasDisposeBag  {
         mmkv?.set(self.areaCode.value, forKey: YWUserManager.YWDefCode)
         mmkv?.set(self.accoutType.value.rawValue,forKey: YWUserManager.YWLoginType)
         //通知 更新用户信息
-        NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateUserInfo), object: nil)
-        
+//        NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateUserInfo), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiRefreshDataView), object: nil)
         self.loginSuccessSubject.onNext(true)
         if let loginCallBack = self.loginCallBack {
             loginCallBack(YWUserManager.userInfo)

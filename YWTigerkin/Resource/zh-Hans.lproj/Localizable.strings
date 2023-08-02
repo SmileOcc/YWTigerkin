@@ -6,6 +6,11 @@
   
 */
 
+tab_home = "首页";
+tab_category = "分类";
+tab_news = "新闻";
+tab_mine = "我的";
+
 title = "你好";
 share_community = "社区";
 share_whatsApp = "WhatsApp";
@@ -147,3 +152,5 @@ cancel_btn = "Cancel";
 "invitation_code_use"="使用邀请码";
 "invitation_code_enter"="请输入邀请码";
 "invitation_code_used"="已使用邀请码：";
+
+logout = "退出登录";
