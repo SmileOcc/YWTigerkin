@@ -15,7 +15,6 @@ class YWNewsCtrl: YWBaseViewController , HUDViewModelBased{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "News"
         
         self.bindHUD()
         self.bindViewModel()

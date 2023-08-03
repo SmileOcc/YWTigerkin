@@ -17,6 +17,8 @@ class YWSettingCtrl: YWBaseViewController , HUDViewModelBased{
         super.viewDidLoad()
         self.title = "设置"
         
+        self.viewModel.language = YWUserManager.curLanguage()
+
         bindViewModel()
         viewModelResponse()
         bindHUD()
@@ -29,6 +31,8 @@ class YWSettingCtrl: YWBaseViewController , HUDViewModelBased{
             make.top.equalTo(self.view.snp.top).offset(12)
             make.bottom.equalTo(self.view.snp.bottom)
         }
+        
+        self.viewModel.requestData()
     }
     
     lazy var footerView:YWSettingFooterView = {
@@ -137,8 +141,9 @@ extension YWSettingCtrl: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.viewModel.datas.count > indexPath.row {
             let model = self.viewModel.datas[indexPath.row]
-            if model.id == "0" {
-                self.payAction()
+            if model.id == "0" {//切换语言
+                
+                self.showLanguageAlert()
             } else if model.id == "1" {
                 let context = YWNavigatable(viewModel: YWVideoViewModel())
                 YWAppDelegate?.navigator.pushPath(YWModulePaths.video.url, context: context, animated: true)
@@ -154,5 +159,35 @@ extension YWSettingCtrl: UITableViewDelegate,UITableViewDataSource {
         }
         return;
     }
+}
+
+extension YWSettingCtrl {
     
+    func showLanguageAlert() {
+        
+        let languageView = YWLanguageAlertView(frame: CGRect.init(x: 0, y: 0, width: YWConstant.screenWidth, height: YWConstant.screenHeight), curLanguage: self.viewModel.language)
+        languageView.didSelected = {[weak self] index in
+            guard let `self` = self else {return}
+            
+            switch index {
+            case 2:
+                self.viewModel.language = .EN
+            case 1:
+                self.viewModel.language = .CN
+            default:
+                self.viewModel.language = .HK
+            }
+            //self.viewModel.configType = .language
+            //存储和更新
+            MMKV.default()?.set(Int32(self.viewModel.language.rawValue), forKey: YWUserManager.YWLanguage)
+//            if YWUserManager.isLogin() {
+                //self.requestUserConfig()
+//            } else {
+            YWLanguageUtility.resetUserLanguage(self.viewModel.language)
+                NotificationCenter.default.post(name: NSNotification.Name(YWUserManager.notiUpdateResetRootView), object: nil)
+//            }
+        }
+        languageView.showAlert()
+
+    }
 }

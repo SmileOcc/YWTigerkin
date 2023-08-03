@@ -22,16 +22,29 @@ import UIKit
     
     var identifier: String {
         switch self {
-        case .CN:
+        case .CN, .unknown:
             return "zh-Hans"
         case .HK:
             return "zh-Hant"
-        case .EN, .unknown:
+        case .EN:
             return "en"
         case .ML:
             return "ms"
         case .TH:
             return "th"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .CN, .unknown:
+            return "中文"
+        case .HK:
+            return "繁体"
+        case .EN:
+            return "EN"
+        default:
+            return "未知"
         }
     }
     

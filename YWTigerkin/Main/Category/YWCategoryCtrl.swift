@@ -13,7 +13,6 @@ class YWCategoryCtrl: YWBaseViewController, YWViewModelBased{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "category"
         // Do any additional setup after loading the view.
     }
     

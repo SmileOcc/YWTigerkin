@@ -25,7 +25,6 @@ class YWAccountCtrl: YWBaseViewController, HUDViewModelBased{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "account"
         self.sh_prefersNavigationBarHidden = true
 
         bindViewModel()

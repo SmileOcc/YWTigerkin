@@ -316,7 +316,7 @@ extension YWUserManager {
             mmkv?.set(Int32(defaultLanguage.rawValue), forKey: YWUserManager.YWLanguage)
             return defaultLanguage
         }
-        return YWLanguageType(rawValue: Int(curLanguage)) ?? YWLanguageType.EN  //有存储
+        return YWLanguageType(rawValue: Int(curLanguage)) ?? YWLanguageType.CN  //有存储
     }
     
     /// 是否当前语言是英文的模式.
@@ -344,8 +344,9 @@ extension YWUserManager {
 
     
     public static let notiUpdateResetRootView   = "noti_updateResetRootView"  //重置根视图
-    
+
     public static let notiRefreshDataView        = "noti_refreshDataView"  //刷新数据
 
 
 }
+

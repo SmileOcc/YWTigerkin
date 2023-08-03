@@ -26,6 +26,17 @@ extension AppDelegate {
         configureButtonRepeat()
     }
 
+    func yw_application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        YWLog("===== openURL: \(url)")
+        
+        var handled = true
+        
+        if url.scheme?.lowercased() ?? "" == YWLocalConfigManager.appScheme() {
+            self.yw_applicationDeeplink(app, deeplink: url, source: "", params: nil)
+        }
+        
+        return handled
+    }
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         if screen_set == .set_port {
             return .portrait

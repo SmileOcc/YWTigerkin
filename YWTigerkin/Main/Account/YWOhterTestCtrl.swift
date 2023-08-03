@@ -155,7 +155,12 @@ extension YWOhterTestCtrl: UITableViewDelegate,UITableViewDataSource {
             } else if model.id == "2" {
                 let context = YWNavigatable(viewModel: YWDouYinVideoViewModel(), userInfo: ["type":"1"])
                 self.viewModel.navigator.pushPath(YWModulePaths.douYinVidoe.url, context: context, animated: true)
-            } else if model.id == "5" {
+            } else if model.id == "3" {
+                
+                let advModel = YWAdvsEventsManager.parseAdvsEventsModel("ywtigerkin://action?actiontype=5&url=5&name=woment&source=deeplink")                
+                YWAdvsEventsManager.instant.advEventTarget(target: self, advEventModel: advModel)
+            }
+            else if model.id == "5" {
                 let webModel = YWWebViewModel(dictionary: [:])
                 webModel.url = "https://baidu.com/"
                 let context = YWNavigatable(viewModel: webModel)

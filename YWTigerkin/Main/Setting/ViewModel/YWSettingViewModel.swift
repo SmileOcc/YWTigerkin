@@ -18,6 +18,8 @@ class YWSettingViewModel: HUDServicesViewModel , HasDisposeBag  {
 
     var navigator: YWNavigatorServicesType!
     
+    var language: YWLanguageType = .CN
+
 //    var loginResponse: HCResultResponse<JSONAny>?
     var accountResponse: YWResultResponse<YWHomeModel>?
     let accountSubject = PublishSubject<Bool>()
@@ -66,34 +68,20 @@ class YWSettingViewModel: HUDServicesViewModel , HasDisposeBag  {
     }
     
     func requestData() {
-        self.hudSubject.onNext(.loading(YWConstant.requestLoading, false))
         for i in 0...5 {
             let model = YWAccountItemModel()
             model.title = "其他"
             model.imgName = "settings"
             model.id = "\(i)"
             if i == 0 {
-                model.title = "Apple Pay"
-            } else if i == 1 {
-                model.title = "视频横竖屏"
-            } else if i == 2 {
-                model.title = "抖音模式"
-            } else if i == 3 {
-                model.title = "活动"
-                model.desc = "最新活动"
-            } else if i == 4 {
-                model.title = "版本"
-                model.desc = "v_\(YWConstant.appVersion ?? "")"
-            } else if i == 5 {
-                model.title = "网页"
+                let lang = YWUserManager.curLanguage()
+                model.title = "语言设置(点击切换)"
+                model.desc = "\(lang.title)"
             }
             self.datas.append(model)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.hudSubject.onNext(.hide)
-            self.accountSubject.onNext(true)
-        })
+        self.accountSubject.onNext(true)
     }
     
     func testRequest() {

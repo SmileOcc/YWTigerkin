@@ -66,7 +66,6 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
     }
     
     func requestData() {
-        self.hudSubject.onNext(.loading(YWConstant.requestLoading, false))
         for i in 0...5 {
             let model = YWAccountItemModel()
             model.title = "其他"
@@ -79,8 +78,8 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
             } else if i == 2 {
                 model.title = "抖音模式"
             } else if i == 3 {
-                model.title = "活动"
-                model.desc = "最新活动"
+                model.title = "活动跳转"
+                model.desc = ""
             } else if i == 4 {
                 model.title = "版本"
                 model.desc = "v_\(YWConstant.appVersion ?? "")"
@@ -90,10 +89,8 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
             self.datas.append(model)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.hudSubject.onNext(.hide)
-            self.accountSubject.onNext(true)
-        })
+        self.accountSubject.onNext(true)
+        
     }
     
     func testRequest() {

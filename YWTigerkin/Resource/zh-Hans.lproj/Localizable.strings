@@ -154,3 +154,7 @@ cancel_btn = "Cancel";
 "invitation_code_used"="已使用邀请码：";
 
 logout = "退出登录";
+
+"mine_simplified"="简体中文";
+"mine_english"="English";
+"mine_traditional"="繁體中文";

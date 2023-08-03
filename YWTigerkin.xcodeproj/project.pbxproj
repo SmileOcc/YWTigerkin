@@ -17,6 +17,8 @@
 		6203BDAA29E43E4B00FF063F /* AppDelegate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */; };
 		6203BDAC29E444BE00FF063F /* YWScreenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BDAB29E444BE00FF063F /* YWScreenTool.swift */; };
 		624583702A7AA4D900041FF1 /* YWLocalConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */; };
+		624583722A7BEE3400041FF1 /* AppDelegate+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624583712A7BEE3400041FF1 /* AppDelegate+Notification.swift */; };
+		624583752A7BF93D00041FF1 /* YWLanguageAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624583742A7BF93D00041FF1 /* YWLanguageAlertView.swift */; };
 		624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */; };
 		624BE06529CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */; };
 		624BE06829CDD2FE0071CD57 /* YWAdvsEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */; };
@@ -229,6 +231,8 @@
 		6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Category.swift"; sourceTree = "<group>"; };
 		6203BDAB29E444BE00FF063F /* YWScreenTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWScreenTool.swift; sourceTree = "<group>"; };
 		6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLocalConfigManager.swift; sourceTree = "<group>"; };
+		624583712A7BEE3400041FF1 /* AppDelegate+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notification.swift"; sourceTree = "<group>"; };
+		624583742A7BF93D00041FF1 /* YWLanguageAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLanguageAlertView.swift; sourceTree = "<group>"; };
 		624BE06229CB3B2E0071CD57 /* YWRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshHeader.swift; sourceTree = "<group>"; };
 		624BE06429CB3DBD0071CD57 /* YWRefreshAuotNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWRefreshAuotNormalFooter.swift; sourceTree = "<group>"; };
 		624BE06729CDD2FD0071CD57 /* YWAdvsEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAdvsEventsModel.swift; sourceTree = "<group>"; };
@@ -466,6 +470,14 @@
 				6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */,
 			);
 			path = YWLocalConfigManager;
+			sourceTree = "<group>";
+		};
+		624583732A7BF91600041FF1 /* YWAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				624583742A7BF93D00041FF1 /* YWLanguageAlertView.swift */,
+			);
+			path = YWAlertView;
 			sourceTree = "<group>";
 		};
 		624BE06129CB3AF40071CD57 /* YWRefreshHeader */ = {
@@ -921,6 +933,7 @@
 				62F68BB829B0CB380023EC3C /* Services */,
 				62F68B9029AB5E190023EC3C /* AppDelegate.swift */,
 				6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */,
+				624583712A7BEE3400041FF1 /* AppDelegate+Notification.swift */,
 				62F68BA629AB74F10023EC3C /* YWBaseViewController.swift */,
 				62F68BA829AB75200023EC3C /* YWNavigationViewController.swift */,
 				62F68BAA29AB75470023EC3C /* YWTabBarViewController.swift */,
@@ -1027,6 +1040,7 @@
 		62F68BC029B0CDC80023EC3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				624583732A7BF91600041FF1 /* YWAlertView */,
 				6245836E2A7AA47800041FF1 /* YWLocalConfigManager */,
 				628E3AA32A6B8BAE00D10622 /* YWLanguage */,
 				62940C7B2A63B812004148E3 /* YWShareManager */,
@@ -1586,6 +1600,7 @@
 				62940C382A512EE6004148E3 /* WebCacheManager.swift in Sources */,
 				628E3AD12A715B0700D10622 /* YWAccountHeaderView.swift in Sources */,
 				62F68C2A29BA1A5D0023EC3C /* YWNSObject+Extension.swift in Sources */,
+				624583722A7BEE3400041FF1 /* AppDelegate+Notification.swift in Sources */,
 				62940C392A512EE6004148E3 /* WebDownloadOperation.swift in Sources */,
 				62F68C2D29BA1D640023EC3C /* YWOrigRequest.swift in Sources */,
 				6203BDA029E04BF700FF063F /* YWTimer+Extension.swift in Sources */,
@@ -1593,6 +1608,7 @@
 				6203BD9E29DD7D7800FF063F /* YWThemeModulModel.swift in Sources */,
 				627DD74729F3B6DD004859A7 /* YWFullScreenPop.swift in Sources */,
 				62940C0C2A500122004148E3 /* YWVideoPlayView.swift in Sources */,
+				624583752A7BF93D00041FF1 /* YWLanguageAlertView.swift in Sources */,
 				62940C182A500D4B004148E3 /* YWScrollAdvCCell.swift in Sources */,
 				62940C452A5A9D90004148E3 /* YWRequestCacheManager.swift in Sources */,
 				62F68BA729AB74F10023EC3C /* YWBaseViewController.swift in Sources */,

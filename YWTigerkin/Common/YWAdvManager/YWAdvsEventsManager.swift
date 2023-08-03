@@ -19,13 +19,17 @@ class YWAdvsEventsManager: NSObject {
     
     static func parseAdvsEventsModel(_ url:String) -> YWAdvsEventsModel {
         let paramDic = YWAdvsEventsManager.parseDeeplinkDic(url)
-        
+        let advModel:YWAdvsEventsModel = YWAdvsEventsManager.parseAdvsEventsModel(paramDic)
+        return advModel
+    }
+    
+    static func parseAdvsEventsModel(_ paramDic:[String:String]) -> YWAdvsEventsModel {
         let type = Int(paramDic[kActiontype] ?? "0") ?? 0
         
         let advModel:YWAdvsEventsModel = YWAdvsEventsModel()
-        advModel.url = url
+        advModel.url = (paramDic["url"] ?? "").removingPercentEncoding
         advModel.actionType = AdvEventType.init(rawValue: type) ?? .unknow
-        advModel.name = paramDic["name"]
+        advModel.name = (paramDic["name"] ?? "").removingPercentEncoding
         advModel.params = paramDic
         return advModel
     }

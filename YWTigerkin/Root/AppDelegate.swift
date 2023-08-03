@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var tab: YWTabBarViewController?
-
+    var isDeepLinkEventing: Bool = false
+    
     lazy var appServices = {
         AppServices(loginService: YWLoginService(),
                     userService: YWUserService(),
@@ -117,6 +118,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 
 
+}
+
+
+extension AppDelegate {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        yw_application(app, open: url, options: options)
+    }
 }
 
 
