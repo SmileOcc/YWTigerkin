@@ -71,9 +71,9 @@ class YWAdvsEventsManager: NSObject {
         return deeplinkParamDic
     }
     
-     func advEventTarget(target:Any?, advEventModel:YWAdvsEventsModel) {
+     static func advEventTarget(target:Any?, advEventModel:YWAdvsEventsModel) {
         
-        if let root = UIApplication.shared.delegate as? AppDelegate {
+        if let root = UIApplication.shared.delegate as? YWAppDelegate {
             
             let navigator = root.navigator
             
@@ -106,7 +106,7 @@ class YWAdvsEventsManager: NSObject {
                 
             } else {//需要登录
                 
-                checkLogin { [weak self] in
+                checkLogin {
                    //事件处理
                 }
                 

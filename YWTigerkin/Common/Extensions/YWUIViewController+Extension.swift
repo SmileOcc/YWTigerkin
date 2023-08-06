@@ -13,7 +13,7 @@ extension UIViewController {
     static func current() -> UIViewController {
         let window = YWConstant.kKeyWindow()
 
-        return UIViewController.getCurrentVC1(root: window.rootViewController) ?? UIViewController()
+        return UIViewController.getCurrentVC1(root: window?.rootViewController) ?? UIViewController()
     }
     
     public func current() -> UIViewController {
@@ -31,12 +31,12 @@ extension UIViewController {
     func getCurrentVC1() -> UIViewController {
         var result: UIViewController? = nil
         let window = YWConstant.kKeyWindow()
-//        if {
-            var keyWindow = window
+        if var keyWindow = window {
+            
          
          // UIWindow.Level window三种等级 normal，alert，statusBar,可见normal才是我们真正要用到的，这段代码就是
             //排除其他两种level，找到所需的normalWindow
-            if window.windowLevel != UIWindow.Level.normal{
+            if keyWindow.windowLevel != UIWindow.Level.normal{
                 let windows = UIApplication.shared.windows
                 for tmp in windows{
                     if tmp.windowLevel == UIWindow.Level.normal{
@@ -49,7 +49,7 @@ extension UIViewController {
             
             
         result = UIViewController.getCurrentVC1(root: keyWindow.rootViewController)
-//        }
+        }
         
         return result ?? UIViewController()
     }

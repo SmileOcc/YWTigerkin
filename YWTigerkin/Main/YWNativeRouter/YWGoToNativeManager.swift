@@ -45,7 +45,7 @@ class YWGoToNativeManager: NSObject, YWGotoNativeProtocol {
 
         let parser = YWNativeUrlParser(result)
         
-        if let root = UIApplication.shared.delegate as? AppDelegate {
+        if let root = UIApplication.shared.delegate as? YWAppDelegate {
             
             let navigator = root.navigator
             

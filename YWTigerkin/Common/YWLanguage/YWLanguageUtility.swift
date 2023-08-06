@@ -25,13 +25,11 @@ import UIKit
         case .CN, .unknown:
             return "zh-Hans"
         case .HK:
-            return "zh-Hant"
+            return "zh-HK"
         case .EN:
             return "en"
-        case .ML:
-            return "ms"
-        case .TH:
-            return "th"
+        default:
+            return "zh-Hans"
         }
     }
     
@@ -44,7 +42,7 @@ import UIKit
         case .EN:
             return "EN"
         default:
-            return "未知"
+            return "中文"
         }
     }
     

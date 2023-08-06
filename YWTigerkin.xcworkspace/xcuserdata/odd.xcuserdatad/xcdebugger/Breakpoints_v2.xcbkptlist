@@ -136,9 +136,9 @@
             filePath = "YWTigerkin/Root/AppDelegate+Category.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "resetRootView(with:)"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "initNotifications()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -225,80 +225,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AA292269-935F-45CD-95B1-6DF0F5528103"
+            uuid = "F6D73C7E-47A5-4A86-B467-108505D188CC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YWTigerkin/Common/YWLanguage/YWLanguageUtility.swift"
+            filePath = "YWTigerkin/Root/YWTabBarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "resetUserLanguage(_:)"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "showAdvertiseView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7C3979C5-097B-4359-AF73-45CC7BE8BD3C"
+            uuid = "E66D4A61-56D9-4A82-A259-CEBC1879ACBD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YWTigerkin/Common/YWLanguage/YWLanguageUtility.swift"
+            filePath = "YWTigerkin/Main/Launch/YWAdvertiseBaseView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "initUserLanguage()"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "advertiseGesture()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9AB4042D-42A1-48A5-950A-2A4266718F2E"
+            uuid = "DDF8A4E9-92B2-4EBE-BAB6-99EB9D31B613"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YWTigerkin/Common/YWLanguage/YWLanguageUtility.swift"
+            filePath = "YWTigerkin/Root/YWTabBarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "identifier()"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "showGuideOrAdvertiseView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D10F4835-19D8-40E1-B1A9-4F7EE134A8BA"
+            uuid = "2BC00BD9-6F95-40AA-992E-AA2CD6D637F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YWTigerkin/Common/YWLanguage/YWLanguageUtility.swift"
+            filePath = "YWTigerkin/Common/YWAlertView/YWUpdateAlertView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "resetUserLanguage(_:)"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
+            landmarkName = "dismiss()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BDE3ADE2-D494-4D25-9A37-1351F63E6794"
+            uuid = "323A232C-D447-4EB7-8E12-D5BBFD48BB5C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YWTigerkin/Common/YWLanguage/YWLanguageUtility.swift"
+            filePath = "YWTigerkin/Common/YWAlertView/YWUpdateAlertView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "kLang(key:)"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "layoutUIViews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

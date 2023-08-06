@@ -77,6 +77,9 @@ class YWSettingViewModel: HUDServicesViewModel , HasDisposeBag  {
                 let lang = YWUserManager.curLanguage()
                 model.title = "语言设置(点击切换)"
                 model.desc = "\(lang.title)"
+            } else if i == 1 {
+                model.title = "版本信息"
+                model.desc = "最新版本"
             }
             self.datas.append(model)
         }

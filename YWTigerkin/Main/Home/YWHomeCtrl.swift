@@ -14,6 +14,9 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
     
     var networkingHUD: YWProgressHUD! = YWProgressHUD()
 
+    //是否触发过请求
+    var hasCheckPop = false
+    
     lazy var themesMainView: YWThemesMainView = {
         let view = YWThemesMainView(frame: self.view.bounds, firstChannel: "", channelId: "", title: "")
         view.backgroundColor = UIColor.random
@@ -127,6 +130,18 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
                 itemMode.isSelect = sourceModel.isSelect
             }
         }
+    }
+    
+    /// 请求pop弹窗
+    func checkPopAlertView() {
+        YWUpdateManager.shared.rx.observe(Bool.self, "finishedUpdatePop").subscribe(onNext: { [weak self] (finishedUpdatePop) in
+            guard let `self` = self else { return }
+            
+            if finishedUpdatePop ?? false && self.hasCheckPop == false {
+                self.hasCheckPop = true
+                //YWPopManager.shared.checkPop(with: YWPopManager.showPageMarket, vc:self)
+            }
+        }).disposed(by: disposeBag)
     }
 
     override func refreshLoginInfoAction() {

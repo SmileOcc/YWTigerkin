@@ -10,7 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 //import AppTrackingTransparency
 
-extension AppDelegate {
+extension YWAppDelegate {
     
     func yw_Application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
         
@@ -24,12 +24,18 @@ extension AppDelegate {
         YWLanguageUtility.initUserLanguage()
         configureApplePay()
         configureButtonRepeat()
+        
+        
     }
 
     func yw_application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         YWLog("===== openURL: \(url)")
         
         var handled = true
+        var source: String = ""
+        if let tsource = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String {
+            source = tsource
+        }
         
         if url.scheme?.lowercased() ?? "" == YWLocalConfigManager.appScheme() {
             self.yw_applicationDeeplink(app, deeplink: url, source: "", params: nil)
@@ -50,6 +56,10 @@ extension AppDelegate {
         return .all
     }
     
+    func chenckUpdateApp() {
+        YWUpdateManager.shared.checkUpdate()
+    }
+    
     func configureApplePay() {
         
     }
@@ -65,7 +75,7 @@ extension AppDelegate {
 }
 
 
-private extension AppDelegate {
+private extension YWAppDelegate {
     func initPushConfig(_ application: UIApplication) {
         // 初始化推送配置
         let center = UNUserNotificationCenter.current()

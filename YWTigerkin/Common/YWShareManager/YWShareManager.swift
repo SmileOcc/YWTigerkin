@@ -333,7 +333,7 @@ extension YWShareManager {
                 return
             }
 
-            if let root = UIApplication.shared.delegate as? AppDelegate {
+            if let root = UIApplication.shared.delegate as? YWAppDelegate {
                 let navigator = root.navigator
                 //navigator.push(viewModel, animated: true)
             }

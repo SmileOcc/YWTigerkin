@@ -31,14 +31,14 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if YWAppDelegate?.screen_set != .set_port {
+        if YWWAppDelegate?.screen_set != .set_port {
             YWScreenTool().switchScreenOrientation(vc: self, mode: self.isSupportedOrientations())
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if YWAppDelegate?.screen_set != .set_port || self.view.frame.size.width > self.view.frame.size.height {
+        if YWWAppDelegate?.screen_set != .set_port || self.view.frame.size.width > self.view.frame.size.height {
             YWScreenTool().switchScreenOrientation(vc: self, mode: self.isSupportedOrientations())
         }
     }

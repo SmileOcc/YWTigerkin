@@ -144,17 +144,16 @@ extension YWSettingCtrl: UITableViewDelegate,UITableViewDataSource {
             if model.id == "0" {//切换语言
                 
                 self.showLanguageAlert()
-            } else if model.id == "1" {
-                let context = YWNavigatable(viewModel: YWVideoViewModel())
-                YWAppDelegate?.navigator.pushPath(YWModulePaths.video.url, context: context, animated: true)
+            } else if model.id == "1" {//版本更新
+                YWUpdateManager.shared.showUpdateAlert()
+
             } else if model.id == "2" {
-                let context = YWNavigatable(viewModel: YWDouYinVideoViewModel(), userInfo: ["type":"1"])
-                self.viewModel.navigator.pushPath(YWModulePaths.douYinVidoe.url, context: context, animated: true)
+                
             } else if model.id == "5" {
                 let webModel = YWWebViewModel(dictionary: [:])
                 webModel.url = "https://baidu.com/"
                 let context = YWNavigatable(viewModel: webModel)
-                YWAppDelegate?.navigator.pushPath(YWModulePaths.webPage.url, context: context, animated: true)
+                YWWAppDelegate?.navigator.pushPath(YWModulePaths.webPage.url, context: context, animated: true)
             }
         }
         return;

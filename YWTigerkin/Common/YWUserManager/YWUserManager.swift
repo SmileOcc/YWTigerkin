@@ -19,14 +19,30 @@ class YWUserManager: NSObject {
     public static let YWDefCode =  "YWDefCode"
     public static let YWLoginType =  "YWLoginType"
     
+    //广告闪屏页的 日期缓存
+    public static let YWAdvertiseDateCache =  "YWAdvertiseDateCache"
     
+    //广告闪屏页的 日期缓存
+    public static let YWSystemIPOAlertDateCache =  "YWSystemIPOAlertDateCache"
     
+    //闪屏广告
+    public static let YWSplashScreenAdvertisement = "YWSplashScreenAdvertisement"
+    //正在展示的闪屏广告
+    public static let YWSplashScreenAdvertisementShowing = "YWSplashScreenAdvertisementShowing"
+    //闪屏广告 图片
+    public static let YWSplashScreenImage = "YWSplashScreenImage"
+    //已经展示过的闪屏广告代码
+    public static let YWSplashScreenImageHasReadCodes = "YWSplashScreenImageHasReadCodes"
     
     static let instance: YWUserManager = YWUserManager()
 
     class func shared() -> YWUserManager {
         return instance
     }
+    
+    lazy var testImgView:UIImageView = {
+       return UIImageView()
+    }()
     
     override init() {
         super.init()
@@ -71,7 +87,7 @@ class YWUserManager: NSObject {
             let loginViewModel = YWLoginViewModel(callBack: callback, vc: nil)
             let context = YWNavigatable(viewModel: loginViewModel)
 
-            YWAppDelegate?.navigator.presentPath(YWModulePaths.login.url, context: context, animated: true)
+            YWWAppDelegate?.navigator.presentPath(YWModulePaths.login.url, context: context, animated: true)
         }
     }
     public class func isLogin() -> Bool {
@@ -284,6 +300,107 @@ class YWUserManager: NSObject {
     class func safeDecrypt(string: String) -> String {  //RSA加密
         string
     }
+    
+    //获取闪屏广告
+    class func getSplashscreenAdvertisement(complete:(()-> Void)?) {
+        if let appDelegate = YWConstant.sharedAppDelegate as? YWAppDelegate {
+            
+            var imgArr:[SplashscreenList] = []
+            for i in 0...3 {
+                
+                var model = SplashscreenList(bannerID: (100 + i), adType: i, adName: "name_\(i)", adPos: i, pictureURL: "https://lmg.jj20.com/up/allimg/tp10/2109261124125L4-0-lp.jpg", jumpType: "", invalidTime: "", originJumpURL: "ywtigerkin://action?actiontype=5&url=5&name=woment&source=deeplink", newsID: "", tag: "200\(i)")
+                if i == 1 {
+                    model = SplashscreenList(bannerID: (100 + i), adType: i, adName: "name_\(i)", adPos: i, pictureURL: "https://fastly.picsum.photos/id/847/200/300.jpg?hmac=c59lDNOau0hCfCBs141cA-vqX8QIRiqaVEnT3tRrDe0", jumpType: "", invalidTime: "", originJumpURL: "ywtigerkin://action?actiontype=5&url=5&name=woment&source=deeplink", newsID: "", tag: "200\(i)")
+                } else if i == 2 {
+                    model = SplashscreenList(bannerID: (100 + i), adType: i, adName: "name_\(i)", adPos: i, pictureURL: "https://fastly.picsum.photos/id/1060/200/300.jpg?hmac=xYtFmeYcfydIF3-Qybnra-tMwklX69T52EtGd-bacBI", jumpType: "", invalidTime: "", originJumpURL: "ywtigerkin://action?actiontype=5&url=5&name=woment&source=deeplink", newsID: "", tag: "200\(i)")
+                } else if i == 3 {
+                    model = SplashscreenList(bannerID: (100 + i), adType: i, adName: "name_\(i)", adPos: i, pictureURL: "https://fastly.picsum.photos/id/1081/200/300.jpg?hmac=ntCnXquH7cpEF0vi5yvz1wKAlRyd2EZwZJQbgtfknu8", jumpType: "", invalidTime: "", originJumpURL: "ywtigerkin://action?actiontype=5&url=5&name=woment&source=deeplink", newsID: "", tag: "200\(i)")
+                }
+                
+                imgArr.append(model)
+            }
+            let splashScreenList:YWSplashScreenList = YWSplashScreenList(dataList: imgArr)
+
+            let picUrl = imgArr.first!.pictureURL ?? ""
+            YWUserManager.shared().testImgView = UIImageView()
+            YWUserManager.shared().testImgView.yy_setImage(with: URL(string: picUrl), placeholder: nil, options: []) { img, url, formType, stage, error in
+               if error == nil {
+                   if let imageData = img?.pngData() {
+                       let mmkv = MMKV.default()
+                       mmkv?.set(imageData, forKey: YWUserManager.YWSplashScreenImage)
+
+                   }
+               }
+           }
+            
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            do {
+                //返回为空也保存，覆盖之前的数据
+                let data = try encoder.encode(splashScreenList)
+                let mmkv = MMKV.default()
+                mmkv?.set(data, forKey: YWUserManager.YWSplashScreenAdvertisement)
+
+            } catch {
+
+            }
+            
+            
+            
+            /* -- 闪屏广告
+             get请求
+            */
+//            appDelegate.appServices.newsService.request(.splashScreenAdvertisement, response:{(response) in
+//                if let complete = complete {
+//                    complete()
+//                }
+//                switch response {
+//                case .success(let result, let code):
+//                    switch code {
+//                    case .success?:
+//                        if let dataArr = result.data?.dataList, dataArr.count > 0 {
+//                              let splashItem = dataArr.min { //取出优先级最靠前的广告
+//                                  $0.adPos ?? 0 < $1.adPos ?? 0
+//                              }
+//                            let picUrl = URL(string: splashItem.pictureURL ?? "")
+//
+//                            let imgView = UIImageView()
+//                            imgView.yy_setImage(with: picUrl, placeholder: nil, options: []) { img, url, formType, stage, error in
+//                                if error == nil {
+//                                    if let imageData = img?.pngData() {
+//                                        let mmkv = MMKV.default()
+//                                        mmkv?.set(imgData, forKey: YWUserManager.YWSplashScreenImage)
+//
+//                                    }
+//                                }
+//                            }
+//
+//                        }
+//
+//                        let encoder = JSONEncoder()
+//                        encoder.outputFormatting = .prettyPrinted
+//                        do {
+//                            //返回为空也保存，覆盖之前的数据
+//                            let data = try encoder.encode(result.data)
+//                            let mmkv = MMKV.default()
+//                            mmkv?.set(data, forKey: YWUserManager.YWSplashScreenAdvertisement)
+//                            
+//                        } catch {
+//                            
+//                        }
+//                        break
+//                    default:
+//                        if let msg = result.msg {
+//                            YWProgressHUD.showError(msg)
+//                        }
+//                    }
+//                case .failed(_): break
+////                    YWProgressHUD.showError(YWLanguageUtility.kLang(key: "common_net_error"))
+//                }
+//                }as YWResultResponse<SplashscreenList>).disposed(by: YWUserManager.shared().disposeBag)
+        }
+    }
+    
 }
 
 
@@ -328,6 +445,29 @@ extension YWUserManager {
             return false
         }
     }
+    
+    /// 是否是同一天
+    /// cacheNow: 是否立即保存日期字符串
+    class func isTheSameDay(with key: String,cacheNow: Bool = true) -> (Bool,String) {
+        //获取东八区的当前时间
+        let eastEightZone = NSTimeZone.init(name: "Asia/Shanghai") as TimeZone?
+        let dateFormatter = DateFormatter.en_US_POSIX()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = eastEightZone
+        let now = Date()
+        
+        let lastDateString = MMKV.default()?.string(forKey: key)
+        let nowDateString = dateFormatter.string(from: now)
+        
+        //一天只展示一次
+        if lastDateString != nowDateString {
+            if cacheNow {
+                MMKV.default()?.set(nowDateString, forKey: key)
+            }
+            return (false,nowDateString)
+        }
+        return (true,nowDateString)
+    }
 }
 
 
@@ -350,3 +490,45 @@ extension YWUserManager {
 
 }
 
+
+// MARK: - DataClass
+struct YWSplashScreenList: Codable {
+    let dataList: [SplashscreenList]?
+    
+    enum CodingKeys: String, CodingKey {
+        case dataList = "dataList"
+    }
+}
+// MARK: - SplashscreenList
+struct SplashscreenList: Codable {
+
+    
+    let bannerID: Int?
+    let adType: Int?
+    let adName: String?
+    let adPos: Int?
+    let pictureURL: String?
+  //  let jumpURL: String?
+    var jumpType: String?
+    let invalidTime: String?
+    
+    var jumpURL: String? {
+        get {
+            return self.originJumpURL
+        }
+    }
+    
+    let originJumpURL, newsID, tag: String?
+
+    enum CodingKeys: String, CodingKey {
+        case bannerID = "id"
+        case adType = "type"
+        case adName = "advertiseName"
+        case adPos = "priority"
+        case pictureURL = "img"
+        case jumpType = "redirectMethod"
+        case invalidTime = "endDate"
+        case originJumpURL = "redirectPosition"
+        case newsID,tag
+    }
+}

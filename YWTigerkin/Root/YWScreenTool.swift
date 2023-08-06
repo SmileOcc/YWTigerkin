@@ -19,7 +19,7 @@ enum SCREEN_SET {
 
 public struct YWScreenTool {
     func switchScreenOrientation(vc: UIViewController, mode: SCREEN_SET) {
-        YWAppDelegate?.screen_set = mode
+        YWWAppDelegate?.screen_set = mode
         if #available(iOS 16.0, *) {
             /// iOS 16以上需要通过scene来实现屏幕方向设置
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
@@ -80,7 +80,7 @@ public struct YWScreenTool {
         
         if isPortrait {
             
-            YWAppDelegate?.screen_set = .set_port
+            YWWAppDelegate?.screen_set = .set_port
             
 
             let value = UIInterfaceOrientation.portrait.rawValue
@@ -89,7 +89,7 @@ public struct YWScreenTool {
             
         } else {
             
-            YWAppDelegate?.screen_set = .set_land
+            YWWAppDelegate?.screen_set = .set_land
 
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
 

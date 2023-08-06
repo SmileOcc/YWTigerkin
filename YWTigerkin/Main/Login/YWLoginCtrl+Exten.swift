@@ -32,7 +32,7 @@ extension UIViewController {
             
 
             // 异常返回处理
-            if let root = UIApplication.shared.delegate as? AppDelegate {
+            if let root = UIApplication.shared.delegate as? YWAppDelegate {
                 if root.window?.rootViewController is UITabBarController {
                     self.navigationController?.popToRootViewController(animated: true)
                     return

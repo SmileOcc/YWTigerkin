@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension AppDelegate {
+extension YWAppDelegate {
     ///MARK: -广告推广
     func yw_applicationDeeplink(_ application: UIApplication, deeplink:URL, source:String, params:Any?) {
         self.isDeepLinkEventing = true

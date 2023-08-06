@@ -15,11 +15,11 @@ func YWLog<T>(_ message: T, file: String = #file, function: String = #function, 
     #endif
 }
 
-let YWAppDelegate = UIApplication.shared.delegate as? AppDelegate
+let YWWAppDelegate = UIApplication.shared.delegate as? YWAppDelegate
 
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class YWAppDelegate: UIResponder, UIApplicationDelegate {
 
     var screen_set:SCREEN_SET = .set_port
 
@@ -59,6 +59,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             //2.2已经开启网络权限 监听网络状态 可以不处理
         }
+        
+        bk_delay(by: 0.5) {[weak self] in
+            guard let `self` = self else {return}
+            self.chenckUpdateApp()
+        }
+        MMKV.default()?.set(false, forKey: "YWIsInstallCacheKey") //设置：不是 新版本app
         return true
     }
 
@@ -121,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-extension AppDelegate {
+extension YWAppDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         yw_application(app, open: url, options: options)
     }

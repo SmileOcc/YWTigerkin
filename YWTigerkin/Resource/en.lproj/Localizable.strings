@@ -5,7 +5,11 @@
   Created by odd on 7/22/23.
   
 */
-
+"lanuch_Skip"="Skip";
+"common_find_new_version"="Update";
+"common_go_update"="Update Now";
+"common_cancel_update"="Update After";
+"common_upgrade"="Upgrade";
 
 tab_home = "Home";
 tab_category = "Category";

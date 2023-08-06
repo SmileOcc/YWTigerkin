@@ -90,15 +90,16 @@ class YWLanguageAlertView: UIView {
 
 
     func showAlert() {
-        
-        let kwindow = YWConstant.kKeyWindow()
-        kwindow.endEditing(true)
-        self.alpha = 0
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        kwindow.addSubview(self)
-        
-        UIView.animate(withDuration: 0.3) {
-            self.alpha = 1.0
+        if let kwindow = YWConstant.kKeyWindow() {
+            kwindow.endEditing(true)
+            self.alpha = 0
+            self.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            kwindow.addSubview(self)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.alpha = 1.0
+            }
         }
+        
     }
 }

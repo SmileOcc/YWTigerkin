@@ -209,7 +209,7 @@ extension YWThemesMainView: YWThemeHandleManagerProtocol {
     func yw_themeManager(managerView: YWThemeHandleManagerView, collectionView: UICollectionView, didSelectItemCell: UICollectionViewCell, indexPath: IndexPath) {
         
         let context = YWNavigatable(viewModel: YWVideoViewModel())
-        YWAppDelegate?.navigator.pushPath(YWModulePaths.video.url, context: context, animated: true)
+        YWWAppDelegate?.navigator.pushPath(YWModulePaths.video.url, context: context, animated: true)
 
     }
     

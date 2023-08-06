@@ -31,7 +31,7 @@ var hudBackgroundColor = UIColor.hexColor("#2A2A34").withAlphaComponent(0.9)
 }
 
 public class YWProgressHUD: MBProgressHUD {
-    @objc func showLoading(_ message: String?, in view: UIView! = YWAppDelegate?.window!) {
+    @objc func showLoading(_ message: String?, in view: UIView? = YWWAppDelegate?.window) {
         if (view == nil) {return}
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.hideHud), object: nil)
         isUserInteractionEnabled = true
@@ -41,7 +41,7 @@ public class YWProgressHUD: MBProgressHUD {
         detailsLabel.text = message
         setOffset()
         
-        view.addSubview(self)
+        view!.addSubview(self)
         
         show(animated: true)
     }
@@ -60,7 +60,7 @@ public class YWProgressHUD: MBProgressHUD {
         show(animated: true)
     }
 
-    @objc func showMessage(_ message: String?, in view: UIView! = YWAppDelegate?.window!, hideAfter delay:CGFloat = 2) {
+    @objc func showMessage(_ message: String?, in view: UIView? = YWWAppDelegate?.window, hideAfter delay:CGFloat = 2) {
         if (view == nil) {return}
         isUserInteractionEnabled = false
         mode = .customView
@@ -71,13 +71,13 @@ public class YWProgressHUD: MBProgressHUD {
         removeFromSuperViewOnHide = true
         setOffset()
         
-        view.addSubview(self)
+        view!.addSubview(self)
         show(animated: true)
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.hideHud), object: nil)
         perform(#selector(self.hideHud), with: nil, afterDelay: TimeInterval(delay))
     }
     
-    @objc func showSuccess(_ message: String?, in view: UIView! = YWAppDelegate?.window!, hideAfter delay:CGFloat = 2) {
+    @objc func showSuccess(_ message: String?, in view: UIView? = YWWAppDelegate?.window, hideAfter delay:CGFloat = 2) {
         if (view == nil) {return}
         isUserInteractionEnabled = false
         mode = .customView
@@ -87,13 +87,13 @@ public class YWProgressHUD: MBProgressHUD {
         detailsLabel.text = message
         removeFromSuperViewOnHide = true
         setOffset()
-        view.addSubview(self)
+        view!.addSubview(self)
         show(animated: true)
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.hideHud), object: nil)
         perform(#selector(self.hideHud), with: nil, afterDelay: TimeInterval(delay))
     }
     
-    @objc func showError(_ message: String?, in view: UIView! = YWAppDelegate?.window!, hideAfter delay:CGFloat = 2) {
+    @objc func showError(_ message: String?, in view: UIView? = YWWAppDelegate?.window, hideAfter delay:CGFloat = 2) {
         if (view == nil) {return}
         isUserInteractionEnabled = false
         mode = .customView
@@ -104,7 +104,7 @@ public class YWProgressHUD: MBProgressHUD {
         removeFromSuperViewOnHide = true
         setOffset()
         
-        view.addSubview(self)
+        view!.addSubview(self)
         show(animated: true)
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.hideHud), object: nil)
         perform(#selector(self.hideHud), with: nil, afterDelay: TimeInterval(delay))
@@ -143,7 +143,7 @@ public class YWProgressHUD: MBProgressHUD {
     }
     
     @objc class func showLoading(_ message: String?) -> YWProgressHUD {
-        YWProgressHUD.showLoading(message, in: YWAppDelegate?.window!)
+        YWProgressHUD.showLoading(message, in: YWWAppDelegate?.window)
     }
     
     @objc class func showMessage(_ message: String?, in view: UIView!, hideAfterDelay delay: CGFloat) {
@@ -157,7 +157,7 @@ public class YWProgressHUD: MBProgressHUD {
     }
     
     @objc class func showMessage(_ message: String?) {
-        YWProgressHUD.showMessage(message, in: YWAppDelegate?.window!, hideAfterDelay: 2)
+        YWProgressHUD.showMessage(message, in: YWWAppDelegate?.window, hideAfterDelay: 2)
     }
     
     @objc class func showMessage(_ message: String?, in view: UIView!, hideAfterDelay delay: CGFloat, userInteractionEnabled enabled: Bool) {
@@ -179,7 +179,7 @@ public class YWProgressHUD: MBProgressHUD {
     }
     
     @objc class func showMessage(_ message: String?, userInteractionEnabled enabled: Bool) {
-        YWProgressHUD.showMessage(message, in: YWAppDelegate?.window!, hideAfterDelay: 2, userInteractionEnabled: enabled)
+        YWProgressHUD.showMessage(message, in: YWWAppDelegate?.window, hideAfterDelay: 2, userInteractionEnabled: enabled)
     }
     
     @objc class func showError(_ message: String?, in view: UIView?, hideAfterDelay delay: CGFloat) {
@@ -194,7 +194,7 @@ public class YWProgressHUD: MBProgressHUD {
     
     @objc class func showError(_ message: String?) {
         
-        YWProgressHUD.showError(message, in: YWAppDelegate?.window!, hideAfterDelay: 2)
+        YWProgressHUD.showError(message, in: YWWAppDelegate?.window, hideAfterDelay: 2)
     }
     
     @objc class func showError(_ message: String?, in view: UIView?, hideAfterDelay delay: CGFloat, userInteractionEnabled enabled: Bool) {
@@ -216,7 +216,7 @@ public class YWProgressHUD: MBProgressHUD {
     }
     
     @objc class func showError(_ message: String?, userInteractionEnabled enabled: Bool) {
-        YWProgressHUD.showError(message, in: YWAppDelegate?.window!, hideAfterDelay: 2, userInteractionEnabled: enabled)
+        YWProgressHUD.showError(message, in: YWWAppDelegate?.window, hideAfterDelay: 2, userInteractionEnabled: enabled)
     }
     
     @objc class func showSuccess(_ message: String?, in view: UIView?, hideAfterDelay delay: CGFloat) {
@@ -231,7 +231,7 @@ public class YWProgressHUD: MBProgressHUD {
     
     @objc class func showSuccess(_ message: String?) {
         
-        YWProgressHUD.showSuccess(message, in: YWAppDelegate?.window!, hideAfterDelay: 2)
+        YWProgressHUD.showSuccess(message, in: YWWAppDelegate?.window, hideAfterDelay: 2)
     }
     
     @objc class func showSuccess(_ message: String?, in view: UIView?, hideAfterDelay delay: CGFloat, userInteractionEnabled enabled: Bool) {
@@ -253,7 +253,7 @@ public class YWProgressHUD: MBProgressHUD {
     }
     
     @objc class func showSuccess(_ message: String?, userInteractionEnabled enabled: Bool) {
-        YWProgressHUD.showSuccess(message, in: YWAppDelegate?.window!, hideAfterDelay: 2, userInteractionEnabled: enabled)
+        YWProgressHUD.showSuccess(message, in: YWWAppDelegate?.window, hideAfterDelay: 2, userInteractionEnabled: enabled)
     }
 
 

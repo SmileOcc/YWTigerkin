@@ -80,12 +80,14 @@ class YWShareImageContentView: UIView {
     //MARK: Show Or Hide
     @objc func showShareView() {
 
-        let window = YWConstant.kKeyWindow()
+        if let window = YWConstant.kKeyWindow() {
+            
+            window.addSubview(self)
+            
+            showShareBottomView()
+        }
+
         
-        
-        window.addSubview(self)
-        
-        showShareBottomView()
 
     }
 

@@ -259,4 +259,15 @@ extension UIView {
         return UIImage(cgImage: cgImage, scale: scale, orientation: .up)
     }
 }
+
+extension UIView {
+    
+    @objc func yw_setOnlyLightStyle() {
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        } else {
+        }
+    }
+}
+
  

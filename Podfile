@@ -178,6 +178,8 @@ pod 'VIMediaCache'
 #相册选择 视频裁剪
 pod 'HXPHPicker'
 
+pod 'DateToolsSwift'
+
 # post_install 是在pod install 执行之后执行
 #【对应的pre_install 则是在pod install 执行之前】
 # 以下代码的作用是在执行pod install 之后，对SIT、DEV、UAT、MOCK等build configuration执行一些build setting设置
