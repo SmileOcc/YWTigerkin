@@ -241,15 +241,12 @@ class YWWebCtrl: YWBaseViewController, HUDViewModelBased{
         self.webView?.uiDelegate = self
         self.webView?.jsDelegate = self
 
-        if #available(iOS 11.0, *) {
-            self.webView?.scrollView.contentInsetAdjustmentBehavior = .never
-            self.webView?.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            if let contentInset = self.webView?.scrollView.contentInset {
-                self.webView?.scrollView.scrollIndicatorInsets = contentInset
-            }
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
+        self.webView?.scrollView.contentInsetAdjustmentBehavior = .never
+        self.webView?.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        if let contentInset = self.webView?.scrollView.contentInset {
+            self.webView?.scrollView.scrollIndicatorInsets = contentInset
         }
+        
         
         self.refreshHeader = YWRefreshHeader.init(refreshingBlock: { [weak self] in
             self?.refreshWebview()

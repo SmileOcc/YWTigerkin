@@ -26,7 +26,7 @@ class YWVideoCtrl: YWBaseViewController, HUDViewModelBased {
         
         floatView.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-(YWConstant.safeBottom + 16))
+            make.bottom.equalToSuperview().offset(-(YWConstant.safeBottomHeight + 16))
             make.size.equalTo(CGSize(width: 56.0, height: 56.0))
         }
         

@@ -62,12 +62,12 @@ class YWOhterTestCtrl: YWBaseViewController , HUDViewModelBased{
         view.separatorStyle = .none
         view.delegate = self
         view.dataSource = self
-        if #available(iOS 11, *) {
-            view.estimatedRowHeight = 56.0
-            view.estimatedSectionFooterHeight = 0
-            view.estimatedSectionHeaderHeight = 0
-            view.contentInsetAdjustmentBehavior = .never
-        }
+        
+        view.estimatedRowHeight = 56.0
+        view.estimatedSectionFooterHeight = 0
+        view.estimatedSectionHeaderHeight = 0
+        view.contentInsetAdjustmentBehavior = .never
+        
         return view
     }()
     

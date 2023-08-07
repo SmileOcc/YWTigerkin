@@ -158,3 +158,12 @@ extension YWConstant {
     static let requestNoData = "暂无数据"
     
 }
+
+extension YWConstant {
+    
+    static let kNotif_CartBadge = "kNotif_CartBadge"
+    
+    static let kNotif_ChangeMessageCountDot = "kNotif_ChangeMessageCountDot"
+
+
+}

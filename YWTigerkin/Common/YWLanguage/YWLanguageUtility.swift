@@ -18,6 +18,8 @@ import UIKit
     case EN = 0x03
     case ML = 0x04
     case TH = 0x05
+    case AR = 0x06
+    case HE = 0x07
     case unknown
     
     var identifier: String {
@@ -55,6 +57,10 @@ extension YWLanguageType: Codable {
 }
 
 var bundle:Bundle?
+
+func LanguageTool(_ key: String) -> String {
+    YWLanguageUtility.kLang(key: key)
+}
 
 class YWLanguageUtility: NSObject {
 

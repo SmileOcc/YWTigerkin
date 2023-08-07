@@ -45,7 +45,7 @@ class YWLanguageAlertView: UIView {
         contentView.snp.makeConstraints { make in
             make.left.right.equalTo(self)
             make.height.equalTo(182)
-            make.bottom.equalTo(self.snp.bottom).offset(-YWConstant.safeBottom)
+            make.bottom.equalTo(self.snp.bottom).offset(-YWConstant.safeBottomHeight)
         }
         
         let h = 182/3

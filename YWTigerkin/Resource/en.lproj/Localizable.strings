@@ -10,6 +10,11 @@
 "common_go_update"="Update Now";
 "common_cancel_update"="Update After";
 "common_upgrade"="Upgrade";
+"sureSignOut" = "Are you sure sign out？";
+"cancel" = "Cancel";
+"sure" = "Sure";
+"done" = "Done";
+"add" = "Add";
 
 tab_home = "Home";
 tab_category = "Category";

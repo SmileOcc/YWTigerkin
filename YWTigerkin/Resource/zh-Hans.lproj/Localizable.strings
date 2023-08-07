@@ -10,6 +10,11 @@
 "common_cancel_update"="稍后更新";
 "common_upgrade"="去升级";
 "common_add_stock"="新增股票";
+"sureSignOut" = "您确定要退出吗？";
+"cancel" = "取消";
+"sure" = "确定";
+"done" = "确定";
+"add" = "添加";
 
 tab_home = "首页";
 tab_category = "分类";

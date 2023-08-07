@@ -99,9 +99,9 @@ class YWShareBottomAlertView: UIView {
     
     // 容器高度
     func currentContentHeight() -> CGFloat {
-        var contentH = 11 + 6 + kShareLienHeight + kShareCancelHeight + YWConstant.safeAreaInsetsBottomHeight()
+        var contentH = 11 + 6 + kShareLienHeight + kShareCancelHeight + YWConstant.safeBottomHeight
         if self.shareThirdItems.count >= 3 {
-            contentH = 11 + 6 + kShareLienHeight * 2 + kShareCancelHeight + YWConstant.safeAreaInsetsBottomHeight()
+            contentH = 11 + 6 + kShareLienHeight * 2 + kShareCancelHeight + YWConstant.safeBottomHeight
         }
         return contentH
     }
@@ -123,7 +123,7 @@ class YWShareBottomAlertView: UIView {
         self.bottomCancelButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.height.equalTo(kShareCancelHeight)
-            make.bottom.equalToSuperview().offset(-YWConstant.safeAreaInsetsBottomHeight())
+            make.bottom.equalToSuperview().offset(-YWConstant.safeBottomHeight)
         }
         
         self.thirdBottomView.snp.makeConstraints { (make) in

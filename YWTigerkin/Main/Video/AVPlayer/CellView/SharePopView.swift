@@ -51,7 +51,7 @@ class SharePopView:UIView {
     
     func initSubView() {
         self.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(handleGuesture(sender:))))
-        container.frame = CGRect.init(x: 0, y: YWConstant.screenHeight, width: YWConstant.screenWidth, height: 280 + YWConstant.safeAreaInsetsBottomHeight())
+        container.frame = CGRect.init(x: 0, y: YWConstant.screenHeight, width: YWConstant.screenWidth, height: 280 + YWConstant.safeBottomHeight)
         container.backgroundColor = ColorBlackAlpha60
         self.addSubview(container)
         
@@ -107,8 +107,8 @@ class SharePopView:UIView {
             bottomScrollView.addSubview(item)
         }
         
-        cancel.frame = CGRect.init(x: 0, y: 230, width: YWConstant.screenWidth, height: 50 + YWConstant.safeAreaInsetsBottomHeight())
-        cancel.titleEdgeInsets = UIEdgeInsets(top: -YWConstant.safeAreaInsetsBottomHeight(), left: 0, bottom: 0, right: 0)
+        cancel.frame = CGRect.init(x: 0, y: 230, width: YWConstant.screenWidth, height: 50 + YWConstant.safeBottomHeight)
+        cancel.titleEdgeInsets = UIEdgeInsets(top: -YWConstant.safeBottomHeight, left: 0, bottom: 0, right: 0)
         cancel.setTitle("取消", for: .normal)
         cancel.setTitleColor(ColorWhite, for: .normal)
         cancel.titleLabel?.font = BigFont

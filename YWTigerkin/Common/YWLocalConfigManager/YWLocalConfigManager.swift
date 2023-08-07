@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class YWLocalConfigManager {
     
@@ -17,6 +18,22 @@ class YWLocalConfigManager {
     /// MARK: - app deeplink配置信息
     static func appDeeplinkPrefix() -> String {
         "ywtigerkin://action"
+    }
+    
+    static func isRightToLeftLanguage() -> Bool {
+        let language = YWUserManager.curLanguage()
+        if language == .AR || language == .HE {
+            return true
+        }
+        return false
+    }
+    
+    // 从右到左
+    static func isRightToLeftShow() -> Bool {
+        if self.isRightToLeftLanguage() && UIView.appearance().semanticContentAttribute == .forceRightToLeft {
+            return true
+        }
+        return false
     }
 }
 

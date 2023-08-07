@@ -74,7 +74,7 @@ class YWDouYinVideoCtrl: YWBaseViewController , HUDViewModelBased {
         
         backView.snp.makeConstraints { make in
             make.left.equalTo(self.view.snp.left).offset(16)
-            make.top.equalTo(self.view.snp.top).offset(YWConstant.deviceScaleEqualToXStyle() ? 50 : 40)
+            make.top.equalTo(self.view.snp.top).offset(YWConstant.isIphoneX() ? 50 : 40)
             make.width.equalTo(44)
             make.height.equalTo(44)
         }
@@ -107,11 +107,8 @@ class YWDouYinVideoCtrl: YWBaseViewController , HUDViewModelBased {
         view.showsVerticalScrollIndicator = false
         view.separatorStyle = .none
         
-        if #available(iOS 11.0, *) {
-            view.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = false
-        }
+        view.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+        
 //        view.register(YWDouYinVideoCell.self, forCellReuseIdentifier: NSStringFromClass(YWDouYinVideoCell.self))
         
         view.register(AwemeListCell.self, forCellReuseIdentifier: NSStringFromClass(AwemeListCell.self))

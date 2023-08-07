@@ -52,12 +52,13 @@ class YWSettingCtrl: YWBaseViewController , HUDViewModelBased{
         view.separatorStyle = .none
         view.delegate = self
         view.dataSource = self
-        if #available(iOS 11, *) {
-            view.estimatedRowHeight = 56.0
-            view.estimatedSectionFooterHeight = 0
-            view.estimatedSectionHeaderHeight = 0
-            view.contentInsetAdjustmentBehavior = .never
-        }
+        
+        view.estimatedRowHeight = 56.0
+        view.estimatedSectionFooterHeight = 0
+        view.estimatedSectionHeaderHeight = 0
+        view.contentInsetAdjustmentBehavior = .never
+
+        
         return view
     }()
     
@@ -80,7 +81,13 @@ class YWSettingCtrl: YWBaseViewController , HUDViewModelBased{
     }()
     
     @objc func logoutAction() {
-        YWUserManager.loginOut(request: true)
+        
+        YWAlertView.showAlert(frame: UIScreen.main.bounds, alertType: STLAlertType.button, isVertical: true, messageAlignment: .center, isAr: false, showHeightIndex: 1, title: nil, message: LanguageTool("sureSignOut"), buttonTitles: [LanguageTool("cancel").uppercased(),LanguageTool("sure").uppercased()]) { flag, _ in
+            if flag == 1 {
+                
+                YWUserManager.loginOut(request: true)
+            }
+        }
     }
     
     @objc func webAction() {

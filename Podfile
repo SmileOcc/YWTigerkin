@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '12.0'
+platform :ios, '13.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -250,7 +250,7 @@ post_install do |installer|
            target.build_configurations.each do |config|
                config.build_settings["DEVELOPMENT_TEAM"] = ""
                #config.build_settings["CODE_SIGN_IDENTITY"] = ""
-               config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+               config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
 
             end
        end

@@ -19,7 +19,7 @@ class YWShareImageContentView: UIView {
             self.bottomView.isDefaultShowMessage = isDefaultShowMessage
         }
     }
-    let kImageViewTopMargin: CGFloat = 44 + (YWConstant.deviceScaleEqualToXStyle() ? 20.0 : 0.0)
+    let kImageViewTopMargin: CGFloat = 44 + (YWConstant.isIphoneX() ? 20.0 : 0.0)
     func bottomContentHeight() -> CGFloat {
         return self.bottomView.currentContentHeight()
     }

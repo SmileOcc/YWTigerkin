@@ -24,12 +24,12 @@ class YWThemesColors: NSObject {
     }
     
     class var col_whiteColor:UIColor {
-        return AutoFitHexColor(lightHex: "#111111", darkHex: "#111111")
+        return AutoFitHexColor(lightHex: "#FFFFFF", darkHex: "#FFFFFF")
 
     }
     
     class var col_blackWhiteColor:UIColor {
-        return AutoFitHexColor(lightHex: "#111111", darkHex: "#000000")
+        return AutoFitHexColor(lightHex: "#FFFFFF", darkHex: "#000000")
 
     }
     
@@ -76,12 +76,18 @@ class YWThemesColors: NSObject {
         return AutoFitHexColor(lightHex: "#999999", darkHex: "#1C1C1C")
     }
     
+    class var col_0D0D0D:UIColor {
+        return AutoFitHexColor(lightHex: "#0D0D0D", darkHex: "#0D0D0D")
+    }
     
     //MARK: - 线条
     class var col_line:UIColor {
         return AutoFitHexColor(lightHex: "#8A2BE2", darkHex: "#8A2BE2")
     }
     
+    class var col_CCCCCC:UIColor {
+        return AutoFitHexColor(lightHex: "#CCCCCC", darkHex: "#CCCCCC")
+    }
     //MARK: - 错误
     class var col_error:UIColor {
         return AutoFitHexColor(lightHex: "#DA70D6", darkHex: "#DA70D6")
