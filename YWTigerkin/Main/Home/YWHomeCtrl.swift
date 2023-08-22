@@ -102,7 +102,8 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
         }
         
         self.themesMainView.viewDidShow()
-        self.themesMainView.addListViewRefresh()
+//        self.themesMainView.addListViewRefresh()
+        self.themesMainView.addListAnimateViewRefresh()
     
         
         label.snp.makeConstraints { make in

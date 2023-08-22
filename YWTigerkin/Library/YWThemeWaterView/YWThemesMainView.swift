@@ -160,6 +160,16 @@ class YWThemesMainView: UIView {
         }
     }
     
+    func addListAnimateViewRefresh() {
+        let shouldRequest = false
+        self.themeManagerView.themeCollectionView.mj_header = YWRefreshAnimateHeader.init(refreshingBlock: { [weak self] in
+            guard let `self` = self else { return }
+            // 列表 顶部广告banner等数据
+            let showLoading = self.themeManagerView.dataSourceList.count == 0
+            self.requestCustomData(showLoading)
+        })
+    }
+    
     func addFooterLoadingMore(_ showLoadingMore: Bool) {
         self.themeManagerView.addFooterLoadingMore(showLoadingMore: showLoadingMore) {[weak self] in
             guard let `self` = self else {return}
