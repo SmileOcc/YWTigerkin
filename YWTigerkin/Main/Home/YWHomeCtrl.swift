@@ -16,7 +16,34 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
 
     //是否触发过请求
     var hasCheckPop = false
-    
+    lazy var topBar:YWHomeNavBar = {
+        let view = YWHomeNavBar(frame: CGRect.zero)
+        view.showBottomLine(false)
+        
+        view.clickBlock = {[weak self] (type,str) in
+            guard let `self` = self else {return}
+            switch type {
+            case .search:
+                let searchModel = YWSearchViewModel()
+                let context = YWNavigatable(viewModel: searchModel)
+                self.viewModel.navigator.pushPath(YWModulePaths.search.url, context: context, animated: true)
+            case .message:
+                let messageModel = YWMessageViewModel()
+                let context = YWNavigatable(viewModel: messageModel)
+                self.viewModel.navigator.pushPath(YWModulePaths.messageCenter.url, context: context, animated: true)
+                
+            case .cart:
+                let cartModel = YWCartViewModel()
+                let context = YWNavigatable(viewModel: cartModel)
+                self.viewModel.navigator.pushPath(YWModulePaths.cart.url, context: context, animated: true)
+            default:
+                YWLog("未知")
+            }
+            
+        }
+        return view
+    }()
+
     lazy var themesMainView: YWThemesMainView = {
         let view = YWThemesMainView(frame: self.view.bounds, firstChannel: "", channelId: "", title: "")
         view.backgroundColor = UIColor.random
@@ -37,6 +64,7 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        sh_prefersNavigationBarHidden = true
         
         self.bindHUD()
         #if DEV
@@ -57,12 +85,20 @@ class YWHomeCtrl: YWBaseViewController, HUDViewModelBased{
         // count计算表情符号错误的，方式与oc length方式不一样，要用utf16
         print("count: \(label.text!.count)   length:\(label.text!.utf16.count)")
         
+        self.label.isHidden = true
+        self.inputTf.isHidden = true
+        
         self.view.addSubview(label)
+        self.view.addSubview(topBar)
         self.view.addSubview(inputTf)
         self.view.addSubview(self.themesMainView)
         
+        
+        
         self.themesMainView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(topBar.snp.bottom)
+            make.leading.trailing.equalTo(view)
+            make.bottom.equalTo(view.snp_bottomMargin)
         }
         
         self.themesMainView.viewDidShow()

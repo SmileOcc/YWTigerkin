@@ -7,25 +7,27 @@
 
 import UIKit
 
-class YWSearchCtrl: YWBaseViewController, YWViewModelBased {
+class YWSearchCtrl: YWBaseViewController, HUDViewModelBased{
+    
+    var networkingHUD: YWProgressHUD! = YWProgressHUD()
 
     var viewModel: YWSearchViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bindViewModel()
+        viewModelResponse()
+        bindHUD()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewModelResponse() {
+        
+        
     }
-    */
+    
+    override func bindViewModel() {
+    }
 
 }

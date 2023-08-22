@@ -1,8 +1,8 @@
 //
-//  YWSearchViewModel.swift
+//  YWCartViewModel.swift
 //  YWTigerkin
 //
-//  Created by odd on 3/3/23.
+//  Created by odd on 8/12/23.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-class YWSearchViewModel: HUDServicesViewModel,HasDisposeBag {
+class YWCartViewModel: HUDServicesViewModel,HasDisposeBag {
     
     var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
 

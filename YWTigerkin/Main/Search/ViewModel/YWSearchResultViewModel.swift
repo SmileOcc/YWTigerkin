@@ -11,7 +11,9 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-class YWSearchResultViewModel: YWServicesViewModel,HasDisposeBag {
+class YWSearchResultViewModel: HUDServicesViewModel,HasDisposeBag {
+    
+    var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
 
     var navigator: YWNavigatorServicesType!
 
@@ -22,10 +24,5 @@ class YWSearchResultViewModel: YWServicesViewModel,HasDisposeBag {
         didSet {
             
         }
-    }
-    
-    
-    func dataRequest(_ loadMore: Bool) {
-        
     }
 }

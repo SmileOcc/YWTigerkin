@@ -30,8 +30,17 @@ public struct YWNavigationMap {
 
             return nil
         }
+        //MARK: - 我的
+        // 用户中心
+        navigator.register(YWModulePaths.userCenter.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWAccountCenterViewModel> {
+                let vc = YWAccountCenterCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
         
-        // 代码搜索
+        //MARK: -搜索
         navigator.register(YWModulePaths.search.url) { (url, values, context) -> UIViewController? in
             
 //            let dic = context as? [String : Any]
@@ -50,7 +59,7 @@ public struct YWNavigationMap {
 //            searchViewModel.showHistory = showHistory
 
             let searchViewModel = YWSearchViewModel()
-            let viewController = YWSearchCtrl.instantiate(withViewModel: searchViewModel, andServices: services, andNavigator: navigator as! YWNavigatorServices)
+            let viewController = YWSearchCtrl.instantiate(withViewModel: searchViewModel, andServices: services, andNavigator: navigator )
 //            let navController = YWNavigationViewController(rootViewController: viewController)
 //            navController.modalPresentationStyle = .fullScreen
 //            if #available(iOS 11.0, *) {
@@ -58,6 +67,16 @@ public struct YWNavigationMap {
 //            }
 
             return viewController
+        }
+        
+        navigator.register(YWModulePaths.searchResut.url) { (url, values, context) -> UIViewController? in
+            
+            if let navigatable = context as? YWNavigatable<YWSearchResultViewModel> {
+                let vc = YWSearchResultCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+
+            return nil
         }
         
         // 视频
@@ -93,7 +112,7 @@ public struct YWNavigationMap {
             return nil
         }
         
-        // 支付
+        // 抖音
         navigator.register(YWModulePaths.douYinVidoe.url) { (url, values, context) -> UIViewController? in
             
             if let navigatable = context as? YWNavigatable<YWDouYinVideoViewModel> {
@@ -121,6 +140,59 @@ public struct YWNavigationMap {
         navigator.register(YWModulePaths.userCenterSet.url) { (url, values, context) -> UIViewController? in
             if let navigatable = context as? YWNavigatable<YWSettingViewModel> {
                 let vc = YWSettingCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        //MARK: - 消息
+        navigator.register(YWModulePaths.messageCenter.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWMessageViewModel> {
+                let vc = YWMessageCenterCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        //MARK: - 购物车
+        navigator.register(YWModulePaths.cart.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWCartViewModel> {
+                let vc = YWCartCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        //MARK: - 订单
+        navigator.register(YWModulePaths.orderCenter.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWOrderViewModel> {
+                let vc = YWOrderCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        navigator.register(YWModulePaths.orderList.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWOrderItemListViewModel> {
+                let vc = YWOrderListCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        navigator.register(YWModulePaths.orderDetail.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWOrderDetailViewModel> {
+                let vc = YWOrderDetailCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        
+        //MARK: - 活动中心
+        navigator.register(YWModulePaths.activityCenter.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWActivityCenterViewModel> {
+                let vc = YWActivityCenterCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
                 return vc
             }
             return nil
@@ -159,7 +231,7 @@ public struct YWNavigationMap {
 //        
 //        // 用户中心-我的收藏
 //        navigator.register(YWModulePaths.userCenterCollect.url) { (url, values, context) -> UIViewController? in
-//            if let navigatable = context as? HCNavigatable<HCLoginViewModel> {
+//            if let navigatable = context as? YWNavigatable<HCLoginViewModel> {
 //                let vc = HCLoginViewController.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
 //                return vc
 //            }
@@ -168,7 +240,7 @@ public struct YWNavigationMap {
 //        
 //        // 注册Code
 //        navigator.register(YWModulePaths.registerCode.url) { (url, values, context) -> UIViewController? in
-//            if let navigatable = context as? HCNavigatable<HCLoginViewModel> {
+//            if let navigatable = context as? YWNavigatable<HCLoginViewModel> {
 //                let vc = HCLoginViewController.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
 //                return vc
 //            }
@@ -177,7 +249,7 @@ public struct YWNavigationMap {
 //        
 //        // 普通注册界面Code
 //        navigator.register(YWModulePaths.normalRegisterCode.url) { (url, values, context) -> UIViewController? in
-//            if let navigatable = context as? HCNavigatable<HCLoginViewModel> {
+//            if let navigatable = context as? YWNavigatable<HCLoginViewModel> {
 //                let vc = HCLoginViewController.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
 //                return vc
 //            }
@@ -186,7 +258,7 @@ public struct YWNavigationMap {
 //        
 //        // 普通注册设置密码
 //        navigator.register(YWModulePaths.normalRegisterSetPwd.url) { (url, values, context) -> UIViewController? in
-//            if let navigatable = context as? HCNavigatable<HCLoginViewModel> {
+//            if let navigatable = context as? YWNavigatable<HCLoginViewModel> {
 //                let vc = HCLoginViewController.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
 //                return vc
 //            }
@@ -195,7 +267,7 @@ public struct YWNavigationMap {
 //        
 //        // 用户中心
 //        navigator.register(YWModulePaths.userCenter.url) { (url, values, context) -> UIViewController? in
-//            if let navigatable = context as? HCNavigatable<HCLoginViewModel> {
+//            if let navigatable = context as? YWNavigatable<HCLoginViewModel> {
 //                let vc = HCLoginViewController.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
 //                return vc
 //            }
@@ -204,7 +276,7 @@ public struct YWNavigationMap {
 //        
 //        // 用户中心-关于
 //        navigator.register(YWModulePaths.userCenterAbout.url) { (url, values, context) -> UIViewController? in
-//            if let navigatable = context as? HCNavigatable<HCLoginViewModel> {
+//            if let navigatable = context as? YWNavigatable<HCLoginViewModel> {
 //                let vc = HCLoginViewController.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
 //                return vc
 //            }

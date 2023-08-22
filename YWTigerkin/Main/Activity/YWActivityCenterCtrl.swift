@@ -1,11 +1,12 @@
 //
-//  YWAccountCenterCtrl.swift
+//  YWActivityCenterCtrl.swift
 //  YWTigerkin
 //
-//  Created by odd on 3/9/23.
+//  Created by odd on 8/17/23.
 //
 
 import UIKit
+
 import Reusable
 import RxSwift
 import RxCocoa
@@ -14,14 +15,14 @@ import SHFullscreenPopGestureSwift
 import JXPagingView
 import JXSegmentedView
 
-class YWAccountCenterCtrl: YWBaseViewController, HUDViewModelBased{
+class YWActivityCenterCtrl: YWBaseViewController, HUDViewModelBased{
     
     var networkingHUD: YWProgressHUD! = YWProgressHUD()
 
-    var viewModel: YWAccountCenterViewModel!
+    var viewModel: YWActivityCenterViewModel!
     
-    var titleMenus:[YWAccountCenterMenuModel] = []
-    var childCtrls:[YWAccountCenterItemCtrl] = []
+    var titleMenus:[YWActivityCenterMenuModel] = []
+    var childCtrls:[YWActivityCenterItemCtrl] = []
     
     lazy var userHeaderView: UIView = {
         let view = Init(UIView(frame: CGRect(x: 0, y: 0, width: Int(YWConstant.screenWidth), height: self.headerViewHeight)), block: {
@@ -35,14 +36,19 @@ class YWAccountCenterCtrl: YWBaseViewController, HUDViewModelBased{
     
     //JXPagingSmoothView 刷新在顶部
     //JXPagingView 刷新在字控制器
-    lazy var pagingView: JXPagingSmoothView = {
-       let view = JXPagingSmoothView(dataSource: self)
-        view.delegate = self
+    lazy var pagingView: JXPagingView = JXPagingView(delegate: self)
+    
+    lazy var segmentedView: JXSegmentedView = {
+        let view = JXSegmentedView(frame: CGRect(x: 0, y: 0, width: YWConstant.screenWidth, height: CGFloat(headerInSectionHeight)))
         return view
     }()
-    
-    lazy var segmentedView: JXSegmentedView = JXSegmentedView(frame: CGRect(x: 0, y: 0, width: YWConstant.screenWidth, height: CGFloat(headerInSectionHeight)))
-    var dataSource = JXSegmentedTitleDataSource()
+//    var dataSource = JXSegmentedTitleDataSource()
+    // 数字
+    lazy var dataSource:JXSegmentedNumberDataSource = {
+       let data = JXSegmentedNumberDataSource()
+        data.numbers = [0,11,120]
+        return data
+    }()
     var titles = ["热门", "最新", "全部"]
     
     ///分类上方头部高度
@@ -62,16 +68,16 @@ class YWAccountCenterCtrl: YWBaseViewController, HUDViewModelBased{
         super.viewDidLoad()
         self.sh_prefersNavigationBarHidden = true
 
-        self.titleMenus = [YWAccountCenterType.all,YWAccountCenterType.hot,YWAccountCenterType.pick].reduce(into: [YWAccountCenterMenuModel](), {
-            let menuModel = YWAccountCenterMenuModel(title: $1.title, id: "id_\($1.rawValue)")
+        self.titleMenus = [YWActivityCenterType.all,YWActivityCenterType.hot,YWActivityCenterType.pick].reduce(into: [YWActivityCenterMenuModel](), {
+            let menuModel = YWActivityCenterMenuModel(title: $1.title, id: "id_\($1.rawValue)")
             $0.append(menuModel)
         })
         
-        self.childCtrls = self.titleMenus.reduce(into: [YWAccountCenterItemCtrl](), {
+        self.childCtrls = self.titleMenus.reduce(into: [YWActivityCenterItemCtrl](), {
             
-            let model = YWAccountCenterItemViewModel()
+            let model = YWActivityCenterItemViewModel()
             model.menuId = $1.id ?? ""
-            let ctrl = YWAccountCenterItemCtrl.instantiate(withViewModel: model, andServices: self.viewModel.services, andNavigator: self.viewModel.navigator)
+            let ctrl = YWActivityCenterItemCtrl.instantiate(withViewModel: model, andServices: self.viewModel.services, andNavigator: self.viewModel.navigator)
             $0.append(ctrl)
         })
         bindViewModel()
@@ -99,8 +105,8 @@ class YWAccountCenterCtrl: YWBaseViewController, HUDViewModelBased{
 //        pagingView.mainTableView.panGestureRecognizer.require(toFail: self.navigationController!.interactivePopGestureRecognizer!)
 //        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
-//        pagingView.currentListInitializeContentOffsetY = CGFloat(pagingViewPinSectionHeaderVerticalOffset)
-//
+        pagingView.pinSectionHeaderVerticalOffset = pagingViewPinSectionHeaderVerticalOffset
+        
         
         pagingView.backgroundColor = YWThemesColors.col_F7F7F7
         
@@ -132,76 +138,64 @@ class YWAccountCenterCtrl: YWBaseViewController, HUDViewModelBased{
     }
 
     func addRefreshHeader() {
-//        tableView.addHeaderRefreshBlock(headerBlock: {[weak self] in
-//            guard let `self` = self else {return}
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//                self.tableView.reloadData()
-//                //self.tableView.mj_header.endRefreshing()
-//                self.tableView.showRequestTip([kTotalPageKey:"2",kCurrentPageKye:"1"])
-////                self.tableView.showRequestTip(nil)
-//
-//            })
-//        }, footerBlock: {
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//                self.tableView.reloadData()
-//                //self.tableView.mj_header.endRefreshing()
-////                self.tableView.showRequestTip(nil)
-//                self.tableView.showRequestTip([kTotalPageKey:"1",kCurrentPageKye:"1"])
-//
-//
-//            })
-//        }, startRefreshing: false)
+        self.pagingView.mainTableView.addHeaderRefreshBlock(headerBlock: {[weak self] in
+            guard let `self` = self else {return}
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.pagingView.mainTableView.reloadData()
+                //self.tableView.mj_header.endRefreshing()
+                self.pagingView.mainTableView.showRequestTip([kTotalPageKey:"2",kCurrentPageKye:"1"])
+//                self.tableView.showRequestTip(nil)
+
+            })
+        }, footerBlock: nil, startRefreshing: false)
     }
 }
-// JXPagingSmoothViewDataSource
 ///JXpagingView代理方法
+extension YWActivityCenterCtrl: JXPagingViewDelegate {
 
-extension YWAccountCenterCtrl: JXPagingSmoothViewDataSource {
-    func heightForPagingHeader(in pagingView: JXPagingSmoothView) -> CGFloat {
-        return CGFloat(headerViewHeight)
+    func tableHeaderViewHeight(in pagingView: JXPagingView) -> Int {
+        ///上方头部高度
+        return headerViewHeight
     }
-    
-    func viewForPagingHeader(in pagingView: JXPagingSmoothView) -> UIView {
+
+    func tableHeaderView(in pagingView: JXPagingView) -> UIView {
+        ///上方头部View（我这里使用的自定义View，建议提出单独写View）
         return userHeaderView
-
     }
-    
-    func heightForPinHeader(in pagingView: JXPagingSmoothView) -> CGFloat {
-        return CGFloat(headerInSectionHeight)
 
+    func heightForPinSectionHeader(in pagingView: JXPagingView) -> Int {
+        ///上滑移动最大偏移量（大于这个偏移量就无法再上滑）
+        return headerInSectionHeight
     }
-    
-    func viewForPinHeader(in pagingView: JXPagingSmoothView) -> UIView {
+
+    func viewForPinSectionHeader(in pagingView: JXPagingView) -> UIView {
+        ///分类文章标题View
         return segmentedView
-
     }
-    
-    func numberOfLists(in pagingView: JXPagingSmoothView) -> Int {
+
+    func numberOfLists(in pagingView: JXPagingView) -> Int {
         ///分类标题个数
         return titles.count
     }
-    
-    func pagingView(_ pagingView: JXPagingSmoothView, initListAtIndex index: Int) -> JXPagingSmoothViewListViewDelegate {
+
+    func pagingView(_ pagingView: JXPagingView, initListAtIndex index: Int) -> JXPagingViewListViewDelegate {
         self.childCtrls[index]
     }
-}
 
-extension YWAccountCenterCtrl: JXPagingSmoothViewDelegate {
-    func pagingSmoothViewDidScroll(_ scrollView: UIScrollView) {
+    func pagingView(_ pagingView: JXPagingView, mainTableViewDidScroll scrollView: UIScrollView) {
+        YWLog("1----\(scrollView.contentOffset.y)")
         if scrollView.contentOffset.y >= (150.0 - YWConstant.statusBarHeight) {
             YWLog("----\(scrollView.contentOffset.y)")
             self.blankView.isHidden = false
         } else {
-            YWLog("+++++\(scrollView.contentOffset.y)")
             self.blankView.isHidden = true
         }
     }
+
 }
 
-
-extension YWAccountCenterCtrl: JXSegmentedViewDelegate {
+extension YWActivityCenterCtrl: JXSegmentedViewDelegate {
     ///默认的分类标题选择项
     func segmentedView(_ segmentedView: JXSegmentedView, didSelectedItemAt index: Int) {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = (index == 0)
@@ -209,4 +203,4 @@ extension YWAccountCenterCtrl: JXSegmentedViewDelegate {
 }
 
 /// 需要将JXPagingListContainerView继承JXSegmentedViewListContainer，不然会报错，开发文档中也有所提及
-extension JXPagingListContainerView: JXSegmentedViewListContainer {}
+//extension JXPagingListContainerView: JXSegmentedViewListContainer {}

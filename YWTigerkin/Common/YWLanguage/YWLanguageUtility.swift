@@ -58,7 +58,7 @@ extension YWLanguageType: Codable {
 
 var bundle:Bundle?
 
-func LanguageTool(_ key: String) -> String {
+func YWLanguageTool(_ key: String) -> String {
     YWLanguageUtility.kLang(key: key)
 }
 

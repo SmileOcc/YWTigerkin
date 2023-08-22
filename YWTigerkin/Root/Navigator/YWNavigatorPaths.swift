@@ -23,14 +23,15 @@ public protocol YWModuleType {
 
     //登录
     case login
-    // 用户中心
+    //MARK: - 我的
     case userCenter
  
     // 用户中心-设置
     case userCenterSet
-    
-    // 搜索
+        
+    //MARK: - 搜索
     case search
+    case searchResut
     
     // 视频
     case video
@@ -46,6 +47,18 @@ public protocol YWModuleType {
     
     // 网页
     case webPage
+    
+    //MARK: - 购物车
+    case cart
+    //MARK: - 订单
+    case orderCenter
+    case orderList
+    case orderDetail
+    //MARK: - 消息
+    case messageCenter
+    
+    //MARK: - 活动中心
+    case activityCenter
     
     
 }
@@ -67,6 +80,8 @@ extension YWModulePaths: YWModuleType {
             return "userCenter/set/"
         case .search:
             return "search/"
+        case .searchResut:
+            return "search/result/"
         case .video:
             return "video/"
         case .settingOther:
@@ -77,6 +92,18 @@ extension YWModulePaths: YWModuleType {
             return "douYinVideo/"
         case .webPage:
             return "webPage/"
+        case .cart:
+            return "cart/"
+        case .orderCenter:
+            return "orderCenter/"
+        case .orderList:
+            return "orderList/"
+        case .orderDetail:
+            return "orderDetial/"
+        case .messageCenter:
+            return "messageCenter/"
+        case .activityCenter:
+            return "activityCenter/"
         }
     }
     

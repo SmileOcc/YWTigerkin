@@ -11,6 +11,10 @@ class YWThemesColors: NSObject {
     
     class var col_themeColor:UIColor {
         return YWThemesColors.col_8A2BE2.withAlphaComponent(0.7)
+    }
+    
+    class var col_themeColor_03:UIColor {
+        return YWThemesColors.col_8A2BE2.withAlphaComponent(0.3)
 
     }
     
@@ -78,6 +82,22 @@ class YWThemesColors: NSObject {
     
     class var col_0D0D0D:UIColor {
         return AutoFitHexColor(lightHex: "#0D0D0D", darkHex: "#0D0D0D")
+    }
+    
+    class var col_F5F5F5:UIColor {
+        return AutoFitHexColor(lightHex: "#F5F5F5", darkHex: "#F5F5F5")
+    }
+    
+    class var col_F7F7F7:UIColor {
+        return AutoFitHexColor(lightHex: "#F7F7F7", darkHex: "#F7F7F7")
+    }
+    
+    class var col_B2B2B2:UIColor {
+        return AutoFitHexColor(lightHex: "#B2B2B2", darkHex: "#B2B2B2")
+    }
+    
+    class var col_B3B3B3:UIColor {
+        return AutoFitHexColor(lightHex: "#B3B3B3", darkHex: "#B3B3B3")
     }
     
     //MARK: - 线条

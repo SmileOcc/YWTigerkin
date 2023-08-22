@@ -166,6 +166,16 @@ extension YWOhterTestCtrl: UITableViewDelegate,UITableViewDataSource {
                 let context = YWNavigatable(viewModel: webModel)
                 YWWAppDelegate?.navigator.pushPath(YWModulePaths.webPage.url, context: context, animated: true)
             }
+            else if model.id == "6" {
+                let accountModel = YWAccountCenterViewModel()
+                let context = YWNavigatable(viewModel: accountModel, userInfo: nil)
+                YWWAppDelegate?.navigator.pushPath(YWModulePaths.userCenter.url, context: context, animated: true)
+            }
+            else if model.id == "7" {
+                let accountModel = YWActivityCenterViewModel()
+                let context = YWNavigatable(viewModel: accountModel, userInfo: nil)
+                YWWAppDelegate?.navigator.pushPath(YWModulePaths.activityCenter.url, context: context, animated: true)
+            }
         }
         return;
     }

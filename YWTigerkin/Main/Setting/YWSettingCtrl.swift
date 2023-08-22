@@ -82,7 +82,7 @@ class YWSettingCtrl: YWBaseViewController , HUDViewModelBased{
     
     @objc func logoutAction() {
         
-        YWAlertView.showAlert(frame: UIScreen.main.bounds, alertType: STLAlertType.button, isVertical: true, messageAlignment: .center, isAr: false, showHeightIndex: 1, title: nil, message: LanguageTool("sureSignOut"), buttonTitles: [LanguageTool("cancel").uppercased(),LanguageTool("sure").uppercased()]) { flag, _ in
+        YWAlertView.showAlert(frame: UIScreen.main.bounds, alertType: STLAlertType.button, isVertical: true, messageAlignment: .center, isAr: false, showHeightIndex: 1, title: nil, message: YWLanguageTool("sureSignOut"), buttonTitles: [YWLanguageTool("cancel").uppercased(),YWLanguageTool("sure").uppercased()]) { flag, _ in
             if flag == 1 {
                 
                 YWUserManager.loginOut(request: true)

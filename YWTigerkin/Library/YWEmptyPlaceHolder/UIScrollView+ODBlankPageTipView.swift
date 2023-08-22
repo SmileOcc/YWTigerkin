@@ -251,7 +251,9 @@ extension UIScrollView {
                 //1.先移除页面上已有的提示视图
                 self.removeOldTipBgView()
                 //2.每次下拉刷新时先结束上啦
-                self.mj_footer.endRefreshing()
+                if self.mj_footer != nil {
+                    self.mj_footer.endRefreshing()
+                }
                 headBlock()
             }
             self.mj_header = header
@@ -282,7 +284,9 @@ extension UIScrollView {
             let header = YWRefreshHeader {[weak self] in
                 guard let `self` = self else {return}
                 self.removeOldTipBgView()
-                self.mj_footer.endRefreshing()
+                if self.mj_footer != nil {
+                    self.mj_footer.endRefreshing()
+                }
                 headBlock()
             }
             
@@ -467,7 +471,7 @@ extension UIScrollView {
                 if requestSuccess {
                     self.pageFooterEndRefreshStatus(pageInfoDic)
                 } else {
-                    self.mj_footer.endRefreshing()
+                    self.mj_footer?.endRefreshing()
                 }
             })
         }
@@ -507,12 +511,12 @@ extension UIScrollView {
             if totalPage.toInt() > currentPage.toInt() {
                 self.mj_footer.isHidden = false
             } else {
-                self.mj_footer.endRefreshingWithNoMoreData()
-                self.mj_footer.isHidden = false
+                self.mj_footer?.endRefreshingWithNoMoreData()
+                self.mj_footer?.isHidden = false
             }
         } else {
-            self.mj_footer.endRefreshingWithNoMoreData()
-            self.mj_footer.isHidden = true
+            self.mj_footer?.endRefreshingWithNoMoreData()
+            self.mj_footer?.isHidden = true
         }
     }
     
@@ -623,20 +627,20 @@ extension UIScrollView {
             
             if !totalPage.isEmpty && !currentPage.isEmpty {
                 if totalPage.toInt() > currentPage.toInt() {
-                    self.mj_footer.isHidden = false
+                    self.mj_footer?.isHidden = false
                 } else {
-                    self.mj_footer.endRefreshingWithNoMoreData()
+                    self.mj_footer?.endRefreshingWithNoMoreData()
                 }
                 
             } else if let dataArray = dataDic[kListKey] as? [Any] {
                 if dataArray.count > 0 {
-                    self.mj_footer.isHidden = false
+                    self.mj_footer?.isHidden = false
                 } else {
-                    self.mj_footer.endRefreshingWithNoMoreData()
+                    self.mj_footer?.endRefreshingWithNoMoreData()
                 }
             }
         } else {
-            self.mj_footer.endRefreshingWithNoMoreData()
+            self.mj_footer?.endRefreshingWithNoMoreData()
         }
     }
 }

@@ -1,8 +1,8 @@
 //
-//  YWOtherTestViewModel.swift
+//  YWActivityCenterItemViewModel.swift
 //  YWTigerkin
 //
-//  Created by odd on 6/18/23.
+//  Created by odd on 8/17/23.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
+class YWActivityCenterItemViewModel: HUDServicesViewModel, HasDisposeBag  {
     typealias Services = AppServices
     
     var hudSubject: PublishSubject<HUDType>! = PublishSubject<HUDType>()
@@ -23,7 +23,9 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
     let accountSubject = PublishSubject<Bool>()
     let disposebag = DisposeBag()
 
-    var datas:[YWAccountItemModel] = []
+    var datas:[YWActivityCenterItemModel] = []
+    
+    var menuId:String = ""
     
     var services: Services! {
         didSet {
@@ -66,35 +68,32 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
     }
     
     func requestData() {
-        for i in 0...10 {
-            let model = YWAccountItemModel()
+        self.hudSubject.onNext(.loading(YWConstant.requestLoading, false))
+        for i in 0...5 {
+            let model = YWActivityCenterItemModel()
             model.title = "其他"
             model.imgName = "settings"
             model.id = "\(i)"
             if i == 0 {
-                model.title = "Apple Pay"
+                model.title = "设置"
             } else if i == 1 {
-                model.title = "视频横竖屏"
+                model.title = "通知"
             } else if i == 2 {
-                model.title = "抖音模式"
+                model.title = "分享^"
             } else if i == 3 {
-                model.title = "活动跳转"
-                model.desc = ""
+                model.title = "活动"
+                model.desc = "最新活动"
             } else if i == 4 {
                 model.title = "版本"
                 model.desc = "v_\(YWConstant.appVersion ?? "")"
-            } else if i == 5 {
-                model.title = "网页"
-            } else if i == 6 {
-                model.title = "用户中心"
-            } else if i == 7 {
-                model.title = "活动中心"
             }
             self.datas.append(model)
         }
         
-        self.accountSubject.onNext(true)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.hudSubject.onNext(.hide)
+            self.accountSubject.onNext(true)
+        })
     }
     
     func testRequest() {

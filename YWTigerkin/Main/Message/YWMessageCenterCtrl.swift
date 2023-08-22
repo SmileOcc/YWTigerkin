@@ -7,15 +7,28 @@
 
 import UIKit
 
-class YWMessageCenterCtrl: YWBaseViewController {
+class YWMessageCenterCtrl: YWBaseViewController , HUDViewModelBased{
+    
+    var networkingHUD: YWProgressHUD! = YWProgressHUD()
+
+    var viewModel: YWMessageViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bindViewModel()
+        viewModelResponse()
+        bindHUD()
+        
     }
     
+    override func viewModelResponse() {
+        
+        
+    }
     
+    override func bindViewModel() {
+    }
 
     /*
     // MARK: - Navigation

@@ -1,17 +1,17 @@
 //
-//  YWSearchResultCtrl.swift
+//  YWCartCtrl.swift
 //  YWTigerkin
 //
-//  Created by odd on 3/9/23.
+//  Created by odd on 8/12/23.
 //
 
 import UIKit
 
-class YWSearchResultCtrl: YWBaseViewController, HUDViewModelBased{
+class YWCartCtrl: YWBaseViewController , HUDViewModelBased{
     
     var networkingHUD: YWProgressHUD! = YWProgressHUD()
 
-    var viewModel: YWSearchResultViewModel!
+    var viewModel: YWCartViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,4 +29,5 @@ class YWSearchResultCtrl: YWBaseViewController, HUDViewModelBased{
     
     override func bindViewModel() {
     }
+
 }
