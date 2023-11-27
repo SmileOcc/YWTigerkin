@@ -197,6 +197,23 @@ public struct YWNavigationMap {
             }
             return nil
         }
+        
+        //MARK: - 地址
+        navigator.register(YWModulePaths.addressCenter.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWAddressListViewModel> {
+                let vc = YWAddressListCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
+        
+        navigator.register(YWModulePaths.addressEdit.url) { (url, values, context) -> UIViewController? in
+            if let navigatable = context as? YWNavigatable<YWAddressEditViewModel> {
+                let vc = YWAddressEditCtrl.instantiate(withViewModel: navigatable.viewModel, andServices: services, andNavigator: navigator)
+                return vc
+            }
+            return nil
+        }
 //        
 //        navigator.register(YWModulePaths.userCenterUserAccount.url) { (url, values, context) -> UIViewController? in
 //            let searchViewModel = HCSearchViewModel()

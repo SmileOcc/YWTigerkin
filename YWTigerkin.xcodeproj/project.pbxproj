@@ -16,6 +16,18 @@
 		6203BDA829E3005F00FF063F /* Info_PRD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6203BDA729E3005F00FF063F /* Info_PRD.plist */; };
 		6203BDAA29E43E4B00FF063F /* AppDelegate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */; };
 		6203BDAC29E444BE00FF063F /* YWScreenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203BDAB29E444BE00FF063F /* YWScreenTool.swift */; };
+		621CDC7C2AFF67B2009FCAEC /* YYTextAsyncLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC7B2AFF67B2009FCAEC /* YYTextAsyncLayer+Extension.swift */; };
+		621CDC882AFF6AAF009FCAEC /* YWPRDConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 621CDC872AFF6AAF009FCAEC /* YWPRDConfig.xcconfig */; };
+		621CDC8F2AFF6B4F009FCAEC /* YWBASEConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 621CDC8E2AFF6B4F009FCAEC /* YWBASEConfig.xcconfig */; };
+		621CDC912B14CD3B009FCAEC /* YWAddressListCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC902B14CD3B009FCAEC /* YWAddressListCtrl.swift */; };
+		621CDC932B14CD51009FCAEC /* YWAddressEditCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC922B14CD51009FCAEC /* YWAddressEditCtrl.swift */; };
+		621CDC952B14CD7D009FCAEC /* YWAddressListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC942B14CD7D009FCAEC /* YWAddressListViewModel.swift */; };
+		621CDC972B14CD94009FCAEC /* YWAddressEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC962B14CD94009FCAEC /* YWAddressEditViewModel.swift */; };
+		621CDC992B14CE10009FCAEC /* YWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC982B14CE10009FCAEC /* YWAddressModel.swift */; };
+		621CDC9B2B14CF0A009FCAEC /* YWAddressItemEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC9A2B14CF0A009FCAEC /* YWAddressItemEditModel.swift */; };
+		621CDC9D2B14D29F009FCAEC /* YWAddressListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC9C2B14D29F009FCAEC /* YWAddressListCell.swift */; };
+		621CDC9F2B14D2CB009FCAEC /* YWAddressItemBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDC9E2B14D2CB009FCAEC /* YWAddressItemBaseCell.swift */; };
+		621CDCA12B14D2F4009FCAEC /* YWAddressItemEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621CDCA02B14D2F4009FCAEC /* YWAddressItemEditCell.swift */; };
 		624583702A7AA4D900041FF1 /* YWLocalConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */; };
 		624583722A7BEE3400041FF1 /* AppDelegate+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624583712A7BEE3400041FF1 /* AppDelegate+Notification.swift */; };
 		624583752A7BF93D00041FF1 /* YWLanguageAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624583742A7BF93D00041FF1 /* YWLanguageAlertView.swift */; };
@@ -277,6 +289,19 @@
 		6203BDA729E3005F00FF063F /* Info_PRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PRD.plist; sourceTree = "<group>"; };
 		6203BDA929E43E4B00FF063F /* AppDelegate+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Category.swift"; sourceTree = "<group>"; };
 		6203BDAB29E444BE00FF063F /* YWScreenTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWScreenTool.swift; sourceTree = "<group>"; };
+		621CDC7B2AFF67B2009FCAEC /* YYTextAsyncLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YYTextAsyncLayer+Extension.swift"; sourceTree = "<group>"; };
+		621CDC872AFF6AAF009FCAEC /* YWPRDConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = YWPRDConfig.xcconfig; sourceTree = "<group>"; };
+		621CDC892AFF6ACA009FCAEC /* YWDEVConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = YWDEVConfig.xcconfig; sourceTree = "<group>"; };
+		621CDC8E2AFF6B4F009FCAEC /* YWBASEConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = YWBASEConfig.xcconfig; sourceTree = "<group>"; };
+		621CDC902B14CD3B009FCAEC /* YWAddressListCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressListCtrl.swift; sourceTree = "<group>"; };
+		621CDC922B14CD51009FCAEC /* YWAddressEditCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressEditCtrl.swift; sourceTree = "<group>"; };
+		621CDC942B14CD7D009FCAEC /* YWAddressListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressListViewModel.swift; sourceTree = "<group>"; };
+		621CDC962B14CD94009FCAEC /* YWAddressEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressEditViewModel.swift; sourceTree = "<group>"; };
+		621CDC982B14CE10009FCAEC /* YWAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressModel.swift; sourceTree = "<group>"; };
+		621CDC9A2B14CF0A009FCAEC /* YWAddressItemEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressItemEditModel.swift; sourceTree = "<group>"; };
+		621CDC9C2B14D29F009FCAEC /* YWAddressListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressListCell.swift; sourceTree = "<group>"; };
+		621CDC9E2B14D2CB009FCAEC /* YWAddressItemBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressItemBaseCell.swift; sourceTree = "<group>"; };
+		621CDCA02B14D2F4009FCAEC /* YWAddressItemEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWAddressItemEditCell.swift; sourceTree = "<group>"; };
 		6245836F2A7AA4D900041FF1 /* YWLocalConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLocalConfigManager.swift; sourceTree = "<group>"; };
 		624583712A7BEE3400041FF1 /* AppDelegate+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notification.swift"; sourceTree = "<group>"; };
 		624583742A7BF93D00041FF1 /* YWLanguageAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWLanguageAlertView.swift; sourceTree = "<group>"; };
@@ -1116,6 +1141,9 @@
 		62F68B8429AB5E190023EC3C = {
 			isa = PBXGroup;
 			children = (
+				621CDC8E2AFF6B4F009FCAEC /* YWBASEConfig.xcconfig */,
+				621CDC892AFF6ACA009FCAEC /* YWDEVConfig.xcconfig */,
+				621CDC872AFF6AAF009FCAEC /* YWPRDConfig.xcconfig */,
 				62F68B8F29AB5E190023EC3C /* YWTigerkin */,
 				62F68B8E29AB5E190023EC3C /* Products */,
 				38CA01FCF50B7950D6C7D981 /* Pods */,
@@ -1217,6 +1245,8 @@
 				62F68C0C29BA0D6B0023EC3C /* YWAccountCenterCtrl.swift */,
 				62DF25452A88D4C800A12A0A /* YWAccountCenterItemCtrl.swift */,
 				62940BF12A3EF238004148E3 /* YWOhterTestCtrl.swift */,
+				621CDC902B14CD3B009FCAEC /* YWAddressListCtrl.swift */,
+				621CDC922B14CD51009FCAEC /* YWAddressEditCtrl.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -1389,6 +1419,8 @@
 				62940BF32A3EF254004148E3 /* YWOtherTestViewModel.swift */,
 				62DF25472A88D4F400A12A0A /* YWAccountCenterItemViewModel.swift */,
 				62DF25492A88D55600A12A0A /* YWAccountCenterViewModel.swift */,
+				621CDC942B14CD7D009FCAEC /* YWAddressListViewModel.swift */,
+				621CDC962B14CD94009FCAEC /* YWAddressEditViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1485,6 +1517,7 @@
 				628E3ADC2A73F61800D10622 /* NSString+Check.m */,
 				624583782A7E2D6C00041FF1 /* SnapKit_Extension.swift */,
 				624583802A7E3A2A00041FF1 /* YWData+Extension.swift */,
+				621CDC7B2AFF67B2009FCAEC /* YYTextAsyncLayer+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1521,6 +1554,9 @@
 				62F68C4329C341E30023EC3C /* YWAccountCell.swift */,
 				628E3AD02A715B0700D10622 /* YWAccountHeaderView.swift */,
 				62DF254F2A8A547300A12A0A /* YWAccountCenterItemCell.swift */,
+				621CDC9C2B14D29F009FCAEC /* YWAddressListCell.swift */,
+				621CDC9E2B14D2CB009FCAEC /* YWAddressItemBaseCell.swift */,
+				621CDCA02B14D2F4009FCAEC /* YWAddressItemEditCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1532,6 +1568,8 @@
 				62940C722A62770F004148E3 /* YWLoginUser.swift */,
 				62DF254B2A8A4E1300A12A0A /* YWAccountCenterModel.swift */,
 				62DF254D2A8A541A00A12A0A /* YWAccountCenterItemModel.swift */,
+				621CDC982B14CE10009FCAEC /* YWAddressModel.swift */,
+				621CDC9A2B14CF0A009FCAEC /* YWAddressItemEditModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1619,12 +1657,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				62DF27BD2A95062100A12A0A /* animation_02.json in Resources */,
+				621CDC8F2AFF6B4F009FCAEC /* YWBASEConfig.xcconfig in Resources */,
 				62940BE72A3EDF6D004148E3 /* 内购图.png in Resources */,
 				62F68B9D29AB5E1F0023EC3C /* LaunchScreen.storyboard in Resources */,
 				62DF27B42A94FD2900A12A0A /* onboard3.json in Resources */,
 				62DF27B32A94FD2900A12A0A /* onboard2.json in Resources */,
 				62DF27AD2A94FD1700A12A0A /* loading.json in Resources */,
 				62DF27AC2A94FD1700A12A0A /* like_animation_white.json in Resources */,
+				621CDC882AFF6AAF009FCAEC /* YWPRDConfig.xcconfig in Resources */,
 				62F68B9A29AB5E1F0023EC3C /* Assets.xcassets in Resources */,
 				62DF27AE2A94FD1700A12A0A /* like_animation_dark.json in Resources */,
 				62DF27BB2A95040700A12A0A /* animation_01.json in Resources */,
@@ -1716,8 +1756,10 @@
 				624583842A7E427700041FF1 /* YWPopManager.swift in Sources */,
 				62940C632A5D9D9B004148E3 /* YWNetworkTypeJSActionHandler.swift in Sources */,
 				624BE07529D054E40071CD57 /* YWThemesMainView.swift in Sources */,
+				621CDC9B2B14CF0A009FCAEC /* YWAddressItemEditModel.swift in Sources */,
 				628E3AA72A6B8DAB00D10622 /* YWShareSDKHelper.swift in Sources */,
 				62F68BB229AB75C80023EC3C /* YWAccountCtrl.swift in Sources */,
+				621CDC7C2AFF67B2009FCAEC /* YYTextAsyncLayer+Extension.swift in Sources */,
 				62DF255A2A8E444400A12A0A /* YWActivityCenterItemViewModel.swift in Sources */,
 				62DF25502A8A547300A12A0A /* YWAccountCenterItemCell.swift in Sources */,
 				62F68BAB29AB75470023EC3C /* YWTabBarViewController.swift in Sources */,
@@ -1745,6 +1787,8 @@
 				62940C732A62770F004148E3 /* YWLoginUser.swift in Sources */,
 				62F68BE729B0E53E0023EC3C /* YWUserAPI.swift in Sources */,
 				62940C682A5DA124004148E3 /* YWGotoNativeProtocol.swift in Sources */,
+				621CDC9F2B14D2CB009FCAEC /* YWAddressItemBaseCell.swift in Sources */,
+				621CDC9D2B14D29F009FCAEC /* YWAddressListCell.swift in Sources */,
 				624583792A7E2D6C00041FF1 /* SnapKit_Extension.swift in Sources */,
 				628E3AA52A6B8BD700D10622 /* YWLanguageUtility.swift in Sources */,
 				628E3ADF2A73FF9100D10622 /* YWH5Urls.swift in Sources */,
@@ -1752,6 +1796,7 @@
 				624BE09629D5BCAF0071CD57 /* YWAsinglViewModule.swift in Sources */,
 				624BE06329CB3B2E0071CD57 /* YWRefreshHeader.swift in Sources */,
 				62940C012A4FF6A9004148E3 /* YWDouYinVideoViewModel.swift in Sources */,
+				621CDC992B14CE10009FCAEC /* YWAddressModel.swift in Sources */,
 				6203BD9929D9458D00FF063F /* YWThemesMainsModel.swift in Sources */,
 				62DF24782A87400900A12A0A /* YWCartCtrl.swift in Sources */,
 				62940C052A4FFB2A004148E3 /* YWCommonService.swift in Sources */,
@@ -1810,6 +1855,7 @@
 				624BE09829D5BFD40071CD57 /* YWHomeChannelCCellModel.swift in Sources */,
 				62F68BDF29B0E12F0023EC3C /* YWRequestable.swift in Sources */,
 				624583922A8126F200041FF1 /* YWHomeNavBar.swift in Sources */,
+				621CDC952B14CD7D009FCAEC /* YWAddressListViewModel.swift in Sources */,
 				62940C2B2A51293A004148E3 /* CommentsPopView.swift in Sources */,
 				62F68BC529B0CF790023EC3C /* YWConstant+Device.swift in Sources */,
 				62F68BF029B220270023EC3C /* YWNavigatable.swift in Sources */,
@@ -1887,6 +1933,7 @@
 				624BE08C29D0637C0071CD57 /* YWThemesMainLayout.swift in Sources */,
 				62F68C3529BF51700023EC3C /* YWView+Extension.swift in Sources */,
 				624BE07D29D05C220071CD57 /* YWCollectionCellModelProtocol.swift in Sources */,
+				621CDCA12B14D2F4009FCAEC /* YWAddressItemEditCell.swift in Sources */,
 				62940C0E2A500C4C004148E3 /* YWTwoAdvCCell.swift in Sources */,
 				62F68C1B29BA0E3A0023EC3C /* YWSearchResultCtrl.swift in Sources */,
 				62940C592A5D9D01004148E3 /* YWGetJSActionHandler.swift in Sources */,
@@ -1902,6 +1949,7 @@
 				62F68BA929AB75200023EC3C /* YWNavigationViewController.swift in Sources */,
 				62F68BDB29B0E0BF0023EC3C /* YWResult.swift in Sources */,
 				62F68BEB29B0E6E00023EC3C /* YWLoginService.swift in Sources */,
+				621CDC972B14CD94009FCAEC /* YWAddressEditViewModel.swift in Sources */,
 				624BE09029D3137D0071CD57 /* YWCustomMathTool.swift in Sources */,
 				624BE08129D05F460071CD57 /* YWThemeBlockModel.swift in Sources */,
 				62940C522A5D9C54004148E3 /* YWWKWebView.swift in Sources */,
@@ -1919,6 +1967,7 @@
 				6203BD9E29DD7D7800FF063F /* YWThemeModulModel.swift in Sources */,
 				627DD74729F3B6DD004859A7 /* YWFullScreenPop.swift in Sources */,
 				62940C0C2A500122004148E3 /* YWVideoPlayView.swift in Sources */,
+				621CDC912B14CD3B009FCAEC /* YWAddressListCtrl.swift in Sources */,
 				62DF25562A8E440400A12A0A /* YWActivityCenterCtrl.swift in Sources */,
 				624583752A7BF93D00041FF1 /* YWLanguageAlertView.swift in Sources */,
 				62940C182A500D4B004148E3 /* YWScrollAdvCCell.swift in Sources */,
@@ -1930,6 +1979,7 @@
 				62940C2E2A51293A004148E3 /* CircleTextView.swift in Sources */,
 				62940C142A500D12004148E3 /* YWHomeOneGoodsCCell.swift in Sources */,
 				62DF255C2A8E446300A12A0A /* YWActivityCenterItemCtrl.swift in Sources */,
+				621CDC932B14CD51009FCAEC /* YWAddressEditCtrl.swift in Sources */,
 				62F68C3729C0A5B10023EC3C /* YWString+Extension.swift in Sources */,
 				62940C122A500CCD004148E3 /* YWThemeGoodsCCell.swift in Sources */,
 				6245837F2A7E2F1600041FF1 /* YWStoreManager.swift in Sources */,
@@ -1979,6 +2029,7 @@
 /* Begin XCBuildConfiguration section */
 		6203BDA129E2FF0600FF063F /* DEV */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621CDC892AFF6ACA009FCAEC /* YWDEVConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2085,6 +2136,7 @@
 		};
 		6203BDA329E2FF2100FF063F /* PRD */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621CDC872AFF6AAF009FCAEC /* YWPRDConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2185,6 +2237,7 @@
 		};
 		62F68B9F29AB5E1F0023EC3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621CDC892AFF6ACA009FCAEC /* YWDEVConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2248,6 +2301,7 @@
 		};
 		62F68BA029AB5E1F0023EC3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621CDC872AFF6AAF009FCAEC /* YWPRDConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;

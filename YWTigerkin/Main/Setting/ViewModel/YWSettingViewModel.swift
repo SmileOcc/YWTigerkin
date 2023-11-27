@@ -80,6 +80,8 @@ class YWSettingViewModel: HUDServicesViewModel , HasDisposeBag  {
             } else if i == 1 {
                 model.title = "版本信息"
                 model.desc = "最新版本"
+            } else if i == 2 {
+                model.title = "地址中心"
             }
             self.datas.append(model)
         }

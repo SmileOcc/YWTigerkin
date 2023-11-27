@@ -60,6 +60,10 @@ public protocol YWModuleType {
     //MARK: - 活动中心
     case activityCenter
     
+    //MARK: - 地址
+    case addressCenter
+    case addressEdit
+    
     
 }
 
@@ -104,6 +108,10 @@ extension YWModulePaths: YWModuleType {
             return "messageCenter/"
         case .activityCenter:
             return "activityCenter/"
+        case .addressCenter:
+            return "address/Center"
+        case .addressEdit:
+            return "address/Edit"
         }
     }
     

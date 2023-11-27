@@ -14,6 +14,15 @@ import Foundation
 //    }
 //}
 
+func YWBaseCofig(_ key:String) -> String {
+        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {
+            return ""
+        }
+        let infoDic = NSDictionary(contentsOfFile: path)
+        let value = infoDic?["key"] as? String ?? ""
+        return value
+    }
+
 
 func synchronized(_ lock: Any, closure: () -> Void) {
     objc_sync_enter(lock)

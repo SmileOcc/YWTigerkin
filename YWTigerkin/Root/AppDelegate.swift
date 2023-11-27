@@ -38,9 +38,11 @@ class YWAppDelegate: UIResponder, UIApplicationDelegate {
     public let navigator = YWNavigatorServices.shareInstance
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+                
         //判断是否第一次安装
         let isFirstInstall = false
+        
+        YYTextAsyncLayer.swizzledDisplayAsync()
         
         YWFullScreenPop.configure()
         

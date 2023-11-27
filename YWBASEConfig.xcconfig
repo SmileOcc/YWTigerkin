@@ -1,0 +1,14 @@
+//
+//  YWBASEConfig.xcconfig
+//  YWTigerkin
+//
+//  Created by odd on 11/11/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) BASE_API='$(BASE_API)' IS_PRODUCT='$(IS_PRODUCT)'
+
+//xcode15c
+//OTHER_LDFLAGS = $(inherited) "-ld64"

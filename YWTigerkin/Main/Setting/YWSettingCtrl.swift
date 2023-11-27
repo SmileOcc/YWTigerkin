@@ -155,7 +155,9 @@ extension YWSettingCtrl: UITableViewDelegate,UITableViewDataSource {
                 YWUpdateManager.shared.showUpdateAlert()
 
             } else if model.id == "2" {
-                
+                let addressModel = YWAddressListViewModel()
+                let context = YWNavigatable(viewModel: addressModel)
+                YWWAppDelegate?.navigator.pushPath(YWModulePaths.addressCenter.url, context: context, animated: true)
             } else if model.id == "5" {
                 let webModel = YWWebViewModel(dictionary: [:])
                 webModel.url = "https://baidu.com/"

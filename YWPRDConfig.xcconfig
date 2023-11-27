@@ -1,0 +1,19 @@
+//
+//  YWPRDConfig.xcconfig
+//  YWTigerkin
+//
+//  Created by odd on 11/11/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// 应用名字
+APP_DISPLAY_NAME = TigerKin.PRD
+//接口地址
+BASE_API = https:/$()/www.baidu.com/02
+
+//是否生产
+IS_PRODUCT = TRUE
+
+#include "YWBASEConfig.xcconfig"

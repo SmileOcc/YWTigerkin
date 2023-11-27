@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIView{
     
@@ -267,6 +268,36 @@ extension UIView {
             self.overrideUserInterfaceStyle = .light
         } else {
         }
+    }
+    
+    //绘制小三角
+    @objc func testTop(showView: UIView, shapeHeight:CGFloat, shapeWidth:CGFloat) -> CAShapeLayer {
+        let tWidth = CGFloat(showView.frame.width)
+        let tHeight = CGFloat(showView.frame.height)
+        
+        let path = UIBezierPath()
+
+        //可以判断是否放向处理
+        let point1 = CGPoint(x: 0, y: tHeight)
+        let point2 = CGPoint(x: 0, y: shapeHeight)
+        let point3 = CGPoint(x:(tWidth / 2.0) - (shapeWidth / 2.0), y: shapeHeight)
+        let point4 = CGPoint(x: (tWidth / 2.0), y: 0.0)
+        let point5 = CGPoint(x: (tWidth / 2.0) + (shapeWidth / 2.0), y: shapeHeight)
+        let point6 = CGPoint(x: tWidth, y: shapeHeight)
+        let point7 = CGPoint(x: tWidth, y: tHeight)
+        
+        path.move(to: point1)
+        path.addLine(to: point1)
+        path.addLine(to: point2)
+        path.addLine(to: point3)
+        path.addLine(to: point4)
+        path.addLine(to: point5)
+        path.addLine(to: point6)
+        path.addLine(to: point7)
+        
+        let layer = CAShapeLayer()
+        layer.path = path.cgPath
+        return layer
     }
 }
 
