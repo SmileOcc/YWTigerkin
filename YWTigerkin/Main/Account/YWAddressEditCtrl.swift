@@ -73,6 +73,11 @@ class YWAddressEditCtrl: YWBaseViewController , HUDViewModelBased{
     
     override func bindViewModel() {
     }
+    
+    func updateCell(cell:YWAddressItemBaseCell,model:YWAddressItemEditModel) {
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+    }
 
 }
 
@@ -86,13 +91,22 @@ extension YWAddressEditCtrl: UITableViewDelegate,UITableViewDataSource {
         if self.viewModel.datas.count > indexPath.row {
             let model = self.viewModel.datas[indexPath.row]
             cell.model = model
+            
+            cell.didchangeBlock = {[weak self] (tcell,model) in
+                guard let `self` = self else {return}
+                self.updateCell(cell: tcell, model: model)
+            }
         }
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        56.0
+        if self.viewModel.datas.count > indexPath.row {
+            let model = self.viewModel.datas[indexPath.row]
+            return model.contentH
+        }
+        return 56.0
     }
     
     

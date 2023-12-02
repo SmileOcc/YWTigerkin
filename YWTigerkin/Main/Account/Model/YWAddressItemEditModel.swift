@@ -22,6 +22,7 @@ class YWAddressItemEditModel: YWBaseModel {
     var itemType:YWAddressItemType = .unknow
     var title:String = ""
     var subDesc:String = ""
+    var content:String = ""
     var errorTip:String = ""
     var isShowError:Bool = false
     
@@ -30,6 +31,6 @@ class YWAddressItemEditModel: YWBaseModel {
     
     var isSetDefault:Bool = false
     
-    var contentH:CGFloat = 44.0
+    var contentH:CGFloat = 56.0
 
 }

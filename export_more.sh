@@ -31,8 +31,67 @@ scheme_name="$targetName"
 
 echo "\033[33;1m您的项目target的scheme名称为=${scheme_name} "
 
+#分支切换
+
+echo "-------------------------选择打包方式-----------------------------"
+echo "\033[36;1m请选择打包方式(输入序号,按回车即可) \033[0m"
+echo "\033[33;1m1. YWTigerkin       \033[0m"
+echo "\033[33;1m2. YWTigerkin.prd    \033[0m"
+echo "\033[33;1m3. YWTigerkin.test  \033[0m"
+echo "\033[33;1m4. YWTigerkin.dev \033[0m"
+# 读取用户输入并存到变量里
+read shceme_branch_input
+sleep 0.5
+
+shceme_branch="$shceme_branch_input"
+
+# 判读用户是否有输入
+if [ -n "$shceme_branch" ]
+then
+    if [ "$shceme_branch" = "1" ] ; then
+        scheme_name="YWTigerkin"
+    elif [ "$shceme_branch" = "2" ] ; then
+        scheme_name="YWTigerkin.prd"
+    elif [ "$shceme_branch" = "3" ] ; then
+        scheme_name="YWTigerkin.test"
+    elif [ "$shceme_branch" = "4" ] ; then
+        scheme_name="YWTigerkin.dev"
+    else
+        echo "输入的参数无效!!!"
+        exit 1
+    fi
+fi
+
+
 # 指定要打包编译的方式 : Release,Debug。一般用Release。必填
 build_configuration="Release"
+
+echo "-------------------------选择打包方式-----------------------------"
+echo "\033[36;1m请选择打包方式(输入序号,按回车即可) \033[0m"
+echo "\033[33;1m1. Debug       \033[0m"
+echo "\033[33;1m2. Release    \033[0m"
+
+# 读取用户输入并存到变量里
+read parameter_buid
+sleep 0.5
+
+buidMeth="$parameter_buid"
+
+# 判读用户是否有输入
+if [ -n "$buidMeth" ]
+then
+    if [ "$buidMeth" = "1" ] ; then
+        build_configuration="Release"
+    elif [ "$buidMeth" = "2" ] ; then
+        build_configuration="Debug"
+    elif [ "$packMethod" = "4" ] ; then
+        build_configuration="Debug"
+    else
+        echo "输入的参数无效!!!"
+        exit 1
+    fi
+fi
+
 
 # method，打包的方式。方式分别为 development, ad-hoc, app-store, enterprise 。必填
 
@@ -69,6 +128,24 @@ fi
 
 
 echo "\033[33;1m打包方式method=${method} "
+
+echo "\n\n"
+app_branch=`git rev-parse --abbrev-ref HEAD`
+echo "【代码版本分支】✅✅✅✅✅:$app_branch"
+echo
+
+if [ "$method" = "app-store" ] ; then
+    if [ -n "$app_branch" ]; then
+        if [ "$app_branch" = "dev_release" ]; then
+        else
+            echo "【校验线上打包：代码版本分支】❌❌❌❌:$app_branch ----> cd进入项目路径下打包， 打线上包需要【dev_release】分支"
+            exit 1
+        fi
+    else
+        echo "【未读取分支 校验线上打包：代码版本分支】❌❌❌❌:$app_branch ----> cd进入项目路径下打包， 打线上包需要【dev_release】分支"
+        exit
+    fi
+fi
 
 
 #  下面两个参数只是在手动指定Pofile文件的时候用到，如果使用Xcode自动管理Profile,直接留空就好
@@ -165,7 +242,10 @@ fi
 /usr/libexec/PlistBuddy -c  "Add :method String ${method}"  $export_options_plist_path
 #/usr/libexec/PlistBuddy -c  "Add :provisioningProfiles:"  $export_options_plist_path
 #/usr/libexec/PlistBuddy -c  "Add :provisioningProfiles:${bundle_identifier} String ${mobileprovision_name}"  $export_options_plist_path
-/usr/libexec/PlistBuddy -c  "Add :signingStyle String automatic"  $export_options_plist_path
+#旧
+#/usr/libexec/PlistBuddy -c  "Add :signingStyle String automatic"  $export_options_plist_path
+#新
+/usr/libexec/PlistBuddy -c  "Add :signingStyle String manual"  $export_options_plist_path
 /usr/libexec/PlistBuddy -c  "Add :destination String export"  $export_options_plist_path
 /usr/libexec/PlistBuddy -c  "Add :compileBitcode bool false"  $export_options_plist_path     #如果您的工程是开启Bitcode的话，请把false改为true
 

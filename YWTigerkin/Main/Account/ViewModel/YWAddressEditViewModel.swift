@@ -35,6 +35,7 @@ class YWAddressEditViewModel: HUDServicesViewModel , HasDisposeBag  {
             let model = YWAddressItemEditModel()
             model.title = "其他"
             model.subDesc = "描述"
+            model.content = "内容描述内容描述内容描述内容描述123内容描述内容描述内容描述内容描述123内容描述内容描述内容描述内容描述123内容描述内容描述内容描述内容描述123内容描述内容描述内容描述内容描述123"
             if i == 0 {
                 model.title = "用户名"
                 model.itemType = .name
@@ -51,6 +52,10 @@ class YWAddressEditViewModel: HUDServicesViewModel , HasDisposeBag  {
                 model.title = "设置默认"
                 model.itemType = .setDefault
             }
+            let contentH = YWAddressItemEditCell.contentHeight(str: model.content)
+            print("--------\(contentH)")
+            model.contentH = contentH
+            
             self.datas.append(model)
         }
         
