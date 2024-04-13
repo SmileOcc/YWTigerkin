@@ -1605,6 +1605,7 @@
 				62F68B8B29AB5E190023EC3C /* Resources */,
 				2927D9E9DB868C311C5F6285 /* [CP] Embed Pods Frameworks */,
 				058D720A0BE14B268DD52AF6 /* [CP] Copy Pods Resources */,
+				623C158A2B25C55400476BA6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1737,6 +1738,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YWTigerkin/Pods-YWTigerkin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		623C158A2B25C55400476BA6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"=====项目是否重签：不\"\n\n#exit 0\necho \"=====项目不重签：开始重签\"\n\n# ${SRCROOT} 它是工程文件所在的目录\nTEMP_PATH=\"${SRCROOT}/Temp\"\n# 资源文件夹，我们提前在工程目录下新建一个APP文件夹，里面放ipa包\nASSETS_PATH=\"${SRCROOT}/APP\"\n# 目标ipa包路径\nTARGET_IPA_PATH=\"${ASSETS_PATH}/*.ipa\"\n# 清空Temp文件夹\nrm -rf \"${SRCROOT}/Temp\"\nmkdir -p \"${SRCROOT}/Temp\"\n\n# 重命名\nNEW_TARGET_NAME=\"${TARGET_NAME}\"\n#自定义\nNEW_TARGET_NAME=\"${TARGET_NAME}_New\"\n\n#----------------------------------------\n# 1. 解压IPA到Temp下\nunzip -oqq \"$TARGET_IPA_PATH\" -d \"$TEMP_PATH\"\n# 拿到解压的临时的APP的路径\nTEMP_APP_PATH=$(set -- \"$TEMP_PATH/Payload/\"*.app;echo \"$1\")\necho \"=====项目路径是:$TEMP_APP_PATH\"\n\n#----------------------------------------\n# 2. 将解压出来的.app拷贝进入工程下\n# BUILT_PRODUCTS_DIR 工程生成的APP包的路径\n# TARGET_NAME target名称\nTARGET_APP_PATH=\"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app\"\n# echo \"app路径:$TARGET_APP_PATH\"\n\nrm -rf \"$TARGET_APP_PATH\"\nmkdir -p \"$TARGET_APP_PATH\"\ncp -rf \"$TEMP_APP_PATH/\" \"$TARGET_APP_PATH\"\n\n#----------------------------------------\n# 3. 删除extension和WatchAPP.个人证书没法签名Extention\nrm -rf \"$TARGET_APP_PATH/PlugIns\"\nrm -rf \"$TARGET_APP_PATH/Watch\"\n\n#----------------------------------------\n# 4. 更新info.plist文件 CFBundleIdentifier\n#  设置:\"Set : KEY Value\" \"目标文件路径\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleIdentifier $PRODUCT_BUNDLE_IDENTIFIER\" \"$TARGET_APP_PATH/Info.plist\"\n# 重命名\n/usr/libexec/PlistBuddy -c \"Set :CFBundleName $NEW_TARGET_NAME\" \"$TARGET_APP_PATH/Info.plist\"\n\n#----------------------------------------\n\n# 5. 给MachO文件上执行权限\n# 拿到MachO文件的路径\nAPP_BINARY=\"plutil -convert xml1 -o - $TARGET_APP_PATH/Info.plist|grep -A1 Exec|tail -n1|cut -f2 -d\\>|cut -f1 -d\\<\"\n# 上可执行权限\nchmod +x \"$TARGET_APP_PATH/$APP_BINARY\"\n\n#----------------------------------------\necho \"=====项目路径是:$TEMP_APP_PATH\"\n\necho \"=====项目三方重签证书:$EXPANDED_CODE_SIGN_IDENTITY\"\n\n# 6. 重签名第三方 FrameWorks\nTARGET_APP_FRAMEWORKS_PATH=\"$TARGET_APP_PATH/Frameworks\"\nif [ -d \"$TARGET_APP_FRAMEWORKS_PATH\" ];\nthen\nfor FRAMEWORK in \"$TARGET_APP_FRAMEWORKS_PATH/\"*\ndo\n\n# 签名\n/usr/bin/codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" \"$FRAMEWORK\"\ndone\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
