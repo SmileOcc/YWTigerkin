@@ -163,7 +163,8 @@ fi
 /usr/libexec/PlistBuddy -c  "Add :method String ${method}"  $export_options_plist_path
 #/usr/libexec/PlistBuddy -c  "Add :provisioningProfiles:"  $export_options_plist_path
 #/usr/libexec/PlistBuddy -c  "Add :provisioningProfiles:${bundle_identifier} String ${mobileprovision_name}"  $export_options_plist_path
-/usr/libexec/PlistBuddy -c  "Add :signingStyle String automatic"  $export_options_plist_path
+#/usr/libexec/PlistBuddy -c  "Add :signingStyle String automatic"  $export_options_plist_path
+/usr/libexec/PlistBuddy -c  "Add :signingStyle String manual"  $export_options_plist_path
 /usr/libexec/PlistBuddy -c  "Add :destination String export"  $export_options_plist_path
 /usr/libexec/PlistBuddy -c  "Add :compileBitcode bool false"  $export_options_plist_path     #如果您的工程是开启Bitcode的话，请把false改为true
 
