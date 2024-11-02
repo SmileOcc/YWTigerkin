@@ -29,6 +29,27 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
         return view
     }()
     
+    lazy var testMessageLab:UILabel = {
+        let view = UILabel(frame:CGRect.zero)
+        view.backgroundColor = UIColor.green
+        view.textAlignment = .center
+        view.font = UIFont.systemFont(ofSize: 13)
+        view.numberOfLines = 0
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var testBtn:UIButton = {
+        let view = UIButton(type: .custom)
+        view.setTitle(" 测试按钮 ", for: .normal)
+        view.backgroundColor = UIColor.blue
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        view.addTarget(self, action: #selector(testAction), for: .touchUpInside)
+        view.isHidden = true
+        return view
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if YWWAppDelegate?.screen_set != .set_port {
@@ -52,9 +73,24 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
         self.modalPresentationStyle = .fullScreen
 
         self.view.addSubview(baseNavBar)
+        
+        self.view.addSubview(testMessageLab)
+        self.view.addSubview(testBtn)
+        
         baseNavBar.snp.makeConstraints { make in
             make.left.right.top.equalTo(self.view)
             make.height.equalTo(YWConstant.navBarHeight)
+        }
+        
+        testMessageLab.snp.makeConstraints { make in
+            make.left.right.equalTo(self.view)
+            make.top.equalTo(self.baseNavBar.snp.bottom).offset(12)
+            make.height.greaterThanOrEqualTo(44)
+        }
+        
+        testBtn.snp.makeConstraints { make in
+            make.centerX.equalTo(self.view.snp.centerX)
+            make.bottom.equalTo(self.view.snp.bottom).offset(-50)
         }
         
         _ = NotificationCenter.default.rx
@@ -120,6 +156,9 @@ class YWBaseViewController: UIViewController, HasDisposeBag {
                 }
     }
 
+    
+    @objc func testAction() {
+    }
     
     
 }

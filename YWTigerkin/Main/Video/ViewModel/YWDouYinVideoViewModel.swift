@@ -110,7 +110,7 @@ class YWDouYinVideoViewModel: HUDServicesViewModel , HasDisposeBag {
                              "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8",
                              "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
                              "https://www.cambridgeenglish.org/images/153149-movers-sample-listening-test-vol2.mp3",
-                             "https://www.cambridgeenglish.org/images/506891-a2-key-for-schools-listening-sample-test.mp3",                             
+                             "https://www.cambridgeenglish.org/images/506891-a2-key-for-schools-listening-sample-test.mp3",
                              "http://mirror.aarnet.edu.au/pub/TED-talks/911Mothers_2010W-480p.mp4",
                              "http://image.nbd.com.cn/uploads/articles/images/673466/500352700_banner.jpg",
                              "https://sample-videos.com/video123/mkv/720/big_buck_bunny_720p_5mb.mkv",

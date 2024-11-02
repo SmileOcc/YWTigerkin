@@ -66,7 +66,7 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
     }
     
     func requestData() {
-        for i in 0...10 {
+        for i in 0...20 {
             let model = YWAccountItemModel()
             model.title = "其他"
             model.imgName = "settings"
@@ -89,6 +89,14 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
                 model.title = "用户中心"
             } else if i == 7 {
                 model.title = "活动中心"
+            } else if i == 8 {
+                model.title = "Dic的读取崩溃"
+            } else if i == 9 {
+                model.title = "封装catch同时捕获oc、swift的catch"
+            } else if i == 10 {
+                model.title = "画表直方图"
+            } else if i == 11 {
+                model.title = "下载文件测试"
             }
             self.datas.append(model)
         }

@@ -15,7 +15,7 @@ class YWOhterTestCtrl: YWBaseViewController , HUDViewModelBased{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "ohter"
+        self.title = "other"
         
         bindViewModel()
         viewModelResponse()
@@ -175,6 +175,23 @@ extension YWOhterTestCtrl: UITableViewDelegate,UITableViewDataSource {
                 let accountModel = YWActivityCenterViewModel()
                 let context = YWNavigatable(viewModel: accountModel, userInfo: nil)
                 YWWAppDelegate?.navigator.pushPath(YWModulePaths.activityCenter.url, context: context, animated: true)
+            }
+            else if model.id == "8" {
+                let ctrl = YWTestDicWriteReadCtrl()
+                self.navigationController?.pushViewController(ctrl, animated: true)
+            }
+            else if model.id == "9" {
+                let ctrl = YWTestOCSwiftCatchCtrl()
+                self.navigationController?.pushViewController(ctrl, animated: true)
+            }
+            else if model.id == "10" {
+                let ctrl = YWTestBarGraphCtrl()
+                self.navigationController?.pushViewController(ctrl, animated: true)
+
+            }
+            else if model.id == "11" {
+                let ctrl = YWTestDownFileCtrl()
+                self.navigationController?.pushViewController(ctrl, animated: true)
             }
         }
         return;

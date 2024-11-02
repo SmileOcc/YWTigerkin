@@ -14,7 +14,7 @@
 #import <CommonCrypto/CommonDigest.h>
 
 #import "VIMediaCache.h"
-
+#import "YWExceptionOCCatch.h"
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKExtension/ShareSDK+Extension.h>

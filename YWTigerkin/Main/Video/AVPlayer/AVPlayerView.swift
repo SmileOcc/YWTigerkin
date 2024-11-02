@@ -78,6 +78,8 @@ class AVPlayerView: UIView {
     func setPlayerSourceUrl(url:String) {
         sourceURL = URL.init(string: url)
         
+        print("cache completed" + url)
+
         var components = URLComponents.init(url: sourceURL!, resolvingAgainstBaseURL: false)
         sourceScheme = components?.scheme
         cacheFileKey = sourceURL?.absoluteString
