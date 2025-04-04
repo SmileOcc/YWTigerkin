@@ -82,5 +82,37 @@ import WebKit
 class YWWKWebView: WKWebView {
 
     @objc open weak var jsDelegate: YWWKWebViewDelegate?
+    
+    //私有方法，注意审核(一般清纯network就好了）
+    let killNetworkProcessKey = "_terminateNetworkProcess"
+    
+    let killServiceWorkersKey = "_terminateServiceWorkers"
+    
+    let killAllWebContentProcesses = "_terminateAllWebContentProcesses"
+    
+    func killNetworkProcess() {
+        let networkProcess = self.configuration.websiteDataStore
+        let sector = Selector(self.killNetworkProcessKey)
+        if networkProcess.responds(to: sector) {
+            networkProcess.perform(sector)
+        }
+        
+    }
+    
+    func killServiceWorkers() {
+        let webProcessPool = self.configuration.processPool
+        let sector = Selector(self.killServiceWorkersKey)
+        if webProcessPool.responds(to:sector) {
+            webProcessPool.perform(sector)
+        }
+    }
+    
+    func killAllContentProces() {
+        let webProcessPool = self.configuration.processPool
+        let sector = Selector(self.killAllWebContentProcesses)
+        if webProcessPool.responds(to:sector) {
+            webProcessPool.perform(sector)
+        }
+    }
 
 }

@@ -19,7 +19,7 @@ pod 'NSObject+Rx'
 # 基于RxSwift的工作流
 #pod 'RxFlow'
 
-pod 'URLNavigator'
+pod 'URLNavigator', '~> 2.4.1'
 
 # 网络请求
 pod 'Moya/RxSwift'
@@ -42,16 +42,16 @@ pod 'IQKeyboardManagerSwift', '~> 6.5.5'
 #pod 'SDCycleScrollView', '~> 1.80'
 #pod 'SDWebImageWebPCoder'
 
-pod 'mob_sharesdk'
-pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'
-pod 'mob_sharesdk/ShareSDKPlatforms/Twitter'
-pod 'mob_sharesdk/ShareSDKPlatforms/Facebook'
-pod 'mob_sharesdk/ShareSDKPlatforms/WhatsApp'
-pod 'mob_sharesdk/ShareSDKPlatforms/Messenger'
-pod 'mob_sharesdk/ShareSDKPlatforms/Line'
-pod 'mob_sharesdk/ShareSDKPlatforms/Instagram'
-pod 'mob_sharesdk/ShareSDKPlatforms/Telegram'
-pod 'mob_sharesdk/ShareSDKExtension'
+#pod 'mob_sharesdk'
+#pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'
+#pod 'mob_sharesdk/ShareSDKPlatforms/Twitter'
+#pod 'mob_sharesdk/ShareSDKPlatforms/Facebook'
+#pod 'mob_sharesdk/ShareSDKPlatforms/WhatsApp'
+#pod 'mob_sharesdk/ShareSDKPlatforms/Messenger'
+#pod 'mob_sharesdk/ShareSDKPlatforms/Line'
+#pod 'mob_sharesdk/ShareSDKPlatforms/Instagram'
+#pod 'mob_sharesdk/ShareSDKPlatforms/Telegram'
+#pod 'mob_sharesdk/ShareSDKExtension'
 #pod 'Firebase/Auth'
 #pod 'GoogleSignIn'
 #pod 'Firebase/Analytics'
@@ -67,7 +67,7 @@ pod 'SAMKeychain'
 #pod 'CocoaAsyncSocket'
 #pod 'PPSPing', '~> 0.3.0'
 #pod 'SwiftProtobuf', '~> 1.10.2'
-pod 'MMKV'
+pod 'MMKV', '~> 1.2.13'
 #pod 'DZNEmptyDataSet'
 
 #AppDelegate瘦身类
@@ -104,7 +104,7 @@ pod 'Masonry'
 #pod 'QMUIKit', '~> 4.4.3'
 
 # Lottie动画
-pod 'lottie-ios'
+#pod 'lottie-ios'
 
 # 富文本处理框架
 #pod 'DTCoreText'
@@ -120,7 +120,7 @@ pod 'CryptoSwift'
 
 pod 'YYModel'
 pod 'YYWebImage'
-pod 'YYImage/WebP'
+#pod 'YYImage/WebP'
 pod 'YYText'
 
 #pod 'RxDataSources'

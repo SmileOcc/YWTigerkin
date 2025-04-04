@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+        <style type="text/css">
+            .block {
+                width: 80%;
+                height: 300pt;
+                margin-top: 50pt;
+                background-color: red;
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .title {
+                width: 100%;
+                text-align: center;
+            }
+            .toast {
+                position: fixed;
+                width: 250pt;
+                height: 100pt;
+                background-color: gray;
+                line-height: 100pt;
+                text-align: center;
+                color: white;
+                top: 50%;
+                left: 50%;
+                font-size: 50pt;
+                transform: translate(-50%,-50%);
+            }
+            .native {
+                width: 100%;
+                height: 350pt;
+                margin-top: 50pt;
+                background-color: blue;
+                overflow: scroll;
+                /* 低版本需要 */
+                -webkit-overflow-scrolling: touch;
+            }
+            .hidchild {
+                    visibility: hidden;
+                    /* 使高度超过父Dom节点高度 */
+                    height: 101%;
+                }
+        </style>
+        <script>
+            // 获取需要转换成原生组件的H5组件
+            // 并将H5组件的索引、类型、Frame相关信息通知给客户端。
+            function insertNativeComponents() {
+                //定义的同层组件
+                var ct = document.getElementsByClassName("native")[0];
+                //同层组件ID：可以是类型 + 123
+                var id = ct.getAttribute("id");
+                //可以添加额外类型 或数据
+                var navType = ct.getAttribute("navType");
+
+                var frame = ct.getBoundingClientRect();
+                var args = {
+                    "frame": {
+                        "y": frame.top,
+                        "x": frame.left,
+                        "width": frame.width,
+                        "height": frame.height
+                    },
+                    "id": id,
+                    "navType": navType
+                };
+                return args
+            }
+            
+            function insertNativeComponentsAll() {
+                var nativeRenderArr = document.getElementsByClassName("native_render");
+                for (var i = 0; i < nativeRenderArr.length; i++) {
+                    var nativeRender = nativeRenderArr[i];
+                    var type = nativeRender.getAttribute("native-render-type");
+                    if (!type) continue;
+                    var frame = nativeRender.getBoundingClientRect();
+                    var args = {
+                        "frame": {
+                            "top": frame.top,
+                            "left": frame.left,
+                            "width": frame.width,
+                            "height": frame.height
+                        },
+                    };
+                    nativeInvoke(type, i, args);
+                }
+            }
+            
+            /**
+             * 将相关信息发送给客户端
+             *
+             * type: 组件类型，客户端根据该字段生成对应原生组件
+             * index：组件索引，客户端根据该字段获取对应的WkWebView
+             * args：相关参数，目前携带H5组件的Frame信息
+             */
+            function nativeInvoke(type, index, args) {
+                var platform = "ios";
+                if (platform === "ios") {
+                    try {
+                        window.webkit.messageHandlers.nativeRender.postMessage({
+                            "type": type,
+                            "index": index,
+                            "args": args
+                        });
+                    } catch (error) {
+                        console.log(error)
+                    }
+                } else if (platform === "Android") {
+                    //TODO:
+                }
+            }
+
+            
+            setTimeout(()=>{
+                window.webkit.messageHandlers.nativeViewHandler.postMessage({
+                    "command": "nativeViewInsert",
+                    "args": insertNativeComponents()
+                });
+            }, 2000);
+            
+            setTimeout("insertNativeComponents()", 100);
+
+        </script>
+</head>
+<body>
+    <!-- 标题 -->
+    <h1 class="title">H5页面Demo</h1>
+    <!-- 内容 -->
+    <div class="content">
+        <div class="block"></div>
+        <div class="block"></div>
+        <!-- 特殊组件 -->
+        <div class="native" id="common_222"  navType="navType">
+<!--            //方式一-->
+<!--            <div style="width: 101%; height: 101%">//这里为什么要超出一点才可以,为了overflow: scroll 可以滚动吧-->
+<!--            </div>-->
+<!--            //方式二-->
+            <div class="hidchild"></div>
+        </div>
+        <div class="native" id="video_22233" navType="video">
+            <div style="width: 100%; height: 100%">
+            </div>
+        </div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+    <!-- 弹框 -->
+<!--    <div class="toast show">弹窗提示</div>-->
+</body>
+</html>
+
+
+<!--属性配置                overflow: scroll;-->
+
+<!--WKWebView 在内部采用的是分层的方式进行渲染，它会将 WebKit 内核生成的 Compositing Layer（合成层）渲染成 iOS 上的一个 WKCompositingView，这是一个客户端原生的 View，不过可惜的是，内核一般会将多个 DOM 节点渲染到一个 Compositing Layer 上，因此合成层与 DOM 节点之间不存在一对一的映射关系。-->
+<!--但是当我们把一个 DOM 节点的 CSS 属性设置为 overflow: scroll （低版本需同时设置 -webkit-overflow-scrolling: touch）之后，并且该 DOM 下有一个高度超过该 DOM 节点高度的子节点，WKWebView 会为该 DOM 节点生成一个 WKChildScrollView，与 DOM 节点存在映射关系。这是一个原生的 UIScrollView 的子类，也就是说 WebView 里的滚动实际上是由真正的原生滚动组件来承载的，WKWebView 这么做是为了可以让 iOS 上的 WebView 滚动有更流畅的体验。-->

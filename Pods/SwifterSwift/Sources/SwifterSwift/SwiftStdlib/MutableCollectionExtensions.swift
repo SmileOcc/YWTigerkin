@@ -1,16 +1,10 @@
-//
-//  MutableCollectionExtensions.swift
-//  SwifterSwift
-//
-//  Created by Luciano Almeida on 21/09/19.
-//  Copyright © 2019 SwifterSwift
-//
+// MutableCollectionExtensions.swift - Copyright 2024 SwifterSwift
 
 public extension MutableCollection where Self: RandomAccessCollection {
     /// SwifterSwift: Sort the collection based on a keypath and a compare function.
     ///
     /// - Parameter keyPath: Key path to sort by. The key path type must be Comparable.
-    /// - Parameter compare: Comparation function that will determine the ordering.
+    /// - Parameter compare: Comparison function that will determine the ordering.
     mutating func sort<T>(by keyPath: KeyPath<Element, T>, with compare: (T, T) -> Bool) {
         sort { compare($0[keyPath: keyPath], $1[keyPath: keyPath]) }
     }
@@ -18,17 +12,18 @@ public extension MutableCollection where Self: RandomAccessCollection {
     /// SwifterSwift: Sort the collection based on a keypath.
     ///
     /// - Parameter keyPath: Key path to sort by. The key path type must be Comparable.
-    mutating func sort<T: Comparable>(by keyPath: KeyPath<Element, T>) {
+    mutating func sort(by keyPath: KeyPath<Element, some Comparable>) {
         sort { $0[keyPath: keyPath] < $1[keyPath: keyPath] }
     }
 
-    /// SwifterSwift: Sort the collection based on two key paths. The second one will be used in case the values of the first one match.
+    /// SwifterSwift: Sort the collection based on two key paths. The second one will be used in case the values of the
+    /// first one match.
     ///
     /// - Parameters:
     ///     - keyPath1: Key path to sort by. Must be Comparable.
     ///     - keyPath2: Key path to sort by in case the values of `keyPath1` match. Must be Comparable.
-    mutating func sort<T: Comparable, U: Comparable>(by keyPath1: KeyPath<Element, T>,
-                                                     and keyPath2: KeyPath<Element, U>) {
+    mutating func sort(by keyPath1: KeyPath<Element, some Comparable>,
+                       and keyPath2: KeyPath<Element, some Comparable>) {
         sort {
             if $0[keyPath: keyPath1] != $1[keyPath: keyPath1] {
                 return $0[keyPath: keyPath1] < $1[keyPath: keyPath1]
@@ -37,15 +32,16 @@ public extension MutableCollection where Self: RandomAccessCollection {
         }
     }
 
-    /// SwifterSwift: Sort the collection based on three key paths. Whenever the values of one key path match, the next one will be used.
+    /// SwifterSwift: Sort the collection based on three key paths. Whenever the values of one key path match, the next
+    /// one will be used.
     ///
     /// - Parameters:
     ///     - keyPath1: Key path to sort by. Must be Comparable.
     ///     - keyPath2: Key path to sort by in case the values of `keyPath1` match. Must be Comparable.
     ///     - keyPath3: Key path to sort by in case the values of `keyPath1` and `keyPath2` match. Must be Comparable.
-    mutating func sort<T: Comparable, U: Comparable, V: Comparable>(by keyPath1: KeyPath<Element, T>,
-                                                                    and keyPath2: KeyPath<Element, U>,
-                                                                    and keyPath3: KeyPath<Element, V>) {
+    mutating func sort(by keyPath1: KeyPath<Element, some Comparable>,
+                       and keyPath2: KeyPath<Element, some Comparable>,
+                       and keyPath3: KeyPath<Element, some Comparable>) {
         sort {
             if $0[keyPath: keyPath1] != $1[keyPath: keyPath1] {
                 return $0[keyPath: keyPath1] < $1[keyPath: keyPath1]
@@ -61,15 +57,12 @@ public extension MutableCollection where Self: RandomAccessCollection {
 public extension MutableCollection {
     /// SwifterSwift: Assign a given value to a field `keyPath` of all elements in the collection.
     ///
-    /// - Parameter value: The new value of the field
-    /// - Parameter keyPath: The actual field of the element
+    /// - Parameters:
+    ///   - value: The new value of the field.
+    ///   - keyPath: The actual field of the element.
     mutating func assignToAll<Value>(value: Value, by keyPath: WritableKeyPath<Element, Value>) {
-        guard !isEmpty else { return }
-
-        var idx = startIndex
-        while idx != endIndex {
+        for idx in indices {
             self[idx][keyPath: keyPath] = value
-            idx = index(after: idx)
         }
     }
 }

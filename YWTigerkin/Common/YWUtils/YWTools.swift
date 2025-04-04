@@ -29,3 +29,15 @@ func synchronized(_ lock: Any, closure: () -> Void) {
     closure()
     objc_sync_exit(lock)
 }
+
+
+//主线程执行
+func ToolsRunOnMain(closure:@escaping ()->Void) {
+    if (Thread.isMainThread) {
+        closure()
+    } else {
+        DispatchQueue.main.async {
+            closure()
+        }
+    }
+}

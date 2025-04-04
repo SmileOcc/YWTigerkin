@@ -97,6 +97,12 @@ class YWSettingCtrl: YWBaseViewController , HUDViewModelBased{
         self.navigationController?.pushViewController(webCtrl, animated: true)
     }
     
+    @objc func webNavAction() {
+        let webCtrl = YWNativeWebCtrl()
+        self.navigationController?.pushViewController(webCtrl, animated: true)
+
+    }
+    
     @objc func searchAction() {
         
         self.viewModel.navigator.push(YWModulePaths.search.url)

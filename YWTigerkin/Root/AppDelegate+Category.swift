@@ -14,6 +14,7 @@ extension YWAppDelegate {
     
     func yw_Application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
         
+        MMKV.initialize(rootDir: nil)
         cofigureKeyboardManager()
         initPushConfig(application)
         initNotifications()

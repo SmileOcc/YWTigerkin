@@ -196,3 +196,15 @@ logout = "logout";
 "mine_simplified"="简体中文";
 "mine_english"="English";
 "mine_traditional"="繁體中文";
+
+
+// 通用
+sure = "Sure";
+confirm = "Confirm";
+cancel = "Cancel";
+complete = "Complete";
+clear = "Clear";
+
+// 起止时间选择
+DurationDatePickView.topTitle = "Please Select Start And End Time";
+DurationDatePickView.to = "To";

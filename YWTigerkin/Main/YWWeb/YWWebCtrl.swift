@@ -607,6 +607,31 @@ extension YWWebCtrl: WKNavigationDelegate {
             self.addNoDataViewAndEnable()
         }
     }
+    
+    //进程终止(内存消耗过大导致白屏)
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+          print("进程被终止")
+          webView.reload()
+    }
+    
+    func wkWebView_AppDidEnterPlayground() {
+        
+        //这个没有测试
+        self.webView?.evaluateJavaScript("document.body.innerHTML") { [weak self] (result, error) in
+            guard let strongSelf = self else {return}
+            if let innerHTML = result as? String {
+                if innerHTML.isEmpty {
+                    strongSelf.webView?.reload()
+                }
+            }
+        }
+        
+        //尝试关闭web,重新启动
+        self.webView?.killNetworkProcess()
+        self.webView?.reload()
+     }
+
+
 }
 
 extension YWWebCtrl: YWWKWebViewDelegate {

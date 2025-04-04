@@ -60,7 +60,7 @@ class YWHomeNavBar: YYAnimatedImageView {
         return view
     }()
     
-    lazy var badgeView: UIView = {
+    lazy var badgeeView: UIView = {
         let view = UIView(frame:CGRect.zero)
         return view
     }()

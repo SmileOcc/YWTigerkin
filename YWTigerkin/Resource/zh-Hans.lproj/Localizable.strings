@@ -187,3 +187,14 @@ logout = "退出登录";
 "mine_simplified"="简体中文";
 "mine_english"="English";
 "mine_traditional"="繁體中文";
+
+// 通用
+sure = "确定";
+cancel = "取消";
+confirm = "确认";
+complete = "完成";
+clear = "清空";
+
+// 起止时间选择
+DurationDatePickView.topTitle = "请选择起止时间";
+DurationDatePickView.to = "至";

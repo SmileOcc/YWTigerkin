@@ -22,7 +22,7 @@ class YWRefreshAnimateHeader: MJRefreshHeader {
     
     lazy var refreshingView: YWLottieView = {
         let refreshingView = YWLottieView(frame: .zero, name: refreshAnimation())
-        refreshingView.lottieView.loopMode = .loop
+//        refreshingView.lottieView.loopMode = .loop
         return refreshingView
     }()
     

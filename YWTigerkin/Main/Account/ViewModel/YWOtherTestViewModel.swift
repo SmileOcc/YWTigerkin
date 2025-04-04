@@ -97,6 +97,10 @@ class YWOtherTestViewModel: HUDServicesViewModel , HasDisposeBag  {
                 model.title = "画表直方图"
             } else if i == 11 {
                 model.title = "下载文件测试"
+            } else if i == 12 {
+                model.title = "同层组件"
+            } else if i == 13 {
+                model.title = "同层组件2 完善"
             }
             self.datas.append(model)
         }

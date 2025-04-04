@@ -16,8 +16,10 @@
 #import "VIMediaCache.h"
 #import "YWExceptionOCCatch.h"
 
-#import <ShareSDK/ShareSDK.h>
-#import <ShareSDKExtension/ShareSDK+Extension.h>
+#import "YWNavtiveWebBase.h"
+
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKExtension/ShareSDK+Extension.h>
 //#import <WechatConnector/WechatConnector.h>
 //#import <ShareSDKConnector/ShareSDKConnector.h>
-#import <ShareSDK/ShareSDK+Base.h>
+//#import <ShareSDK/ShareSDK+Base.h>

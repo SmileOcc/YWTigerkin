@@ -382,30 +382,30 @@ class YWLoginCtrl: YWBaseViewController , HUDViewModelBased{
         
         quickSignInView.weChatBtn.rx.tap.subscribe(onNext:{ [weak self] in
 
-            YWShareSDKHelper.instance.authorize(.typeWechat, callBack: { [weak self] (success, userInfo, _) in
-                            guard let strongSelf = self else { return }
-                            if success {
-                                //隐藏转圈
-                                strongSelf.viewModel.hudSubject?.onNext(.loading(nil, false))
-                                //请求第三方登录
-                                strongSelf.viewModel.isThirdLogin = true
-                                if let credential = userInfo?["credential"] as? [AnyHashable : Any],
-                                    let rawData = credential["rawData"] as? [AnyHashable : Any],
-                                    let access_token = rawData["access_token"] as? String,
-                                    let openid = rawData["openid"] as? String {
-                                    strongSelf.viewModel.accessToken = access_token
-                                    strongSelf.viewModel.openId = openid
-                                    strongSelf.viewModel.thirdLoginType = .weChat
-//                                    strongSelf.viewModel.services.aggregationService.request(.thirdLogin(access_token, openid, nil, strongSelf.viewModel.thirdLoginType), response: strongSelf.viewModel.loginResponse).disposed(by: strongSelf.disposeBag)
-                                }
-                            }else {
-                                if let _ = userInfo?["error"] {
-                                    YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_failure"))
-                                }else {
-                                    YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_cancel"))
-                                }
-                            }
-                        })
+//            YWShareSDKHelper.instance.authorize(.typeWechat, callBack: { [weak self] (success, userInfo, _) in
+//                            guard let strongSelf = self else { return }
+//                            if success {
+//                                //隐藏转圈
+//                                strongSelf.viewModel.hudSubject?.onNext(.loading(nil, false))
+//                                //请求第三方登录
+//                                strongSelf.viewModel.isThirdLogin = true
+//                                if let credential = userInfo?["credential"] as? [AnyHashable : Any],
+//                                    let rawData = credential["rawData"] as? [AnyHashable : Any],
+//                                    let access_token = rawData["access_token"] as? String,
+//                                    let openid = rawData["openid"] as? String {
+//                                    strongSelf.viewModel.accessToken = access_token
+//                                    strongSelf.viewModel.openId = openid
+//                                    strongSelf.viewModel.thirdLoginType = .weChat
+////                                    strongSelf.viewModel.services.aggregationService.request(.thirdLogin(access_token, openid, nil, strongSelf.viewModel.thirdLoginType), response: strongSelf.viewModel.loginResponse).disposed(by: strongSelf.disposeBag)
+//                                }
+//                            }else {
+//                                if let _ = userInfo?["error"] {
+//                                    YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_failure"))
+//                                }else {
+//                                    YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_cancel"))
+//                                }
+//                            }
+//                        })
         }).disposed(by: disposeBag)
         
         quickSignInView.googleBtn.rx.tap.subscribe(onNext:{ [weak self] in
@@ -420,62 +420,62 @@ class YWLoginCtrl: YWBaseViewController , HUDViewModelBased{
         
         quickSignInView.faceBookBtn.rx.tap.subscribe(onNext:{ [weak self] in
 
-            YWShareSDKHelper.instance.authorize(.typeFacebook, callBack: { [weak self] (success, userInfo, _) in
-                guard let strongSelf = self else { return }
-
-                self?.viewModel.hudSubject.onNext(.hide)
-                if success {
-                    //隐藏转圈
-                    strongSelf.viewModel.hudSubject?.onNext(.loading(nil, false))
-                    //请求第三方登录
-                    strongSelf.viewModel.isThirdLogin = true
-//                    if let credential = userInfo?["credential"] as? [AnyHashable : Any],
-//                        let rawData = credential["rawData"] as? [AnyHashable : Any],
-//                        let access_token = rawData["access_token"] as? String {
-//                        strongSelf.viewModel.accessToken = access_token
-//                        strongSelf.viewModel.thirdLoginType = .faceBook
-//                        strongSelf.viewModel.services.aggregationService.request(.thirdLogin(access_token, "", nil, strongSelf.viewModel.thirdLoginType), response: strongSelf.viewModel.loginResponse).disposed(by: strongSelf.disposeBag)
+//            YWShareSDKHelper.instance.authorize(.typeFacebook, callBack: { [weak self] (success, userInfo, _) in
+//                guard let strongSelf = self else { return }
+//
+//                self?.viewModel.hudSubject.onNext(.hide)
+//                if success {
+//                    //隐藏转圈
+//                    strongSelf.viewModel.hudSubject?.onNext(.loading(nil, false))
+//                    //请求第三方登录
+//                    strongSelf.viewModel.isThirdLogin = true
+////                    if let credential = userInfo?["credential"] as? [AnyHashable : Any],
+////                        let rawData = credential["rawData"] as? [AnyHashable : Any],
+////                        let access_token = rawData["access_token"] as? String {
+////                        strongSelf.viewModel.accessToken = access_token
+////                        strongSelf.viewModel.thirdLoginType = .faceBook
+////                        strongSelf.viewModel.services.aggregationService.request(.thirdLogin(access_token, "", nil, strongSelf.viewModel.thirdLoginType), response: strongSelf.viewModel.loginResponse).disposed(by: strongSelf.disposeBag)
+////                    }
+//                } else {
+//                    if let _ = userInfo?["error"] {
+//                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_failure"))
+//                    }else {
+//                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_cancel"))
 //                    }
-                } else {
-                    if let _ = userInfo?["error"] {
-                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_failure"))
-                    }else {
-                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_cancel"))
-                    }
-                }
-            })
+//                }
+//            })
 
         }).disposed(by: disposeBag)
         
         
         quickSignInView.lineBtn.rx.tap.subscribe(onNext:{ [weak self] in
 
-            YWShareSDKHelper.instance.authorize(.typeLine, callBack: { [weak self] (success, userInfo, _) in
-                guard let strongSelf = self else { return }
-
-                self?.viewModel.hudSubject.onNext(.hide)
-                if success {
-                    //隐藏转圈
-                    strongSelf.viewModel.hudSubject?.onNext(.loading(nil, false))
-                    //请求第三方登录
-                    strongSelf.viewModel.isThirdLogin = true
-                    if let credential = userInfo?["credential"] as? [AnyHashable : Any],
-                        let rawData = credential["rawData"] as? [AnyHashable : Any],
-                        let uid = credential["uid"] as? String,
-                        let access_token = rawData["accessToken"] as? String {
-                        strongSelf.viewModel.accessToken = access_token
-                        strongSelf.viewModel.thirdLoginType = .line
-                        strongSelf.viewModel.lineUserId = uid
-//                        strongSelf.viewModel.services.aggregationService.request(.lineLogin(access_token, uid), response: strongSelf.viewModel.loginResponse).disposed(by: strongSelf.disposeBag)
-                    }
-                } else {
-                    if let _ = userInfo?["error"] {
-                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_failure"))
-                    }else {
-                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_cancel"))
-                    }
-                }
-            })
+//            YWShareSDKHelper.instance.authorize(.typeLine, callBack: { [weak self] (success, userInfo, _) in
+//                guard let strongSelf = self else { return }
+//
+//                self?.viewModel.hudSubject.onNext(.hide)
+//                if success {
+//                    //隐藏转圈
+//                    strongSelf.viewModel.hudSubject?.onNext(.loading(nil, false))
+//                    //请求第三方登录
+//                    strongSelf.viewModel.isThirdLogin = true
+//                    if let credential = userInfo?["credential"] as? [AnyHashable : Any],
+//                        let rawData = credential["rawData"] as? [AnyHashable : Any],
+//                        let uid = credential["uid"] as? String,
+//                        let access_token = rawData["accessToken"] as? String {
+//                        strongSelf.viewModel.accessToken = access_token
+//                        strongSelf.viewModel.thirdLoginType = .line
+//                        strongSelf.viewModel.lineUserId = uid
+////                        strongSelf.viewModel.services.aggregationService.request(.lineLogin(access_token, uid), response: strongSelf.viewModel.loginResponse).disposed(by: strongSelf.disposeBag)
+//                    }
+//                } else {
+//                    if let _ = userInfo?["error"] {
+//                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_failure"))
+//                    }else {
+//                        YWProgressHUD.showError(YWLanguageUtility.kLang(key: "login_auth_cancel"))
+//                    }
+//                }
+//            })
 
         }).disposed(by: disposeBag)
         

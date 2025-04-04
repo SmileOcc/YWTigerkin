@@ -9,7 +9,7 @@ import UIKit
 import MBProgressHUD
 import RxSwift
 import RxCocoa
-import Lottie
+//import Lottie
 
 let kHUDAlpha = 0.8
 

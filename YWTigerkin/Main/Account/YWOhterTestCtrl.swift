@@ -193,6 +193,14 @@ extension YWOhterTestCtrl: UITableViewDelegate,UITableViewDataSource {
                 let ctrl = YWTestDownFileCtrl()
                 self.navigationController?.pushViewController(ctrl, animated: true)
             }
+            else if model.id == "12" {
+                let ctrl = YWNativeWebCtrl()
+                self.navigationController?.pushViewController(ctrl, animated: true)
+            } else if model.id == "13" {
+                let ctrl = SameLayerRenderViewController()
+                self.navigationController?.pushViewController(ctrl, animated: true)
+
+            }
         }
         return;
     }
